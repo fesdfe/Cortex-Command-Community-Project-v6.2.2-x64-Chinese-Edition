@@ -1,0 +1,42 @@
+sources += files(
+'Base64/base64.cpp',
+'MicroPather/micropather.cpp',
+'glad/gl.c',
+'Semver200/Semver200_comparator.cpp',
+'Semver200/Semver200_modifier.cpp',
+'Semver200/Semver200_parser.cpp',
+'StandardIncludes.cpp',
+'AllegroTools.cpp',
+'Atom.cpp',
+'ContentFile.cpp',
+'Controller.cpp',
+'GenericSavedData.cpp',
+'GraphicalPrimitive.cpp',
+'Writer.cpp',
+'Box.cpp',
+'Entity.cpp',
+'Vector.cpp',
+'Reader.cpp',
+'Color.cpp',
+'InputScheme.cpp',
+'RTETools.cpp',
+'System.cpp',
+'InputMapping.cpp',
+'PathFinder.cpp',
+'DataModule.cpp',
+'Timer.cpp',
+'RTEError.cpp',
+'Matrix.cpp',
+'Shader.cpp',
+'Serializable.cpp',
+'PieQuadrant.cpp',
+'GLCheck.cpp',
+'SpatialPartitionGrid.cpp',
+)
+
+if host_machine.system() == 'windows'
+  sources += files(
+	'StackWalker/StackWalker.cpp',
+    'RTEStackTrace.cpp',
+  )
+endif
