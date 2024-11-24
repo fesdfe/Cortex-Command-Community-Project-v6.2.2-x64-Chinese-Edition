@@ -1,0 +1,1219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Full|Win32">
+      <Configuration>Debug Full</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Full|x64">
+      <Configuration>Debug Full</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Minimal|Win32">
+      <Configuration>Debug Minimal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Minimal|x64">
+      <Configuration>Debug Minimal</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Release|Win32">
+      <Configuration>Debug Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Release|x64">
+      <Configuration>Debug Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|x64">
+      <Configuration>Final</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiling|Win32">
+      <Configuration>Profiling</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiling|x64">
+      <Configuration>Profiling</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A58C9DD7-8BC7-48DA-9E04-04D04F582BE3}</ProjectGuid>
+    <RootNamespace>RTEA</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset Condition="'$(VisualStudioVersion)'=='16.0'">v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)'=='17.0'">v143</PlatformToolset>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <IntDir>_Bin\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>.\</OutDir>
+    <GenerateManifest>true</GenerateManifest>
+    <EmbedManifest>true</EmbedManifest>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Full|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Full|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Full|Win32'" Label="Configuration">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>Cortex Command.debug.full.x86</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Full|x64'" Label="Configuration">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>Cortex Command.profiling</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|Win32'" Label="Configuration">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>Cortex Command.debug.minimal.x86</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|x64'" Label="Configuration">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>Cortex Command.debug.minimal</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Release|Win32'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>Cortex Command.debug.release.x86</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>Cortex Command.profiling.x86</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Release|x64'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>Cortex Command.debug.release</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>Cortex Command.profiling</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>Cortex Command x86</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>Cortex Command</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Full|Win32'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;DEBUG_BUILD;DEBUGMODE;TARGET_MACHINE_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ConformanceMode>true</ConformanceMode>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic-32.lib;libminizip-32.lib;libpng16-static-32.lib;setupapi.lib;version.lib;imm32.lib;fmodL_vc.lib;allegro-debug-32.lib;loadpng-debug-32.lib;liblz4_debug_static.lib;luajit-debug-32.lib;luabind-debug-32.lib;raknet-debug-32.lib;sdl2main-debug-32.lib;sdl2-debug-32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Full|x64'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;DEBUG_BUILD;DEBUGMODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+      <OmitFramePointers>false</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic.lib;libminizip.lib;libpng16-static.lib;setupapi.lib;version.lib;imm32.lib;fmod_vc.lib;allegro-debug.lib;loadpng-debug.lib;liblz4_debug_static.lib;luajit-debug.lib;luabind-debug.lib;raknet-debug.lib;sdl2main-debug.lib;sdl2-debug.lib;opengl32.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|Win32'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;MIN_DEBUG_BUILD;DEBUGMODE;TARGET_MACHINE_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic-32.lib;libminizip-32.lib;libpng16-static-32.lib;setupapi.lib;version.lib;imm32.lib;fmodL_vc.lib;allegro-debug-32.lib;loadpng-debug-32.lib;liblz4_debug_static.lib;luajit-debug-release-32.lib;luabind-debug-32.lib;raknet-debug-32.lib;sdl2main-debug-32.lib;sdl2-debug-32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|x64'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;MIN_DEBUG_BUILD;DEBUGMODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+      <OmitFramePointers>false</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic.lib;libminizip.lib;libpng16-static.lib;setupapi.lib;version.lib;imm32.lib;fmod_vc.lib;allegro-debug.lib;loadpng-debug.lib;liblz4_debug_static.lib;luajit-debug-release.lib;luabind-debug.lib;raknet-debug.lib;sdl2main-debug.lib;sdl2-debug.lib;opengl32.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;DEBUG_RELEASE_BUILD;NDEBUG;TRACY_ENABLE;TRACY_ON_DEMAND;TARGET_MACHINE_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <OmitFramePointers>false</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>false</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic-32.lib;libminizip-32.lib;libpng16-static-32.lib;fmodL_vc.lib;allegro-debug-release-32.lib;loadpng-debug-release-32.lib;liblz4_release_static.lib;luajit-debug-release-32.lib;luabind-debug-release-32.lib;raknet-release-32.lib;opengl32.lib;SDL2-32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;TRACY_ENABLE;TRACY_ON_DEMAND;PROFILING_BUILD;NDEBUG;TARGET_MACHINE_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <OmitFramePointers>false</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>false</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic-32.lib;libminizip-32.lib;libpng16-static-32.lib;fmodL_vc.lib;allegro-debug-release-32.lib;loadpng-debug-release-32.lib;liblz4_release_static.lib;luajit-debug-release-32.lib;luabind-debug-release-32.lib;raknet-release-32.lib;opengl32.lib;SDL2-32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Release|x64'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;DEBUG_RELEASE_BUILD;NDEBUG;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>
+      </EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <OmitFramePointers>false</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>false</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic.lib;libminizip.lib;libpng16-static.lib;fmod_vc.lib;allegro-debug-release.lib;loadpng-debug-release.lib;liblz4_release_static.lib;luajit-debug-release.lib;luabind-debug-release.lib;raknet-release.lib;opengl32.lib;SDL2.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;TRACY_ENABLE;TRACY_ON_DEMAND;PROFILING_BUILD;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>
+      </EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <OmitFramePointers>false</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>false</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic.lib;libminizip.lib;libpng16-static.lib;fmod_vc.lib;allegro-debug-release.lib;loadpng-debug-release.lib;liblz4_release_static.lib;luajit-debug-release.lib;luabind-debug-release.lib;raknet-release.lib;opengl32.lib;SDL2.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;RELEASE_BUILD;NDEBUG;TRACY_ENABLE;TRACY_ON_DEMAND;TRACY_ONLY_LOCALHOST;TRACY_NO_BROADCAST;TARGET_MACHINE_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <OmitFramePointers>true</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic-32.lib;libminizip-32.lib;libpng16-static-32.lib;fmodL_vc.lib;allegro-release-32.lib;loadpng-release-32.lib;liblz4_release_static.lib;luajit-release-32.lib;luabind-release-32.lib;raknet-release-32.lib;opengl32.lib;SDL2-32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <Import Project="RTEA.common.props" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'">
+    <ClCompile>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='16.0'">/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)'=='17.0'">/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source;$(ProjectDir)Source\System;$(ProjectDir)Source\Lua;$(ProjectDir)Source\Entities;$(ProjectDir)Source\Activities;$(ProjectDir)Source\Managers;$(ProjectDir)Source\Menus;$(ProjectDir)Source\GUI;$(ProjectDir)Source\GUI\Wrappers;$(ProjectDir)external\include\boost_1_75;$(ProjectDir)external\include\glm-0.9.9.8;$(ProjectDir)external\include\glad-2.0.0-beta;$(ProjectDir)external\include\LZ4-1.9.3\LZ4;$(ProjectDir)external\include\fmod-2.2.13;$(ProjectDir)external\include\thread-pool-3.5.0\include;$(ProjectDir)external\include\hopscotch-map-2.3.1\include;$(ProjectDir)external\sources\libpng-1.6.40\include;$(ProjectDir)external\sources\zlib-ng-2.1.3\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\include;$(ProjectDir)external\sources\allegro 4.4.3.1-custom\addons\loadpng;$(ProjectDir)external\sources\SDL2-2.26.3\include;$(ProjectDir)external\sources\LuaJIT-2.1\src;$(ProjectDir)external\sources\luabind-0.7.1\;$(ProjectDir)external\sources\luabind-0.7.1\luabind;$(ProjectDir)external\sources\RakNet\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\include;$(ProjectDir)external\sources\minizip-ng-4.0.0\src;$(ProjectDir)external\sources\tracy\public</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;ZLIB_COMPAT;_WINDOWS;WIN32;RELEASE_BUILD;NDEBUG;TRACY_ENABLE;TRACY_ON_DEMAND;TRACY_ONLY_LOCALHOST;TRACY_NO_BROADCAST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>
+      </EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles);StandardIncludes.h;</ForcedIncludeFiles>
+      <OmitFramePointers>true</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <ConformanceMode>true</ConformanceMode>
+      <IncludeInUnityFile>false</IncludeInUnityFile>
+      <AddCodeAfterSourceInclude>#undef GetClassName</AddCodeAfterSourceInclude>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;dinput8.lib;ddraw.lib;dxguid.lib;dsound.lib;zlibstatic.lib;libminizip.lib;libpng16-static.lib;fmod_vc.lib;allegro-release.lib;loadpng-release.lib;liblz4_release_static.lib;luajit-release.lib;luabind-release.lib;raknet-release.lib;opengl32.lib;SDL2.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>external\sources\zlib-ng-2.1.3\_Bin;external\sources\libpng-1.6.40\_Bin;external\sources\allegro 4.4.3.1-custom\_Bin;external\sources\SDL2-2.26.3\_Bin;external\sources\luabind-0.7.1\_Bin;external\sources\LuaJIT-2.1\_Bin;external\sources\RakNet\_Bin;external\sources\minizip-ng-4.0.0\_Bin;external\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName).manifest</OutputManifestFile>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(IntDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CNtools.h" />
+    <ClInclude Include="Source\Entities\Activity.h" />
+    <ClInclude Include="Source\Entities\ADSensor.h" />
+    <ClInclude Include="Source\Entities\AEJetpack.h" />
+    <ClInclude Include="Source\Entities\Emission.h" />
+    <ClInclude Include="Source\Entities\Gib.h" />
+    <ClInclude Include="Source\Entities\MetaSave.h" />
+    <ClInclude Include="Source\Entities\PEmitter.h" />
+    <ClInclude Include="Source\Entities\Round.h" />
+    <ClInclude Include="Source\Entities\SLBackground.h" />
+    <ClInclude Include="Source\Entities\SoundSet.h" />
+    <ClInclude Include="Source\Entities\TerrainFrosting.h" />
+    <ClInclude Include="Source\GUI\GUIInterface.h" />
+    <ClInclude Include="Source\GUI\GUIReader.h" />
+    <ClInclude Include="Source\GUI\GUISound.h" />
+    <ClInclude Include="Source\GUI\Wrappers\AllegroBitmap.h" />
+    <ClInclude Include="Source\GUI\Wrappers\AllegroScreen.h" />
+    <ClInclude Include="Source\GUI\Wrappers\GUIInputWrapper.h" />
+    <ClInclude Include="Source\Lua\LuaAdapterDefinitions.h" />
+    <ClInclude Include="Source\Lua\LuabindObjectWrapper.h" />
+    <ClInclude Include="Source\Lua\LuabindDefinitions.h" />
+    <ClInclude Include="Source\Lua\LuaBindingRegisterDefinitions.h" />
+    <ClInclude Include="Source\GUI\GUIWriter.h" />
+    <ClInclude Include="Source\Managers\CameraMan.h" />
+    <ClInclude Include="Source\Managers\MenuMan.h" />
+    <ClInclude Include="Source\Managers\NetworkClient.h" />
+    <ClInclude Include="Source\Managers\NetworkServer.h" />
+    <ClInclude Include="Source\Managers\PerformanceMan.h" />
+    <ClInclude Include="Source\Managers\PostProcessMan.h" />
+    <ClInclude Include="Source\Managers\PrimitiveMan.h" />
+    <ClInclude Include="Source\Managers\ThreadMan.h" />
+    <ClInclude Include="Source\Managers\WindowMan.h" />
+    <ClInclude Include="Source\Menus\LoadingScreen.h" />
+    <ClInclude Include="Source\Menus\ModManagerGUI.h" />
+    <ClInclude Include="Source\Menus\PauseMenuGUI.h" />
+    <ClInclude Include="Source\Menus\SaveLoadMenuGUI.h" />
+    <ClInclude Include="Source\Menus\ScenarioActivityConfigGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsAudioGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsGameplayGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsInputGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsInputMappingGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsInputMappingWizardGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsMiscGUI.h" />
+    <ClInclude Include="Source\Menus\SettingsVideoGUI.h" />
+    <ClInclude Include="Source\Menus\TitleScreen.h" />
+    <ClInclude Include="Resources\Credits.h" />
+    <ClInclude Include="Resources\resource.h" />
+    <ClInclude Include="Source\System\AllegroTools.h" />
+    <ClInclude Include="Source\System\Atom.h" />
+    <ClInclude Include="Source\System\Base64\base64.h" />
+    <ClInclude Include="Source\System\Constants.h" />
+    <ClInclude Include="Source\System\Controller.h" />
+    <ClInclude Include="Source\System\Entity.h" />
+    <ClInclude Include="Source\System\GameVersion.h" />
+    <ClInclude Include="Source\System\GenericSavedData.h" />
+    <ClInclude Include="Source\System\GLCheck.h" />
+    <ClInclude Include="Source\System\InputMapping.h" />
+    <ClInclude Include="Source\System\InputScheme.h" />
+    <ClInclude Include="Source\System\NetworkMessages.h" />
+    <ClInclude Include="Source\System\GraphicalPrimitive.h" />
+    <ClInclude Include="Source\System\Gamepad.h" />
+    <ClInclude Include="Source\Menus\InventoryMenuGUI.h" />
+    <ClInclude Include="Source\System\PieQuadrant.h" />
+    <ClInclude Include="Source\System\Semver200\semver200.h" />
+    <ClInclude Include="Source\System\Semver200\version.h" />
+    <ClInclude Include="Source\System\Shader.h" />
+    <ClInclude Include="Source\System\SpatialPartitionGrid.h" />
+    <ClInclude Include="Source\System\RTEStackTrace.h" />
+    <ClInclude Include="Source\System\StackWalker\StackWalker.h" />
+    <ClInclude Include="Source\System\StandardIncludes.h" />
+    <ClInclude Include="Source\System\Box.h" />
+    <ClInclude Include="Source\System\Color.h" />
+    <ClInclude Include="Source\System\ContentFile.h" />
+    <ClInclude Include="Source\System\DataModule.h" />
+    <ClInclude Include="Source\System\RTEError.h" />
+    <ClInclude Include="Source\System\RTETools.h" />
+    <ClInclude Include="Source\System\Matrix.h" />
+    <ClInclude Include="Source\System\PathFinder.h" />
+    <ClInclude Include="Source\System\Reader.h" />
+    <ClInclude Include="Source\System\Serializable.h" />
+    <ClInclude Include="Source\System\Singleton.h" />
+    <ClInclude Include="Source\System\System.h" />
+    <ClInclude Include="Source\System\Timer.h" />
+    <ClInclude Include="Source\System\Vector.h" />
+    <ClInclude Include="Source\System\Writer.h" />
+    <ClInclude Include="Source\System\MicroPather\micropather.h" />
+    <ClInclude Include="Source\Managers\AchievementMan.h" />
+    <ClInclude Include="Source\Managers\ActivityMan.h" />
+    <ClInclude Include="Source\Managers\AudioMan.h" />
+    <ClInclude Include="Source\Managers\ConsoleMan.h" />
+    <ClInclude Include="Source\Managers\FrameMan.h" />
+    <ClInclude Include="Source\Managers\LuaMan.h" />
+    <ClInclude Include="Source\Managers\MetaMan.h" />
+    <ClInclude Include="Source\Managers\MovableMan.h" />
+    <ClInclude Include="Source\Managers\PresetMan.h" />
+    <ClInclude Include="Source\Managers\SceneMan.h" />
+    <ClInclude Include="Source\Managers\SettingsMan.h" />
+    <ClInclude Include="Source\Managers\TimerMan.h" />
+    <ClInclude Include="Source\Managers\UInputMan.h" />
+    <ClInclude Include="Source\GUI\GUI.h" />
+    <ClInclude Include="Source\GUI\GUIBanner.h" />
+    <ClInclude Include="Source\GUI\GUIButton.h" />
+    <ClInclude Include="Source\GUI\GUICheckbox.h" />
+    <ClInclude Include="Source\GUI\GUICollectionBox.h" />
+    <ClInclude Include="Source\GUI\GUIComboBox.h" />
+    <ClInclude Include="Source\GUI\GUIControl.h" />
+    <ClInclude Include="Source\GUI\GUIControlFactory.h" />
+    <ClInclude Include="Source\GUI\GUIControlManager.h" />
+    <ClInclude Include="Source\GUI\GUIEvent.h" />
+    <ClInclude Include="Source\GUI\GUIFont.h" />
+    <ClInclude Include="Source\GUI\GUIInput.h" />
+    <ClInclude Include="Source\GUI\GUILabel.h" />
+    <ClInclude Include="Source\GUI\GUIListBox.h" />
+    <ClInclude Include="Source\GUI\GUIListPanel.h" />
+    <ClInclude Include="Source\GUI\GUIManager.h" />
+    <ClInclude Include="Source\GUI\GUIPanel.h" />
+    <ClInclude Include="Source\GUI\GUIProgressBar.h" />
+    <ClInclude Include="Source\GUI\GUIProperties.h" />
+    <ClInclude Include="Source\GUI\GUIPropertyPage.h" />
+    <ClInclude Include="Source\GUI\GUIRadioButton.h" />
+    <ClInclude Include="Source\GUI\GUIScrollbar.h" />
+    <ClInclude Include="Source\GUI\GUIScrollPanel.h" />
+    <ClInclude Include="Source\GUI\GUISkin.h" />
+    <ClInclude Include="Source\GUI\GUISlider.h" />
+    <ClInclude Include="Source\GUI\GUITab.h" />
+    <ClInclude Include="Source\GUI\GUITextBox.h" />
+    <ClInclude Include="Source\GUI\GUITextPanel.h" />
+    <ClInclude Include="Source\GUI\GUIUtil.h" />
+    <ClInclude Include="Source\Entities\ACDropShip.h" />
+    <ClInclude Include="Source\Entities\ACrab.h" />
+    <ClInclude Include="Source\Entities\ACraft.h" />
+    <ClInclude Include="Source\Entities\ACRocket.h" />
+    <ClInclude Include="Source\Entities\Actor.h" />
+    <ClInclude Include="Source\Entities\ADoor.h" />
+    <ClInclude Include="Source\Entities\AEmitter.h" />
+    <ClInclude Include="Source\Entities\AHuman.h" />
+    <ClInclude Include="Source\Entities\Arm.h" />
+    <ClInclude Include="Source\Entities\AtomGroup.h" />
+    <ClInclude Include="Source\Entities\Attachable.h" />
+    <ClInclude Include="Source\Entities\BunkerAssembly.h" />
+    <ClInclude Include="Source\Entities\BunkerAssemblyScheme.h" />
+    <ClInclude Include="Source\Entities\Deployment.h" />
+    <ClInclude Include="Source\Entities\GlobalScript.h" />
+    <ClInclude Include="Source\Entities\HDFirearm.h" />
+    <ClInclude Include="Source\Entities\HeldDevice.h" />
+    <ClInclude Include="Source\Entities\Icon.h" />
+    <ClInclude Include="Source\Entities\Leg.h" />
+    <ClInclude Include="Source\Entities\LimbPath.h" />
+    <ClInclude Include="Source\Entities\Loadout.h" />
+    <ClInclude Include="Source\Entities\Magazine.h" />
+    <ClInclude Include="Source\Entities\Material.h" />
+    <ClInclude Include="Source\Entities\MetaPlayer.h" />
+    <ClInclude Include="Source\Entities\MOPixel.h" />
+    <ClInclude Include="Source\Entities\MOSParticle.h" />
+    <ClInclude Include="Source\Entities\MOSprite.h" />
+    <ClInclude Include="Source\Entities\MOSRotating.h" />
+    <ClInclude Include="Source\Entities\MovableObject.h" />
+    <ClInclude Include="Source\Entities\PieMenu.h" />
+    <ClInclude Include="Source\Entities\PieSlice.h" />
+    <ClInclude Include="Source\Entities\Scene.h" />
+    <ClInclude Include="Source\Entities\SceneLayer.h" />
+    <ClInclude Include="Source\Entities\SceneObject.h" />
+    <ClInclude Include="Source\Entities\SLTerrain.h" />
+    <ClInclude Include="Source\Entities\SoundContainer.h" />
+    <ClInclude Include="Source\Entities\TDExplosive.h" />
+    <ClInclude Include="Source\Entities\TerrainDebris.h" />
+    <ClInclude Include="Source\Entities\TerrainObject.h" />
+    <ClInclude Include="Source\Entities\ThrownDevice.h" />
+    <ClInclude Include="Source\Entities\Turret.h" />
+    <ClInclude Include="Source\Activities\ActorEditor.h" />
+    <ClInclude Include="Source\Activities\AreaEditor.h" />
+    <ClInclude Include="Source\Activities\AssemblyEditor.h" />
+    <ClInclude Include="Source\Activities\BaseEditor.h" />
+    <ClInclude Include="Source\Activities\EditorActivity.h" />
+    <ClInclude Include="Source\Activities\GameActivity.h" />
+    <ClInclude Include="Source\Activities\GAScripted.h" />
+    <ClInclude Include="Source\Activities\GATutorial.h" />
+    <ClInclude Include="Source\Activities\GibEditor.h" />
+    <ClInclude Include="Source\Activities\MultiplayerGame.h" />
+    <ClInclude Include="Source\Activities\MultiplayerServerLobby.h" />
+    <ClInclude Include="Source\Activities\SceneEditor.h" />
+    <ClInclude Include="Source\Menus\AreaEditorGUI.h" />
+    <ClInclude Include="Source\Menus\AreaPickerGUI.h" />
+    <ClInclude Include="Source\Menus\AssemblyEditorGUI.h" />
+    <ClInclude Include="Source\Menus\BuyMenuGUI.h" />
+    <ClInclude Include="Source\Menus\GibEditorGUI.h" />
+    <ClInclude Include="Source\Menus\MainMenuGUI.h" />
+    <ClInclude Include="Source\Menus\MetagameGUI.h" />
+    <ClInclude Include="Source\Menus\ObjectPickerGUI.h" />
+    <ClInclude Include="Source\Menus\ScenarioGUI.h" />
+    <ClInclude Include="Source\Menus\SceneEditorGUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CNtools.cpp" />
+    <ClCompile Include="external\sources\tracy\public\TracyClient.cpp" />
+    <ClCompile Include="Source\Entities\AEJetpack.cpp" />
+    <ClCompile Include="Source\GUI\Wrappers\AllegroBitmap.cpp" />
+    <ClCompile Include="Source\GUI\Wrappers\AllegroScreen.cpp" />
+    <ClCompile Include="Source\GUI\Wrappers\GUIInputWrapper.cpp" />
+    <ClCompile Include="Source\Lua\LuaAdapters.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuabindObjectWrapper.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsActivities.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsEntities.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsGUI.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsManagers.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsMisc.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsInput.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsPrimitives.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\LuaBindingsSystem.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Managers\LuaMan.cpp">
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard Condition="'$(VisualStudioVersion)'=='16.0'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\Activity.cpp" />
+    <ClCompile Include="Source\Entities\ADSensor.cpp" />
+    <ClCompile Include="Source\Entities\Emission.cpp" />
+    <ClCompile Include="Source\Entities\Gib.cpp" />
+    <ClCompile Include="Source\Entities\MetaSave.cpp" />
+    <ClCompile Include="Source\Entities\PEmitter.cpp" />
+    <ClCompile Include="Source\Entities\Round.cpp" />
+    <ClCompile Include="Source\Entities\SLBackground.cpp" />
+    <ClCompile Include="Source\Entities\SoundSet.cpp" />
+    <ClCompile Include="Source\Entities\TerrainFrosting.cpp" />
+    <ClCompile Include="Source\GUI\GUIReader.cpp" />
+    <ClCompile Include="Source\GUI\GUISound.cpp" />
+    <ClCompile Include="Source\GUI\GUIWriter.cpp" />
+    <ClCompile Include="Source\Managers\MenuMan.cpp" />
+    <ClCompile Include="Source\Managers\NetworkClient.cpp" />
+    <ClCompile Include="Source\Managers\NetworkServer.cpp" />
+    <ClCompile Include="Source\Managers\PerformanceMan.cpp" />
+    <ClCompile Include="Source\Managers\PostProcessMan.cpp" />
+    <ClCompile Include="Source\Managers\PrimitiveMan.cpp" />
+    <ClCompile Include="Source\Managers\CameraMan.cpp" />
+    <ClCompile Include="Source\Managers\ThreadMan.cpp" />
+    <ClCompile Include="Source\Managers\WindowMan.cpp" />
+    <ClCompile Include="Source\Menus\LoadingScreen.cpp" />
+    <ClCompile Include="Source\Menus\ModManagerGUI.cpp" />
+    <ClCompile Include="Source\Menus\PauseMenuGUI.cpp" />
+    <ClCompile Include="Source\Menus\SaveLoadMenuGUI.cpp" />
+    <ClCompile Include="Source\Menus\ScenarioActivityConfigGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsAudioGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsGameplayGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsInputGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsInputMappingGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsInputMappingWizardGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsMiscGUI.cpp" />
+    <ClCompile Include="Source\Menus\SettingsVideoGUI.cpp" />
+    <ClCompile Include="Source\Menus\TitleScreen.cpp" />
+    <ClCompile Include="Source\Menus\InventoryMenuGUI.cpp" />
+    <ClCompile Include="Source\System\AllegroTools.cpp" />
+    <ClCompile Include="Source\System\Atom.cpp" />
+    <ClCompile Include="Source\System\Base64\base64.cpp" />
+    <ClCompile Include="Source\System\Controller.cpp" />
+    <ClCompile Include="Source\System\Entity.cpp" />
+    <ClCompile Include="Source\System\GenericSavedData.cpp" />
+    <ClCompile Include="Source\System\glad\gl.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Full|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Full|x64'">NotUsing</PrecompiledHeader>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug Release|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug Full|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug Release|x64'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Final|x64'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|x64'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug Full|x64'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Source\System\GLCheck.cpp" />
+    <ClCompile Include="Source\System\InputMapping.cpp" />
+    <ClCompile Include="Source\System\InputScheme.cpp" />
+    <ClCompile Include="Source\System\GraphicalPrimitive.cpp" />
+    <ClCompile Include="Source\System\PieQuadrant.cpp" />
+    <ClCompile Include="Source\System\Semver200\Semver200_comparator.cpp" />
+    <ClCompile Include="Source\System\Semver200\Semver200_modifier.cpp" />
+    <ClCompile Include="Source\System\Semver200\Semver200_parser.cpp" />
+    <ClCompile Include="Source\System\Serializable.cpp" />
+    <ClCompile Include="Source\System\Shader.cpp" />
+    <ClCompile Include="Source\System\SpatialPartitionGrid.cpp" />
+    <ClCompile Include="Source\System\RTEStackTrace.cpp" />
+    <ClCompile Include="Source\System\StackWalker\StackWalker.cpp" />
+    <ClCompile Include="Source\System\StandardIncludes.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>StandardIncludes.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Source\System\Box.cpp" />
+    <ClCompile Include="Source\System\Color.cpp" />
+    <ClCompile Include="Source\System\ContentFile.cpp" />
+    <ClCompile Include="Source\System\DataModule.cpp" />
+    <ClCompile Include="Source\System\RTEError.cpp" />
+    <ClCompile Include="Source\System\RTETools.cpp" />
+    <ClCompile Include="Source\System\Matrix.cpp" />
+    <ClCompile Include="Source\System\MicroPather\micropather.cpp">
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Debug Release|Win32'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|Win32'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Debug Full|Win32'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Debug Release|x64'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Final|x64'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Debug Minimal|x64'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Debug Full|x64'">false</IncludeInUnityFile>
+    </ClCompile>
+    <ClCompile Include="Source\System\PathFinder.cpp" />
+    <ClCompile Include="Source\System\Reader.cpp" />
+    <ClCompile Include="Source\System\System.cpp" />
+    <ClCompile Include="Source\System\Timer.cpp" />
+    <ClCompile Include="Source\System\Vector.cpp" />
+    <ClCompile Include="Source\System\Writer.cpp" />
+    <ClCompile Include="Source\Managers\AchievementMan.cpp" />
+    <ClCompile Include="Source\Managers\ActivityMan.cpp" />
+    <ClCompile Include="Source\Managers\AudioMan.cpp" />
+    <ClCompile Include="Source\Managers\ConsoleMan.cpp" />
+    <ClCompile Include="Source\Managers\FrameMan.cpp" />
+    <ClCompile Include="Source\Managers\MetaMan.cpp" />
+    <ClCompile Include="Source\Managers\MovableMan.cpp" />
+    <ClCompile Include="Source\Managers\PresetMan.cpp" />
+    <ClCompile Include="Source\Managers\SceneMan.cpp" />
+    <ClCompile Include="Source\Managers\SettingsMan.cpp" />
+    <ClCompile Include="Source\Managers\TimerMan.cpp" />
+    <ClCompile Include="Source\Managers\UInputMan.cpp" />
+    <ClCompile Include="Source\GUI\GUIBanner.cpp" />
+    <ClCompile Include="Source\GUI\GUIButton.cpp" />
+    <ClCompile Include="Source\GUI\GUICheckbox.cpp" />
+    <ClCompile Include="Source\GUI\GUICollectionBox.cpp" />
+    <ClCompile Include="Source\GUI\GUIComboBox.cpp" />
+    <ClCompile Include="Source\GUI\GUIControl.cpp" />
+    <ClCompile Include="Source\GUI\GUIControlFactory.cpp" />
+    <ClCompile Include="Source\GUI\GUIControlManager.cpp" />
+    <ClCompile Include="Source\GUI\GUIEvent.cpp" />
+    <ClCompile Include="Source\GUI\GUIFont.cpp" />
+    <ClCompile Include="Source\GUI\GUIInput.cpp" />
+    <ClCompile Include="Source\GUI\GUILabel.cpp" />
+    <ClCompile Include="Source\GUI\GUIListBox.cpp" />
+    <ClCompile Include="Source\GUI\GUIListPanel.cpp" />
+    <ClCompile Include="Source\GUI\GUIManager.cpp" />
+    <ClCompile Include="Source\GUI\GUIPanel.cpp" />
+    <ClCompile Include="Source\GUI\GUIProgressBar.cpp" />
+    <ClCompile Include="Source\GUI\GUIProperties.cpp" />
+    <ClCompile Include="Source\GUI\GUIPropertyPage.cpp" />
+    <ClCompile Include="Source\GUI\GUIRadioButton.cpp" />
+    <ClCompile Include="Source\GUI\GUIScrollbar.cpp" />
+    <ClCompile Include="Source\GUI\GUIScrollPanel.cpp" />
+    <ClCompile Include="Source\GUI\GUISkin.cpp" />
+    <ClCompile Include="Source\GUI\GUISlider.cpp" />
+    <ClCompile Include="Source\GUI\GUITab.cpp" />
+    <ClCompile Include="Source\GUI\GUITextBox.cpp" />
+    <ClCompile Include="Source\GUI\GUITextPanel.cpp" />
+    <ClCompile Include="Source\GUI\GUIUtil.cpp" />
+    <ClCompile Include="Source\Entities\ACDropShip.cpp" />
+    <ClCompile Include="Source\Entities\ACrab.cpp" />
+    <ClCompile Include="Source\Entities\ACraft.cpp" />
+    <ClCompile Include="Source\Entities\ACRocket.cpp" />
+    <ClCompile Include="Source\Entities\Actor.cpp" />
+    <ClCompile Include="Source\Entities\ADoor.cpp" />
+    <ClCompile Include="Source\Entities\AEmitter.cpp" />
+    <ClCompile Include="Source\Entities\AHuman.cpp" />
+    <ClCompile Include="Source\Entities\Arm.cpp" />
+    <ClCompile Include="Source\Entities\AtomGroup.cpp" />
+    <ClCompile Include="Source\Entities\Attachable.cpp" />
+    <ClCompile Include="Source\Entities\BunkerAssembly.cpp" />
+    <ClCompile Include="Source\Entities\BunkerAssemblyScheme.cpp" />
+    <ClCompile Include="Source\Entities\Deployment.cpp" />
+    <ClCompile Include="Source\Entities\GlobalScript.cpp" />
+    <ClCompile Include="Source\Entities\HDFirearm.cpp" />
+    <ClCompile Include="Source\Entities\HeldDevice.cpp" />
+    <ClCompile Include="Source\Entities\Icon.cpp" />
+    <ClCompile Include="Source\Entities\Leg.cpp" />
+    <ClCompile Include="Source\Entities\LimbPath.cpp" />
+    <ClCompile Include="Source\Entities\Loadout.cpp" />
+    <ClCompile Include="Source\Entities\Magazine.cpp" />
+    <ClCompile Include="Source\Entities\Material.cpp" />
+    <ClCompile Include="Source\Entities\MetaPlayer.cpp" />
+    <ClCompile Include="Source\Entities\MOPixel.cpp" />
+    <ClCompile Include="Source\Entities\MOSParticle.cpp" />
+    <ClCompile Include="Source\Entities\MOSprite.cpp" />
+    <ClCompile Include="Source\Entities\MOSRotating.cpp" />
+    <ClCompile Include="Source\Entities\MovableObject.cpp" />
+    <ClCompile Include="Source\Entities\PieMenu.cpp" />
+    <ClCompile Include="Source\Entities\PieSlice.cpp" />
+    <ClCompile Include="Source\Entities\Scene.cpp" />
+    <ClCompile Include="Source\Entities\SceneLayer.cpp" />
+    <ClCompile Include="Source\Entities\SceneObject.cpp" />
+    <ClCompile Include="Source\Entities\SLTerrain.cpp" />
+    <ClCompile Include="Source\Entities\SoundContainer.cpp" />
+    <ClCompile Include="Source\Entities\TDExplosive.cpp" />
+    <ClCompile Include="Source\Entities\TerrainDebris.cpp" />
+    <ClCompile Include="Source\Entities\TerrainObject.cpp" />
+    <ClCompile Include="Source\Entities\ThrownDevice.cpp" />
+    <ClCompile Include="Source\Entities\Turret.cpp" />
+    <ClCompile Include="Source\Activities\ActorEditor.cpp" />
+    <ClCompile Include="Source\Activities\AreaEditor.cpp" />
+    <ClCompile Include="Source\Activities\AssemblyEditor.cpp" />
+    <ClCompile Include="Source\Activities\BaseEditor.cpp" />
+    <ClCompile Include="Source\Activities\EditorActivity.cpp" />
+    <ClCompile Include="Source\Activities\GameActivity.cpp" />
+    <ClCompile Include="Source\Activities\GAScripted.cpp" />
+    <ClCompile Include="Source\Activities\GATutorial.cpp" />
+    <ClCompile Include="Source\Activities\GibEditor.cpp" />
+    <ClCompile Include="Source\Activities\MultiplayerGame.cpp" />
+    <ClCompile Include="Source\Activities\MultiplayerServerLobby.cpp" />
+    <ClCompile Include="Source\Activities\SceneEditor.cpp" />
+    <ClCompile Include="Source\Menus\AreaEditorGUI.cpp" />
+    <ClCompile Include="Source\Menus\AreaPickerGUI.cpp" />
+    <ClCompile Include="Source\Menus\AssemblyEditorGUI.cpp" />
+    <ClCompile Include="Source\Menus\BuyMenuGUI.cpp" />
+    <ClCompile Include="Source\Menus\GibEditorGUI.cpp" />
+    <ClCompile Include="Source\Menus\MainMenuGUI.cpp" />
+    <ClCompile Include="Source\Menus\MetagameGUI.cpp" />
+    <ClCompile Include="Source\Menus\ObjectPickerGUI.cpp" />
+    <ClCompile Include="Source\Menus\ScenarioGUI.cpp" />
+    <ClCompile Include="Source\Menus\SceneEditorGUI.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\ccicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\RTEA.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="Source\System\Semver200\version.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
