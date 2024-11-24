@@ -1,3 +1,12 @@
+# Cortex-Command-Community-Project-v6.6.2-x64-Chinese-Edition
+该项目针对表层指挥社区项目v6.6.2的win64版本进行了汉化，支持了对中文GB2312的编码（仅限汉字，不包含标点等字符）
+该项目的汉化范围包括游戏内的绝大部分UI、大概所有的物品描述，以及新手教程，仍未汉化的部分是几乎所有地图场景描述（Scene），该部分文本的汉化不需要您修改程序源文件，只需要按照特定的格式修改游戏资源中的配置文件即可，如果您感兴趣，我会在此贴出汉化原理讲解视频，您可以根据该视频自行学习如何汉化这些文本：
+[![表层指挥汉化原理](https://www.bilibili.com/video/BV177B2YaEng)]
+如果您希望以我这个汉化版本为基础继续进行开发，您不需要事先征求我的同意，毕竟这是个开源项目
+*该汉化项目大概率不会再进行更新，因为更新该项目意味着从零开始重新汉化游戏的所有文本，至于原因...因为我懒*
+
+# 以下是原表层指挥社区项目的readme文件
+
 # Cortex Command Community Project Source
 *The Cortex Command Community Project is Free/Libre and Open Source under GNU AGPL v3*
 
