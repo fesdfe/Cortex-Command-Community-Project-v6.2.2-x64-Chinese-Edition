@@ -11,7 +11,11 @@
 
 **该汉化项目大概率不会再进行更新，因为更新该项目意味着从零开始重新汉化游戏的所有文本，至于原因...因为我懒**
 
+
+
 # 以下是原表层指挥社区项目的readme文件
+
+
 
 # Cortex Command Community Project Source
 *The Cortex Command Community Project is Free/Libre and Open Source under GNU AGPL v3*
