@@ -1,7 +1,7 @@
 # 表层指挥v6.2.2汉化版改进版
-*该版本由DolphinA制作*
+*该版本由DolphinA制作*  
 该版本在基础汉化版之上完善了大多数界面汉化，并汉化了原本未汉化的地图描述，大部分物品也得到了汉化  
-以下为原项目的readme：
+以下为原项目的readme：  
 
 # Cortex Command Community Project Source
 *The Cortex Command Community Project is Free/Libre and Open Source under GNU AGPL v3*
