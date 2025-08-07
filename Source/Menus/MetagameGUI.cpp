@@ -4580,9 +4580,9 @@ void MetagameGUI::UpdatePreBattleAttackers(float progress) {
 			// When at site destination, take into account the side the brain icon needs to be on
 			else {
 				if (quadIndex <= 1)
-					std::snprintf(str, sizeof(str), "%c %.0f oz %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
+					std::snprintf(str, sizeof(str), "%c %.0f 盎司 %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
 				else
-					std::snprintf(str, sizeof(str), "%c%c%c %c %.0f oz", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
+					std::snprintf(str, sizeof(str), "%c%c%c %c %.0f 盎司", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
 			}
 			m_apPlayerBrainTravelLabel[mp]->SetText(str);
 			m_apPlayerBrainTravelLabel[mp]->SetToolTip("被 派 来 进 攻 这 个 地 方 的 主 脑 , 以 及 它 为 此 所 携 带 的 预 算 ."); // The specific brain that is being sent in to attack this place, and the funds he has been budgeted to do so with.
@@ -4715,9 +4715,9 @@ void MetagameGUI::UpdatePreBattleDefenders(float progress) {
 			// When at site destination, take into account the side the brain icon needs to be on
 			else {
 				if (quadIndex <= 1)
-					std::snprintf(str, sizeof(str), "%c %.0f oz %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
+					std::snprintf(str, sizeof(str), "%c %.0f 盎司 %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
 				else
-					std::snprintf(str, sizeof(str), "%c%c%c %c %.0f oz", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
+					std::snprintf(str, sizeof(str), "%c%c%c %c %.0f 盎司", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
 			}
 			m_apPlayerBrainTravelLabel[mp]->SetText(str);
 			m_apPlayerBrainTravelLabel[mp]->SetToolTip("保 护 这 个 站 点 免 受 攻 击 的 驻 守 主 脑 , 以 及 他 可 以 使 用 的 玩 家 的 未 分 配 资 金 ( 除 了 已 经 在 这 里 进 行 的 防 御 投 资 ) ."); //"The resident brain that is defending this site from attack, and the unallocated funds of its player that he gets to use (beyond the defense investments already made here)."
@@ -4838,9 +4838,9 @@ void MetagameGUI::UpdatePostBattleRetreaters(float progress) {
 			// When at site destination, take into account the side the brain icon needs to be on
 			else {
 				if (quadIndex <= 1)
-					std::snprintf(str, sizeof(str), "%c %.0f oz %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
+					std::snprintf(str, sizeof(str), "%c %.0f 盎司 %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
 				else
-					std::snprintf(str, sizeof(str), "%c%c%c %c %.0f oz", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
+					std::snprintf(str, sizeof(str), "%c%c%c %c %.0f 盎司", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
 			}
 			m_apPlayerBrainTravelLabel[mp]->SetText(str);
 			m_apPlayerBrainTravelLabel[mp]->SetToolTip("被 派 来 进 攻 这 个 地 方 的 主 脑 , 以 及 它 为 此 所 携 带 的 预 算 ."); // The specific brain that is being sent in to attack this place, and the funds he has been budgeted to do so with.
@@ -4978,15 +4978,15 @@ void MetagameGUI::UpdatePostBattleResidents(float progress) {
 					else {
 						if (quadIndex <= 1) {
 							if (m_aAnimDestroyed[mp])
-								std::snprintf(str, sizeof(str), "%c %.0f oz     ", -58, m_aBattleFunds[mp]);
+								std::snprintf(str, sizeof(str), "%c %.0f 盎司     ", -58, m_aBattleFunds[mp]);
 							else
-								std::snprintf(str, sizeof(str), "%c %.0f oz %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -26);
+								std::snprintf(str, sizeof(str), "%c %.0f 盎司 %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -26);
 							//                            std::snprintf(str, sizeof(str), "%c %.0f oz %c", -58, m_aBattleFunds[mp], m_AnimTimer2.AlternateReal(200) ? -39 : -26);
 						} else {
 							if (m_aAnimDestroyed[mp])
-								std::snprintf(str, sizeof(str), "     %c %.0f oz", -58, m_aBattleFunds[mp]);
+								std::snprintf(str, sizeof(str), "     %c %.0f 盎司", -58, m_aBattleFunds[mp]);
 							else
-								std::snprintf(str, sizeof(str), "%c%c%c %c %.0f oz", m_aAnimDestroyed[mp] ? ' ' : -26, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
+								std::snprintf(str, sizeof(str), "%c%c%c %c %.0f 盎司", m_aAnimDestroyed[mp] ? ' ' : -26, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
 							//                            std::snprintf(str, sizeof(str), "%c %c %.0f oz", m_AnimTimer2.AlternateReal(200) ? -39 : -26, -58, m_aBattleFunds[mp]);
 						}
 					}
@@ -5053,10 +5053,10 @@ void MetagameGUI::UpdatePostBattleResidents(float progress) {
 				// When at site start position, take into account the side the brain icon needs to be on
 				else {
 					if (quadIndex <= 1)
-						std::snprintf(str, sizeof(str), "%c %.0f oz %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
+						std::snprintf(str, sizeof(str), "%c %.0f 盎司 %c%c%c", -58, m_aBattleFunds[mp], m_aBattleAttacker[mp] ? -46 : -47, 127, -48);
 					//                        std::snprintf(str, sizeof(str), "%c %.0f oz %c%c", -58, m_aBattleFunds[mp], -47, -48);
 					else
-						std::snprintf(str, sizeof(str), "%c%c%c %c %.0f oz", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
+						std::snprintf(str, sizeof(str), "%c%c%c %c %.0f 盎司", -48, 127, m_aBattleAttacker[mp] ? -46 : -47, -58, m_aBattleFunds[mp]);
 					//                        std::snprintf(str, sizeof(str), "%c%c %c %.0f oz", -48, -47, -58, m_aBattleFunds[mp]);
 				}
 				m_apPlayerBrainTravelLabel[mp]->SetText(str);
@@ -5207,7 +5207,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 		// Write the description, and add the total defense investment in this place so far as a lil stat
 		Vector sceneSizeMeters = m_pSelectedScene->GetDimensions() / c_PPM;
 		std::string sceneDimensions = "站 点 尺 寸 : " + std::to_string(sceneSizeMeters.GetFloorIntX()) + " x " + std::to_string(sceneSizeMeters.GetFloorIntY()) + " 米"; //"Site Dimensions: " " meters"
-		std::string sceneInvestments = "此 处 的 总 基 地 投 入 : " + std::to_string(static_cast<int>(m_pSelectedScene->GetTotalInvestment())) + "oz"; //"Total base investments here: "
+		std::string sceneInvestments = "此 处 的 总 基 地 投 入 : " + std::to_string(static_cast<int>(m_pSelectedScene->GetTotalInvestment())) + "盎司"; //"Total base investments here: "
 		m_pSceneInfoLabel->SetText(m_pSelectedScene->GetDescription() + "\n\n" + sceneDimensions + "\n\n" + sceneInvestments);
 		// Adjust the height of the text box and container so it fits the text to display
 		int newHeight = m_pSceneInfoLabel->ResizeHeightToFit();
@@ -5246,7 +5246,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 			if (sceneOwnedByPlayer) {
 				// Set the budget label as per the slider
 				int budget = floorf(((float)m_pSceneBudgetSlider->GetValue() / 100.0f) * g_MetaMan.m_Players[metaPlayer].GetFunds());
-				std::snprintf(str, sizeof(str), "建筑预算 : %d oz", budget); //"Build Budget: %d oz"
+				std::snprintf(str, sizeof(str), "建筑预算 : %d 盎司", budget); //"Build Budget: %d oz"
 				m_pSceneBudgetLabel->SetText(str);
 				m_apMetaButton[SCANNOW]->SetVisible(false);
 				m_apMetaButton[SCANLATER]->SetVisible(false);
@@ -5271,7 +5271,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 					int budget = std::floor(((float)m_pSceneBudgetSlider->GetValue() / 100.0f) * g_MetaMan.m_Players[metaPlayer].GetFunds());
 					// Set the appropriate action message, depending on whether this is enemy owned, or merely unexplored
 					if (g_MetaMan.IsActiveTeam(m_pSelectedScene->GetTeamOwnership())) {
-						std::snprintf(str, sizeof(str), "进攻预算 : %d oz", budget); //"Attack Budget: %d oz"
+						std::snprintf(str, sizeof(str), "进攻预算 : %d 盎司", budget); //"Attack Budget: %d oz"
 						m_pSceneBudgetLabel->SetToolTip("设 置 您 的 总 资 金 中 有 多 少 将 用 于 探 索 此 站 点 . 任 何 未 在 攻 击 中 使 用 的 资 金 都 将 在 之 后 返 回 您 的 账 户 , 但 如 果 其 他 人 在 同 一 回 合 攻 击 您 的 任 何 基 地 , 这 些 资 金 也 将 被 占 用 , 不 能 用 于 防 御 . 每 回 合 只 能 攻 击 一 个 站 点 !");
 						m_pSceneBudgetSlider->SetToolTip("设 置 您 的 总 资 金 中 有 多 少 将 用 于 探 索 此 站 点 . 任 何 未 在 攻 击 中 使 用 的 资 金 都 将 在 之 后 返 回 您 的 账 户 , 但 如 果 其 他 人 在 同 一 回 合 攻 击 您 的 任 何 基 地 , 这 些 资 金 也 将 被 占 用 , 不 能 用 于 防 御 . 每 回 合 只 能 攻 击 一 个 站 点 !");
 						/*
@@ -5279,7 +5279,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 						m_pSceneBudgetSlider->SetToolTip("Sets how much of your total funds will be budgeted toward exploring this site. Any gold that isn't used in the attack will return to your account afterward, but will also be tied up and can't be used for defense if someone else attacks any of your bases during the same turn. You can only attack one site per turn!");
 						*/
 					} else {
-						std::snprintf(str, sizeof(str), "扩张预算 : %d oz", budget); //"Expedition Budget: %d oz"
+						std::snprintf(str, sizeof(str), "扩张预算 : %d 盎司", budget); //"Expedition Budget: %d oz"
 						m_pSceneBudgetLabel->SetToolTip("设 置 您 的 总 资 金 中 有 多 少 将 用 于 攻 击 此 站 点 . 任 何 未 在 扩 张 中 使 用 的 资 金 都 将 在 之 后 返 回 您 的 账 户 , 但 如 果 其 他 人 在 同 一 回 合 攻 击 您 的 任 何 基 地 , 这 些 资 金 也 将 被 占 用 , 不 能 用 于 防 御 . 每 个 回 合 只 能 扩 张 一 个 站 点 !");
 						m_pSceneBudgetSlider->SetToolTip("设 置 您 的 总 资 金 中 有 多 少 将 用 于 攻 击 此 站 点 . 任 何 未 在 扩 张 中 使 用 的 资 金 都 将 在 之 后 返 回 您 的 账 户 , 但 如 果 其 他 人 在 同 一 回 合 攻 击 您 的 任 何 基 地 , 这 些 资 金 也 将 被 占 用 , 不 能 用 于 防 御 . 每 个 回 合 只 能 扩 张 一 个 站 点 !");
 						/*
@@ -5308,7 +5308,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 						m_apMetaButton[SCANLATER]->SetVisible(false);
 						m_pScanInfoLabel->SetVisible(true);
 						std::snprintf(str, sizeof(str), "%d", SCANCOST);
-						m_pScanInfoLabel->SetText("需要 " + std::string(str) + " oz 来扫描 !"); //"Need " + std::string(str) + " oz left to Scan!"
+						m_pScanInfoLabel->SetText("需要 " + std::string(str) + " 盎司 来扫描 !"); //"Need " + std::string(str) + " oz left to Scan!"
 					}
 					// Site can be scheduled to be scanned
 					else {
@@ -5319,7 +5319,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 						m_apMetaButton[DESIGNBASE]->SetVisible(false);
 						m_apMetaButton[SCENEACTION]->SetVisible(true);
 						std::snprintf(str, sizeof(str), "%d", SCANCOST);
-						m_apMetaButton[SCENEACTION]->SetText("扫描站点 (" + std::string(str) + " oz)"); //"Scan Site (" + std::string(str) + " oz)"
+						m_apMetaButton[SCENEACTION]->SetText("扫描站点 (" + std::string(str) + " 盎司)"); //"Scan Site (" + std::string(str) + " oz)"
 						m_apMetaButton[SCENEACTION]->SetToolTip("对 该 地 点 进 行 轨 道 扫 描 , 这 将 显 示 地 表 上 的 所 有 东 西 , 但 无 法 深 入 地 下 .");
 						//m_apMetaButton[SCENEACTION]->SetToolTip("Performs an orbital scan of this site, which will show everything that is on the surface, but will not be able to penetrate far into the ground.");
 					}
@@ -5407,7 +5407,7 @@ void MetagameGUI::UpdateGameSizeLabels() {
 
 	// How much starting gold does the slider yield
 	int startGold = STARTGOLDMIN + ((STARTGOLDMAX - STARTGOLDMIN) * (float)m_pGoldSlider->GetValue() / 100.0);
-	std::snprintf(str, sizeof(str), "起始资金 : %c %d oz", -58, startGold); //"Starting Gold: %c %d oz"
+	std::snprintf(str, sizeof(str), "起始资金 : %c %d 盎司", -58, startGold); //"Starting Gold: %c %d oz"
 	m_pGoldLabel->SetText(str);
 
 	// Set the length label also according to the game length slider
@@ -5417,17 +5417,17 @@ void MetagameGUI::UpdateGameSizeLabels() {
 	m_pLengthLabel->SetText(str);
 
 	if (m_pDifficultySlider->GetValue() < Activity::CakeDifficulty)
-		m_pDifficultyLabel->SetText("难度 : 小菜一碟"); //Difficulty: Cake
+		m_pDifficultyLabel->SetText("难度 : 闲庭信步"); //Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::EasyDifficulty)
 		m_pDifficultyLabel->SetText("难度 : 简单"); // Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::MediumDifficulty)
-		m_pDifficultyLabel->SetText("难度 : 均衡"); // Difficulty: Cake
+		m_pDifficultyLabel->SetText("难度 : 普通"); // Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::HardDifficulty)
 		m_pDifficultyLabel->SetText("难度 : 困难"); // Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::NutsDifficulty)
 		m_pDifficultyLabel->SetText("难度 : 疯狂"); // Difficulty: Cake
 	else
-		m_pDifficultyLabel->SetText("难度 : 自寻死路 !"); // Difficulty: Cake
+		m_pDifficultyLabel->SetText("难度 : 超级疯狂"); // Difficulty: Cake
 }
 
 void MetagameGUI::UpdatePlayerSetup() {
@@ -5521,11 +5521,11 @@ void MetagameGUI::UpdatePlayerBars() {
 			// Show funds of player if income lines are showing, or we are counting income/expenses somehow
 			if ((!m_PreTurn && metaPlayer == (g_MetaMan.m_GameState - MetaMan::PLAYER1TURN) && m_pSelectedScene) ||
 			    metaPlayer == m_ActivePlayerIncomeLines || g_MetaMan.m_GameState == MetaMan::COUNTINCOME || g_MetaMan.m_GameState == MetaMan::BUILDBASES || g_MetaMan.m_GameState == MetaMan::RUNACTIVITIES || g_MetaMan.m_GameState == MetaMan::ENDROUND) {
-				std::snprintf(str, sizeof(str), "%c %.0f oz", -58, (*mpItr).m_Funds);
+				std::snprintf(str, sizeof(str), "%c %.0f 盎司", -58, (*mpItr).m_Funds);
 				//                std::snprintf(str, sizeof(str), "%cx%d %c %.0f oz", -48, (*mpItr).GetBrainPoolCount(), -58, (*mpItr).m_Funds);
 				m_apPlayerBarLabel[metaPlayer]->SetText(str);
 				m_apPlayerBarLabel[metaPlayer]->SetHAlignment(GUIFont::Right);
-				m_apPlayerBarLabel[metaPlayer]->SetToolTip("This player's total funds");
+				m_apPlayerBarLabel[metaPlayer]->SetToolTip("这位玩家的总资金");
 			}
 			// Show player name instead
 			else {
@@ -5659,7 +5659,7 @@ void MetagameGUI::PlayerTextIndication(int metaPlayer, std::string text, const V
 
 void MetagameGUI::FundsChangeIndication(int metaPlayer, float change, const Vector& screenPos, double animLengthMS) {
 	char str[256];
-	std::snprintf(str, sizeof(str), change >= 1.0 ? "%c +%.0f oz" : (change <= -1.0 ? "%c %.0f oz" : "%c %.0f oz"), -58, change);
+	std::snprintf(str, sizeof(str), change >= 1.0 ? "%c +%.0f 盎司" : (change <= -1.0 ? "%c %.0f 盎司" : "%c %.0f 盎司"), -58, change);
 	m_apFundsChangeLabel[metaPlayer]->SetText(str);
 	m_apFundsChangeLabel[metaPlayer]->SetHAlignment(GUIFont::Right);
 	m_apFundsChangeLabel[metaPlayer]->SetVAlignment(GUIFont::Top);

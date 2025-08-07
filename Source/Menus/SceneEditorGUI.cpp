@@ -452,7 +452,7 @@ void SceneEditorGUI::Update() {
 	if (!m_pPicker->IsVisible())
 		g_CameraMan.SetScreenOcclusion(Vector(), g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 	else
-		g_FrameMan.SetScreenText("Pick what you want to place next", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+		g_FrameMan.SetScreenText("选择你接下来要放的东西", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 	/////////////////////////////////////
 	// ADDING OBJECT MODE
@@ -462,7 +462,7 @@ void SceneEditorGUI::Update() {
 
 			m_ModeChanged = false;
 		}
-		g_FrameMan.SetScreenText("Click to ADD a new object - Drag for precision", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+		g_FrameMan.SetScreenText("点击以添加新对象 - 拖动以精确定位", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 		m_DrawCurrentObject = true;
 
@@ -569,7 +569,7 @@ void SceneEditorGUI::Update() {
 
 			m_ModeChanged = false;
 		}
-		g_FrameMan.SetScreenText("Click to INSTALL your governor brain with a clear path to orbit - Drag for precision", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+		g_FrameMan.SetScreenText("点击放置你的主脑,确保路线畅通--拖动鼠标以精准放置", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 		m_DrawCurrentObject = true;
 
@@ -669,11 +669,11 @@ void SceneEditorGUI::Update() {
 		}
 
 		if (m_PreviousMode == MOVINGOBJECT)
-			g_FrameMan.SetScreenText("Click and drag on a placed object to MOVE it - Click quickly to DETACH", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("点击并拖动已放置的物体以移动它 - 快速点击以分离", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 		else if (m_PreviousMode == INSTALLINGBRAIN)
-			g_FrameMan.SetScreenText("Release to INSTALL the governor brain - Tap other button to cancel", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("释放以放置主脑 - 点击其他按钮取消", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 		else
-			g_FrameMan.SetScreenText("Release to ADD the new object - Tap other button to cancel", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("释放以添加新对象 - 点击其他按钮取消", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 		// Check brain position validity with pathfinding and show a path to the sky
 		if (m_PreviousMode == INSTALLINGBRAIN) {
@@ -788,7 +788,7 @@ void SceneEditorGUI::Update() {
 				// If no clear path to the sky, just reject the placment and keep the brain in hand
 				else {
 					g_FrameMan.ClearScreenText(g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
-					g_FrameMan.SetScreenText("Your brain can only be placed with a clear access path to orbit!", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()), 333, 3500);
+					g_FrameMan.SetScreenText("你的主脑只能被放置在有清晰进入轨道路径的地方!", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()), 333, 3500);
 					g_GUISound.UserErrorSound()->Play(m_pController->GetPlayer());
 				}
 			}
@@ -873,7 +873,7 @@ void SceneEditorGUI::Update() {
 					// Check if team can afford the placed object and if so, deduct the cost
 					if (g_ActivityMan.GetActivity()->GetTeamFunds(m_pController->GetTeam()) < m_pCurrentObject->GetTotalValue(m_NativeTechModule, m_ForeignCostMult)) {
 						g_FrameMan.ClearScreenText(g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
-						g_FrameMan.SetScreenText("You can't afford to place that!", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()), 333, 1500);
+						g_FrameMan.SetScreenText("你承担不起那个代价!", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()), 333, 1500);
 						g_GUISound.UserErrorSound()->Play(m_pController->GetPlayer());
 					} else {
 						// TODO: Experimental! clean up this messiness
@@ -1059,7 +1059,7 @@ void SceneEditorGUI::Update() {
 
 				m_ModeChanged = false;
 			}
-			g_FrameMan.SetScreenText("Click and drag on a placed object to MOVE it - Click quickly to DETACH", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("点击并拖动已放置的物体以移动它 - 快速点击以分离", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// Pick an object under the cursor and start moving it
 			if (m_pController->IsState(PRESS_PRIMARY) && !m_pPicker->IsVisible()) {
@@ -1091,7 +1091,7 @@ void SceneEditorGUI::Update() {
 
 				m_ModeChanged = false;
 			}
-			g_FrameMan.SetScreenText("Click and hold to select an object - release to DELETE it", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("点击并长按以选择一个对象 - 松开即可删除它", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// When primary is held down, pick object and show which one will be nuked if released
 			if (m_pController->IsState(PRIMARY_ACTION) && !m_pPicker->IsVisible()) {
@@ -1116,9 +1116,9 @@ void SceneEditorGUI::Update() {
 				m_ModeChanged = false;
 			}
 			if (m_EditorGUIMode == PLACEINFRONT)
-				g_FrameMan.SetScreenText(m_FeatureSet == ONLOADEDIT ? "Click an object to place the next one IN FRONT of it" : "Click an object to place the next one AFTER it in the build order", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+				g_FrameMan.SetScreenText(m_FeatureSet == ONLOADEDIT ? "点击一个物体,将下一个物体放置在其前方" : "点击一个对象,将下一个对象放置在构建顺序中该对象之后", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 			else if (m_EditorGUIMode == PLACEBEHIND)
-				g_FrameMan.SetScreenText(m_FeatureSet == ONLOADEDIT ? "Click an object to place the next one BEHIND it" : "Click an object to insert the next one BEFORE it in the build order", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+				g_FrameMan.SetScreenText(m_FeatureSet == ONLOADEDIT ? "点击一个物体,将下一个物体放置在其后方" : "点击一个对象,以将其在构建顺序中的下一个对象插入到其之前", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// When primary is held down, pick object and show which one will be nuked if released
 			if (m_pController->IsState(PRIMARY_ACTION) && !m_pPicker->IsVisible()) {

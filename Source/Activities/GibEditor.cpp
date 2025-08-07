@@ -216,7 +216,7 @@ void GibEditor::Update() {
 
 		// We haven't detonated yet
 		if (m_pTestingObject) {
-			g_FrameMan.SetScreenText("Click to test gib the object!", 0, 333);
+			g_FrameMan.SetScreenText("点击以测试该物体!", 0, 333);
 
 			// Detonate on command!
 			if (m_PlayerController[0].IsState(PRESS_PRIMARY) || m_PlayerController[0].IsState(PRESS_SECONDARY) || m_PlayerController[0].IsState(PRESS_FACEBUTTON)) {
@@ -230,7 +230,7 @@ void GibEditor::Update() {
 		}
 		// Test has blown up, now waiting for user to finish watching the pieces fly
 		else {
-			g_FrameMan.SetScreenText("Click again to go back to editing...");
+			g_FrameMan.SetScreenText("再次点击返回编辑模式...");
 
 			if (m_PlayerController[0].IsState(PRESS_PRIMARY) || m_PlayerController[0].IsState(PRESS_SECONDARY) || m_PlayerController[0].IsState(PRESS_FACEBUTTON)) {
 				// Clear out the terrain after a few tests
@@ -702,7 +702,7 @@ void GibEditor::UpdateNewDialog() {
 
 void GibEditor::UpdateLoadDialog() {
 	if (m_pObjectToLoad)
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("LoadNameLabel"))->SetText("Load object named " + m_pObjectToLoad->GetPresetName() + "?");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("LoadNameLabel"))->SetText("加载物体名称 " + m_pObjectToLoad->GetPresetName() + "?");
 }
 
 void GibEditor::UpdateSaveDialog() {
@@ -719,10 +719,10 @@ void GibEditor::UpdateChangesDialog() {
 		return;
 
 	if (m_HasEverBeenSaved) {
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("Do you want to save your changes to:");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("你想要保存所做的更改吗:");
 		m_pChangesNameLabel->SetText(g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/NewData/" + m_pEditedObject->GetPresetName() + ".ini");
 	} else {
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("Save your new Object first?");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("保存你的新物体?");
 		m_pChangesNameLabel->SetText("");
 	}
 }

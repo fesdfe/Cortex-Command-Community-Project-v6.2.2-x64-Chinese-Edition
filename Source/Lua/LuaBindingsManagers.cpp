@@ -276,8 +276,8 @@ LuaBindingRegisterFunctionDefinitionForType(ManagerLuaBindings, SceneMan) {
 	    .property("SceneOrbitDirection", &SceneMan::GetSceneOrbitDirection)
 	    .property("LayerDrawMode", &SceneMan::GetLayerDrawMode, &SceneMan::SetLayerDrawMode)
 	    .property("GlobalAcc", &SceneMan::GetGlobalAcc)
-	    .property("OzPerKg", &SceneMan::GetOzPerKg)
-	    .property("KgPerOz", &SceneMan::GetKgPerOz)
+	    .property("ozPerKg", &SceneMan::GetozPerKg)
+	    .property("KgPeroz", &SceneMan::GetKgPeroz)
 	    .property("ScrapCompactingHeight", &SceneMan::GetScrapCompactingHeight, &SceneMan::SetScrapCompactingHeight)
 
 	    .def("LoadScene", (int(SceneMan::*)(std::string, bool, bool)) & SceneMan::LoadScene)

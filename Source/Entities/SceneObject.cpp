@@ -131,7 +131,7 @@ SceneObject* SceneObject::SOPlacer::GetPlacedCopy(const SceneObject* pParent) co
 
 void SceneObject::Clear() {
 	m_Pos.Reset();
-	m_OzValue = 0;
+	m_ozValue = 0;
 	m_Buyable = true;
 	m_BuyableMode = BuyableMode::NoRestrictions;
 	m_Team = Activity::NoTeam;
@@ -159,7 +159,7 @@ int SceneObject::Create(const SceneObject& reference) {
 	Entity::Create(reference);
 
 	m_Pos = reference.m_Pos;
-	m_OzValue = reference.m_OzValue;
+	m_ozValue = reference.m_ozValue;
 	m_Buyable = reference.m_Buyable;
 	m_BuyableMode = reference.m_BuyableMode;
 	m_Team = reference.m_Team;
@@ -172,7 +172,7 @@ int SceneObject::ReadProperty(const std::string_view& propName, Reader& reader) 
 	StartPropertyList(return Entity::ReadProperty(propName, reader));
 
 	MatchProperty("Position", { reader >> m_Pos; });
-	MatchForwards("GoldValue") MatchProperty("GoldCost", { reader >> m_OzValue; });
+	MatchForwards("GoldValue") MatchProperty("GoldCost", { reader >> m_ozValue; });
 	MatchProperty("Buyable", { reader >> m_Buyable; });
 	MatchProperty("BuyableMode", { m_BuyableMode = static_cast<BuyableMode>(std::stoi(reader.ReadPropValue())); });
 
@@ -195,7 +195,7 @@ int SceneObject::Save(Writer& writer) const {
 	    writer.NewProperty("Position");
 	    writer << m_Pos;
 	    writer.NewProperty("GoldValue");
-	    writer << m_OzValue;
+	    writer << m_ozValue;
 	    writer.NewProperty("Buyable");
 	    writer << m_Buyable;
 	    writer.NewProperty("BuyableMode");
@@ -217,7 +217,7 @@ void SceneObject::Destroy(bool notInherited) {
 
 float SceneObject::GetGoldValue(int nativeModule, float foreignMult, float nativeMult) const {
 	// Multiply the value of this according to whether its Tech is native or not to the specified DataModule
-	return m_OzValue * ((m_DefinedInModule > 0 && nativeModule > 0 && m_DefinedInModule != nativeModule) ? foreignMult : nativeMult);
+	return m_ozValue * ((m_DefinedInModule > 0 && nativeModule > 0 && m_DefinedInModule != nativeModule) ? foreignMult : nativeMult);
 }
 
 std::string SceneObject::GetGoldValueString(int nativeModule, float foreignMult, float nativeMult) const {

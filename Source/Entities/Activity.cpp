@@ -627,29 +627,29 @@ bool Activity::IsOtherPlayerBrain(Actor* actor, int player) const {
 
 std::string Activity::GetDifficultyString(int difficulty) {
 	if (difficulty <= DifficultySetting::CakeDifficulty) {
-		return "小菜一碟"; //Cake
+		return "闲庭信步"; //Cake
 	} else if (difficulty <= DifficultySetting::EasyDifficulty) {
 		return "简单"; //Easy
 	} else if (difficulty <= DifficultySetting::MediumDifficulty) {
-		return "标准"; //Medium
+		return "中等"; //Medium
 	} else if (difficulty <= DifficultySetting::HardDifficulty) {
 		return "困难"; //Hard
 	} else if (difficulty <= DifficultySetting::NutsDifficulty) {
 		return "疯狂"; //Nuts
 	} else {
-		return "自寻死路"; //Nuts!
+		return "超级疯狂"; //Nuts!
 	}
 }
 
 std::string Activity::GetAISkillString(int skill) {
 	if (skill < AISkillSetting::InferiorSkill) {
-		return "人工智障"; //Inferior
+		return "人机"; //Inferior
 	} else if (skill < AISkillSetting::AverageSkill) {
-		return "均衡"; //Average
+		return "标准"; //Average
 	} else if (skill < AISkillSetting::GoodSkill) {
 		return "优秀"; //Good
 	} else {
-		return "开了"; //Unfair
+		return "碾压"; //Unfair
 	}
 }
 
@@ -795,7 +795,7 @@ void Activity::HandleCraftEnteringOrbit(ACraft* orbitedCraft) {
 	}
 	if (totalValue > 0.0F) {
 		m_TeamFunds[orbitedCraftTeam] += totalValue;
-		std::snprintf(messageString, sizeof(messageString), "%s 返还了 %.0f oz !", craftText.c_str(), totalValue); // 
+		std::snprintf(messageString, sizeof(messageString), "%s 返还了 %.0f 盎司 !", craftText.c_str(), totalValue); // 
 	}
 	for (int player = Players::PlayerOne; player < Players::MaxPlayerCount; ++player) {
 		if (m_IsActive[player]) {

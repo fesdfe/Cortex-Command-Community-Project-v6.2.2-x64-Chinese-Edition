@@ -661,23 +661,23 @@ void SceneEditor::UpdateLoadDialog() {
 }
 
 void SceneEditor::UpdateSaveDialog() {
-	m_pSaveNameBox->SetText((g_SceneMan.GetScene()->GetPresetName() == "None" || !m_HasEverBeenSaved) ? "New Scene" : g_SceneMan.GetScene()->GetPresetName());
+	m_pSaveNameBox->SetText((g_SceneMan.GetScene()->GetPresetName() == "无" || !m_HasEverBeenSaved) ? "新场景" : g_SceneMan.GetScene()->GetPresetName());
 
 	if (g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() == c_UserScenesModuleName)
-		m_pSaveModuleLabel->SetText("Will save in " + g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/");
+		m_pSaveModuleLabel->SetText("将保存在 " + g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/");
 	else
-		m_pSaveModuleLabel->SetText("Will save in " + g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/Scenes");
+		m_pSaveModuleLabel->SetText("将保存在 " + g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/Scenes");
 }
 
 void SceneEditor::UpdateChangesDialog() {
 	if (m_HasEverBeenSaved) {
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("Do you want to save your changes to:");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("你想要改变所做的更改吗:");
 		if (g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() == c_UserScenesModuleName)
 			m_pChangesNameLabel->SetText(g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/" + g_SceneMan.GetScene()->GetPresetName());
 		else
 			m_pChangesNameLabel->SetText(g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName() + "/Scenes/" + g_SceneMan.GetScene()->GetPresetName());
 	} else {
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("Save your new Scene first?");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("保存你的新场景?");
 		m_pChangesNameLabel->SetText("");
 	}
 }

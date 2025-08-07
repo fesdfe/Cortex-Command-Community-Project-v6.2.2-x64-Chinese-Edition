@@ -244,12 +244,12 @@ namespace RTE {
 		Vector GetGlobalAcc() const;
 
 		/// Gets how many Ounces there are in a metric Kilogram
-		/// @return A float describing the Oz/Kg ratio.
-		float GetOzPerKg() const { return 35.27396; }
+		/// @return A float describing the oz/Kg ratio.
+		float GetozPerKg() const { return 35.27396; }
 
 		/// Gets how many metric Kilograms there are in an Ounce.
-		/// @return A float describing the Kg/Oz ratio.
-		float GetKgPerOz() const { return 0.02834952; }
+		/// @return A float describing the Kg/oz ratio.
+		float GetKgPeroz() const { return 0.02834952; }
 
 		/// Sets the drawing mode of the SceneMan, to easily view what's going on
 		/// in the different internal SceneLayer:s.

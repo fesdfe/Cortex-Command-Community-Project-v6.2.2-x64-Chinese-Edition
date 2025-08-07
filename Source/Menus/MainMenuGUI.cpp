@@ -174,7 +174,7 @@ void MainMenuGUI::CreateCreditsScreen() {
 			stringChar = static_cast<unsigned char>(221); //'?'
 		}
 	}
-	m_CreditsTextLabel->SetText("-中文本地化-\nfesdfe\n\n" + s_CreditsText);
+	m_CreditsTextLabel->SetText("-中文本地化-\nfesdfe\nDolphinA\n\n" + s_CreditsText);
 	m_CreditsTextLabel->ResizeHeightToFit();
 }
 

@@ -842,7 +842,7 @@ int Atom::Travel(float travelTime, bool autoTravel) {
 				// TODO: Make material IDs more robust!")
 				if (m_Material->GetIndex() == c_GoldMaterialID && g_MovableMan.IsOfActor(m_MOIDHit)) {
 					if (Actor* actor = dynamic_cast<Actor*>(g_MovableMan.GetMOFromID(m_LastHit.Body[HITEE]->GetRootID())); actor && !actor->IsDead()) {
-						actor->AddGold(m_OwnerMO->GetMass() * g_SceneMan.GetOzPerKg() * removeOrphansRadius ? 1.25F : 1.0F);
+						actor->AddGold(m_OwnerMO->GetMass() * g_SceneMan.GetozPerKg() * removeOrphansRadius ? 1.25F : 1.0F);
 						m_OwnerMO->SetToDelete(true);
 						// This is to break out of the do-while and the function properly.
 						m_LastHit.Terminate[HITOR] = hit[dom] = hit[sub] = true;

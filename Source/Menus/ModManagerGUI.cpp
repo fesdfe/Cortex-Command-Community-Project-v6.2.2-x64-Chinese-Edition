@@ -34,7 +34,7 @@ ModManagerGUI::ModManagerGUI(AllegroScreen* guiScreen, GUIInputWrapper* guiInput
 
 	if (createForPauseMenu) {
 		m_BackToMainButton->SetSize(120, 20);
-		m_BackToMainButton->SetText("Back to Pause Menu");
+		m_BackToMainButton->SetText("·µ»ØÔÝÍ£²Ëµ¥");
 	}
 	m_BackToMainButton->SetPositionAbs((rootBox->GetWidth() - m_BackToMainButton->GetWidth()) / 2, modManagerMenuBox->GetYPos() + modManagerMenuBox->GetHeight() + 10);
 

@@ -593,15 +593,15 @@ void AssemblyEditor::UpdateSaveDialog() {
 		defaultName = pScheme->GetPresetName() + " - ";
 
 	m_pSaveNameBox->SetText(m_pEditorGUI->GetCurrentAssemblyName() == "" ? defaultName : m_pEditorGUI->GetCurrentAssemblyName());
-	m_pSaveModuleLabel->SetText("Will save in " + g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName());
+	m_pSaveModuleLabel->SetText("将保存在 " + g_PresetMan.GetDataModule(m_ModuleSpaceID)->GetFileName());
 }
 
 void AssemblyEditor::UpdateChangesDialog() {
 	if (m_HasEverBeenSaved) {
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("Do you want to save your changes to:");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("你想要保存所做的更改吗:");
 		m_pChangesNameLabel->SetText(m_pEditorGUI->GetCurrentAssemblyName());
 	} else {
-		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("Save your new Assembly first?");
+		dynamic_cast<GUILabel*>(m_pGUIController->GetControl("ChangesExpLabel"))->SetText("保存你的新配置文件?");
 		m_pChangesNameLabel->SetText(m_pEditorGUI->GetCurrentAssemblyName());
 	}
 }

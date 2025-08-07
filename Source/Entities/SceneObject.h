@@ -200,7 +200,7 @@ namespace RTE {
 
 		/// Sets the cost to purchase this item, in oz's of gold.
 		/// @param value The cost, in oz of gold.
-		void SetGoldValue(float value) { m_OzValue = value; }
+		void SetGoldValue(float value) { m_ozValue = value; }
 
 		/// DOES THE SAME THING AS GetGoldValue, USED ONLY TO PRESERVE LUA COMPATIBILITY
 		virtual float GetGoldValueOld(int nativeModule, float foreignMult) const { return GetGoldValue(nativeModule, foreignMult, 1.0); }
@@ -288,7 +288,7 @@ namespace RTE {
 		// Absolute position of the center of this in the scene, in pixels
 		Vector m_Pos;
 		// How much this SceneObject costs to purchase, in oz's of gold.
-		float m_OzValue;
+		float m_ozValue;
 		// Whether this shows up in the buy menu at all
 		bool m_Buyable;
 

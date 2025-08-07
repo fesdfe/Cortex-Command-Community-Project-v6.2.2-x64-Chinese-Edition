@@ -48,7 +48,7 @@ void BunkerAssembly::AddPlacedObject(SceneObject* pSO) {
 	Deployment* pDeployment = dynamic_cast<Deployment*>(pSO);
 	// Set fixed price
 	// if (!pDeployment && !pSO->IsInGroup("Bunker Backgrounds"))
-	//	m_OzValue += pSO->GetGoldValue();
+	//	m_ozValue += pSO->GetGoldValue();
 
 	// Draw this terrain object to presentaion bitmap
 	TerrainObject* pTObject = dynamic_cast<TerrainObject*>(pSO);
@@ -158,7 +158,7 @@ int BunkerAssembly::ReadProperty(const std::string_view& propName, Reader& reade
 		if (pScheme) {
 			// Calculate fixed scheme price based on the scheme size
 			if (pScheme->GetGoldValue() == 0)
-				m_OzValue = pScheme->GetArea() * 3;
+				m_ozValue = pScheme->GetArea() * 3;
 			else
 				pScheme->GetGoldValue();
 

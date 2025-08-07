@@ -210,7 +210,7 @@ void AssemblyEditorGUI::Update() {
 	// Update the user controller
 	//    m_pController->Update();
 
-	std::string selectedAssembly = "\nSelected scheme: ";
+	std::string selectedAssembly = "\n所选方案: ";
 
 	if (m_pCurrentScheme) {
 		std::list<Entity*> assemblies;
@@ -221,7 +221,7 @@ void AssemblyEditorGUI::Update() {
 		selectedAssembly += assemblyName.str();
 	}
 
-	selectedAssembly += "\nCurrent assembly: " + m_CurrentAssemblyName;
+	selectedAssembly += "\n当前组件: " + m_CurrentAssemblyName;
 
 	m_EditMade = false;
 	m_pObjectToBlink = 0;
@@ -282,7 +282,7 @@ void AssemblyEditorGUI::Update() {
 		PieSlice* saveSlice = m_PieMenu->GetFirstPieSliceByType(PieSliceType::EditorSave);
 		if (saveSlice) {
 			saveSlice->SetEnabled(m_pCurrentScheme != nullptr);
-			saveSlice->SetDescription(m_pCurrentScheme != nullptr ? "Save Assembly" : "Can't Save Assembly, Scheme Not Selected!");
+			saveSlice->SetDescription(m_pCurrentScheme != nullptr ? "保存组价" : "无法保存组件, 方案没有被选择!");
 		}
 	}
 
@@ -342,7 +342,7 @@ void AssemblyEditorGUI::Update() {
 	if (!m_pPicker->IsVisible())
 		g_CameraMan.SetScreenOcclusion(Vector(), g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 	else
-		g_FrameMan.SetScreenText("Pick what you want to place next" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+		g_FrameMan.SetScreenText("选择你接下来要放的东西" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 	/////////////////////////////////////
 	// ADDING OBJECT MODE
@@ -351,7 +351,7 @@ void AssemblyEditorGUI::Update() {
 		if (m_ModeChanged) {
 			m_ModeChanged = false;
 		}
-		g_FrameMan.SetScreenText("Click to ADD a new object - Drag for precision" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+		g_FrameMan.SetScreenText("点击以添加新对象 - 拖动以实现精确操作" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 		m_DrawCurrentObject = true;
 
@@ -433,9 +433,9 @@ void AssemblyEditorGUI::Update() {
 		}
 
 		if (m_PreviousMode == MOVINGOBJECT)
-			g_FrameMan.SetScreenText("Click and drag on a placed object to MOVE it - Click quickly to DETACH" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("点击并拖动已放置的物体以移动它 - 快速点击以分离" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 		else
-			g_FrameMan.SetScreenText("Release to ADD the new object - Tap other button to cancel" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("释放以添加新对象 - 点击其他按钮取消" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 		m_DrawCurrentObject = true;
 
@@ -708,7 +708,7 @@ void AssemblyEditorGUI::Update() {
 
 				m_ModeChanged = false;
 			}
-			g_FrameMan.SetScreenText("Click and drag on a placed object to MOVE it - Click quickly to DETACH" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("点击并拖动已放置的物体以移动它 - 快速点击以分离" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// Pick an object under the cursor and start moving it
 			if (m_pController->IsState(PRESS_PRIMARY) && !m_pPicker->IsVisible()) {
@@ -740,7 +740,7 @@ void AssemblyEditorGUI::Update() {
 
 				m_ModeChanged = false;
 			}
-			g_FrameMan.SetScreenText("Click and hold to select an object - release to DELETE it" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("点击并按住以选择一个对象 - 释放后即可删除它" + selectedAssembly, g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// When primary is held down, pick object and show which one will be nuked if released
 			if (m_pController->IsState(PRIMARY_ACTION) && !m_pPicker->IsVisible()) {

@@ -38,16 +38,16 @@ SaveLoadMenuGUI::SaveLoadMenuGUI(AllegroScreen* guiScreen, GUIInputWrapper* guiI
 	m_SaveGameMenuBox->SetPositionAbs(m_SaveGameMenuBox->GetXPos(), (rootBox->GetHeight() < 540) ? m_SaveGameMenuBox->GetYPos() - 15 : 140);
 
 	m_OrderByComboBox = dynamic_cast<GUIComboBox*>(m_GUIControlManager->GetControl("ComboOrderBy"));
-	m_OrderByComboBox->AddItem("Name");
-	m_OrderByComboBox->AddItem("Date");
-	m_OrderByComboBox->AddItem("Activity");
+	m_OrderByComboBox->AddItem("名称排序");
+	m_OrderByComboBox->AddItem("日期排序");
+	m_OrderByComboBox->AddItem("活动排序");
 	m_OrderByComboBox->SetSelectedIndex(1); // order by Date by default
 
 	m_BackToMainButton = dynamic_cast<GUIButton*>(m_GUIControlManager->GetControl("ButtonBackToMainMenu"));
 
 	if (createForPauseMenu) {
 		m_BackToMainButton->SetSize(120, 20);
-		m_BackToMainButton->SetText("Back to Pause Menu");
+		m_BackToMainButton->SetText("返回暂停菜单");
 	}
 	m_BackToMainButton->SetPositionAbs((rootBox->GetWidth() - m_BackToMainButton->GetWidth()) / 2, m_SaveGameMenuBox->GetYPos() + m_SaveGameMenuBox->GetHeight() + 10);
 
@@ -240,10 +240,10 @@ void SaveLoadMenuGUI::SwitchToConfirmDialogMode(ConfirmDialogMode mode) {
 
 	switch (m_ConfirmDialogMode) {
 		case ConfirmDialogMode::ConfirmOverwrite:
-			m_ConfirmationLabel->SetText("Are you sure you want to overwrite this savegame?");
+			m_ConfirmationLabel->SetText("确定要覆盖这个存档吗?");
 			break;
 		case ConfirmDialogMode::ConfirmDelete:
-			m_ConfirmationLabel->SetText("Are you sure you want to delete this savegame?");
+			m_ConfirmationLabel->SetText("确定要删除这个存档吗?");
 			break;
 	}
 }

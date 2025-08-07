@@ -265,21 +265,21 @@ void GibEditorGUI::Update() {
 	// Picking something to load into the editor
 	if (m_EditorGUIMode == PICKOBJECTTOLOAD) {
 		g_FrameMan.ClearScreenText();
-		g_FrameMan.SetScreenText("Select an object to LOAD into the gib editor ->", 0, 333);
+		g_FrameMan.SetScreenText("选择一个对象以加载到GIB编辑器中 ->", 0, 333);
 
 		// Picked something!
 		if (m_pPicker->ObjectPicked() && !m_pPicker->IsEnabled()) {
 			m_pObjectToLoad = dynamic_cast<const MOSRotating*>(m_pPicker->ObjectPicked());
 			// Set picker back to showing all valid gib types
 			if (m_pObjectToLoad) {
-				m_pPicker->ShowOnlyType("MovableObject");
+				m_pPicker->ShowOnlyType("可移动对象");
 				g_FrameMan.ClearScreenText();
 			}
 		}
 	}
 	// Picking an object to place as a gib in currently edited object
 	else if (m_EditorGUIMode == PICKINGGIB) {
-		g_FrameMan.SetScreenText("Select a new Gib object to add onto the edited object ->");
+		g_FrameMan.SetScreenText("选择一个新的Gib对象以添加到已编辑的对象上 ->");
 
 		if (m_pPicker->ObjectPicked()) {
 			// Assign a copy of the picked object to be the currently held one.
@@ -308,7 +308,7 @@ void GibEditorGUI::Update() {
 	// ADDING GIB MODE
 
 	if (m_EditorGUIMode == ADDINGGIB && !m_PieMenu->IsEnabled()) {
-		g_FrameMan.SetScreenText("Click to ADD a new gib to the edited object - Drag to place with precision", 0);
+		g_FrameMan.SetScreenText("点击以向已编辑对象添加新GIB - 拖动以精确定位", 0);
 
 		m_DrawCurrentGib = true;
 
@@ -387,9 +387,9 @@ void GibEditorGUI::Update() {
 
 	else if (m_EditorGUIMode == PLACINGGIB) {
 		if (m_PreviousMode == MOVINGGIB)
-			g_FrameMan.SetScreenText("Click and drag on a placed gib to MOVE it - Click quickly to DETACH", 0);
+			g_FrameMan.SetScreenText("点击并拖动已放置的吊钩以移动它 - 快速点击以分离", 0);
 		else
-			g_FrameMan.SetScreenText("Click to ADD a new gib to the edited object - Drag to place with precision", 0);
+			g_FrameMan.SetScreenText("点击以向已编辑对象添加新几何体 - 拖动以精确放置", 0);
 
 		m_DrawCurrentGib = true;
 
@@ -498,7 +498,7 @@ void GibEditorGUI::Update() {
 		// MOVING GIB MODE
 
 		if (m_EditorGUIMode == MOVINGGIB) {
-			g_FrameMan.SetScreenText("Click and drag on a placed gib to MOVE it - Click quickly to DETACH", 0);
+			g_FrameMan.SetScreenText("点击并拖动已放置的吊钩以移动它 - 快速点击以分离", 0);
 
 			// Pick an object under the cursor and start moving it
 			if (m_pController->IsState(PRESS_PRIMARY) && !m_pPicker->IsVisible()) {
@@ -525,7 +525,7 @@ void GibEditorGUI::Update() {
 		// REMOVING GIB MODE
 
 		else if (m_EditorGUIMode == DELETINGGIB) {
-			g_FrameMan.SetScreenText("Click and hold to select an object - release to DELETE it", 0);
+			g_FrameMan.SetScreenText("点击并按住以选择一个对象 - 释放后即可删除它", 0);
 
 			// When primary is held down, pick object and show which one will be nuked if released
 			if (m_pController->IsState(PRIMARY_ACTION) && !m_pPicker->IsVisible()) {
@@ -546,9 +546,9 @@ void GibEditorGUI::Update() {
 
 		else if (m_EditorGUIMode == PLACEINFRONT || m_EditorGUIMode == PLACEBEHIND) {
 			if (m_EditorGUIMode == PLACEINFRONT)
-				g_FrameMan.SetScreenText("Click an object to place the next one IN FRONT of it", 0);
+				g_FrameMan.SetScreenText("点击一个物体，将下一个物体放置在其前方", 0);
 			else if (m_EditorGUIMode == PLACEBEHIND)
-				g_FrameMan.SetScreenText("Click an object to place the next one BEHIND it", 0);
+				g_FrameMan.SetScreenText("点击一个物体，将下一个物体放置在其后方", 0);
 
 			// When primary is held down, pick object and show which one will be nuked if released
 			if (m_pController->IsState(PRIMARY_ACTION) && !m_pPicker->IsVisible()) {

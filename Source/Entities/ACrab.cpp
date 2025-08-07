@@ -1422,7 +1422,7 @@ void ACrab::DrawHUD(BITMAP* pTargetBitmap, const Vector& targetPos, int whichScr
 					}
 					int totalTextWidth = pSmallFont->CalculateWidth(textString);
 					if (mountedFirearm->IsReloading()) {
-						textString += "Reloading";
+						textString += "重新装填"; //"Reloading";
 						rectfill(pTargetBitmap, drawPos.GetFloorIntX() + 1 + totalTextWidth, drawPos.GetFloorIntY() + m_HUDStack + 13, drawPos.GetFloorIntX() + 29 + totalTextWidth, drawPos.GetFloorIntY() + m_HUDStack + 14, 245);
 						rectfill(pTargetBitmap, drawPos.GetFloorIntX() + totalTextWidth, drawPos.GetFloorIntY() + m_HUDStack + 12, drawPos.GetFloorIntX() + static_cast<int>(28.0F * mountedFirearm->GetReloadProgress() + 0.5F) + totalTextWidth, drawPos.GetFloorIntY() + m_HUDStack + 13, 77);
 					} else {
@@ -1438,7 +1438,7 @@ void ACrab::DrawHUD(BITMAP* pTargetBitmap, const Vector& targetPos, int whichScr
 				m_HUDStack -= 9;
 			}
 		} else {
-			std::snprintf(str, sizeof(str), "NO TURRET!");
+			std::snprintf(str, sizeof(str), "没有炮台!"); //"NO TURRET!");
 			pSmallFont->DrawAligned(&allegroBitmap, drawPos.m_X + 2, drawPos.m_Y + m_HUDStack + 3, str, GUIFont::Centre);
 			m_HUDStack += -9;
 		}
@@ -1514,10 +1514,10 @@ int ACrab::WhilePieMenuOpenListener(const PieMenu* pieMenu) {
 	for (PieSlice* pieSlice: GetPieMenu()->GetPieSlices()) {
 		if (pieSlice->GetType() == PieSliceType::Reload) {
 			if (m_pTurret && m_pTurret->HasMountedDevice()) {
-				pieSlice->SetDescription("Reload");
+				pieSlice->SetDescription("重新装填"); //("Reload");
 				pieSlice->SetEnabled(!FirearmsAreFull());
 			} else {
-				pieSlice->SetDescription(m_pTurret ? "No Weapons" : "No Turret");
+				pieSlice->SetDescription(m_pTurret ? "没有武器" : "没有炮台"); // "No Weapons" : "No Turret");
 				pieSlice->SetEnabled(false);
 			}
 			break;

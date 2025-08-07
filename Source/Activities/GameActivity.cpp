@@ -826,7 +826,7 @@ int GameActivity::Start() {
 		// Draw GO! game start notification, if it's a new game
 		if (m_ActivityState == ActivityState::NotStarted) {
 			m_pBannerYellow[player]->ShowText("GO!", GUIBanner::FLYBYLEFTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 500);
-			g_FrameMan.SetScreenText((player % 2 == 0) ? "挖掘黄金 , 然后用挖来的钱升级你的火力 ..." : "...然后摧毁竞争者的首脑 , 宣告胜利 !", ScreenOfPlayer(player), 0); //"Mine Gold and buy more firepower with the funds..." : "...then smash the competing brain to claim victory!"
+			g_FrameMan.SetScreenText((player % 2 == 0) ? "挖掘黄金 , 用挖来的钱升级你的火力 ..." : "...然后摧毁竞争者的主脑 , 宣告胜利 !", ScreenOfPlayer(player), 0); //"Mine Gold and buy more firepower with the funds..." : "...then smash the competing brain to claim victory!"
 		}
 
 		m_ActorCursor[player].Reset();
@@ -972,7 +972,7 @@ void GameActivity::UpdateEditing() {
 					m_pEditorGUI[player]->SetCurrentObject(dynamic_cast<SceneObject*>(pBrain->Clone()));
 				m_pEditorGUI[player]->SetEditorGUIMode(SceneEditorGUI::INSTALLINGBRAIN);
 				g_FrameMan.ClearScreenText(ScreenOfPlayer(player));
-				g_FrameMan.SetScreenText("将你的首脑放在一个有效的位置 !", ScreenOfPlayer(player), 250, 3500);//PLACE YOUR BRAIN IN A VALID SPOT FIRST!
+				g_FrameMan.SetScreenText("将你的主脑放在一个有效的位置 !", ScreenOfPlayer(player), 250, 3500);//PLACE YOUR BRAIN IN A VALID SPOT FIRST!
 				m_MessageTimer[player].Reset();
 			}
 			// Ready to start
@@ -1014,7 +1014,7 @@ void GameActivity::UpdateEditing() {
 					m_pEditorGUI[player]->SetCurrentObject(dynamic_cast<SceneObject*>(pBrain->Clone()));
 				m_pEditorGUI[player]->SetEditorGUIMode(SceneEditorGUI::INSTALLINGBRAIN);
 				g_FrameMan.ClearScreenText(ScreenOfPlayer(player));
-				g_FrameMan.SetScreenText("将你的首脑放在一个有效的位置 !", ScreenOfPlayer(player), 333, 3500); //PLACE YOUR BRAIN IN A VALID SPOT FIRST!
+				g_FrameMan.SetScreenText("将你的主脑放在一个有效的位置 !", ScreenOfPlayer(player), 333, 3500); //PLACE YOUR BRAIN IN A VALID SPOT FIRST!
 				m_MessageTimer[player].Reset();
 			}
 		}
@@ -1765,19 +1765,19 @@ void GameActivity::Update() {
 
 			// Player on a winning team
 			if (GetWinnerTeam() == m_Team[player] && !m_pBannerYellow[player]->IsVisible())
-				m_pBannerYellow[player]->ShowText("WIN", GUIBanner::FLYBYRIGHTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
+				m_pBannerYellow[player]->ShowText("获胜", GUIBanner::FLYBYRIGHTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
 
 			// Loser player
 			if (GetWinnerTeam() != m_Team[player] && !m_pBannerRed[player]->IsVisible())
-				m_pBannerRed[player]->ShowText("FAIL", GUIBanner::FLYBYLEFTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
+				m_pBannerRed[player]->ShowText("失败", GUIBanner::FLYBYLEFTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
 		}
 		// If a player had a brain that is now dead, but his team is not yet done, show the dead banner on his screen
 		else if (m_ActivityState != ActivityState::Editing && m_ActivityState != ActivityState::Starting && m_HadBrain[player] && !m_Brain[player] && !m_pBannerRed[player]->IsVisible()) {
 			// If repeated too many times, just let the banner stop at showing and not cycle
 			if (m_BannerRepeats[player]++ < 6)
-				m_pBannerRed[player]->ShowText("DEAD", GUIBanner::FLYBYLEFTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
+				m_pBannerRed[player]->ShowText("去世", GUIBanner::FLYBYLEFTWARD, 1000, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
 			else
-				m_pBannerRed[player]->ShowText("DEAD", GUIBanner::FLYBYLEFTWARD, -1, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
+				m_pBannerRed[player]->ShowText("去世", GUIBanner::FLYBYLEFTWARD, -1, Vector(g_FrameMan.GetPlayerFrameBufferWidth(player), g_FrameMan.GetPlayerFrameBufferHeight(player)), 0.5, 1500, 400);
 		}
 
 		///////////////////////////////////////
@@ -2057,7 +2057,7 @@ void GameActivity::DrawGUI(BITMAP* pTargetBitmap, const Vector& targetPos, int w
 	if (pIcon)
 		draw_sprite(pTargetBitmap, pIcon->GetBitmaps8()[0], MAX(2, g_CameraMan.GetScreenOcclusion(which).m_X + 2), 2);
 	// Gold
-	std::snprintf(str, sizeof(str), "%c Funds: %.10g oz", TeamFundsChanged(which) ? -57 : -58, std::floor(GetTeamFunds(m_Team[PoS])));
+	std::snprintf(str, sizeof(str), "%c 黄金: %.10g 盎司", TeamFundsChanged(which) ? -57 : -58, std::floor(GetTeamFunds(m_Team[PoS])));
 	g_FrameMan.GetLargeFont()->DrawAligned(&pBitmapInt, MAX(16, g_CameraMan.GetScreenOcclusion(which).m_X + 16), yTextPos, str, GUIFont::Left);
 	/* Not applicable anymore to the 4-team games
 	    // Body losses

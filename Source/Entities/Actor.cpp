@@ -476,7 +476,7 @@ float Actor::GetInventoryMass() const {
 }
 
 float Actor::GetMass() const {
-	return MOSRotating::GetMass() + GetInventoryMass() + (m_GoldCarried * g_SceneMan.GetKgPerOz());
+	return MOSRotating::GetMass() + GetInventoryMass() + (m_GoldCarried * g_SceneMan.GetKgPeroz());
 }
 
 float Actor::GetBaseMass() {
@@ -605,13 +605,13 @@ bool Actor::Look(float FOVSpread, float range) {
 	return g_SceneMan.CastSeeRay(m_Team, aimPos, lookVector, ignored, 25, g_SceneMan.GetUnseenResolution(m_Team).GetSmallest() / 2);
 }
 
-void Actor::AddGold(float goldOz) {
+void Actor::AddGold(float goldoz) {
 	bool isHumanTeam = g_ActivityMan.GetActivity()->IsHumanTeam(m_Team);
 	if (g_SettingsMan.GetAutomaticGoldDeposit() || !isHumanTeam) {
 		// TODO: Allow AI to reliably deliver gold via craft
-		g_ActivityMan.GetActivity()->ChangeTeamFunds(goldOz, m_Team);
+		g_ActivityMan.GetActivity()->ChangeTeamFunds(goldoz, m_Team);
 	} else {
-		m_GoldCarried += goldOz;
+		m_GoldCarried += goldoz;
 		m_GoldPicked = true;
 		if (isHumanTeam) {
 			for (int player = Players::PlayerOne; player < Players::MaxPlayerCount; player++) {
@@ -1398,7 +1398,7 @@ void Actor::DrawHUD(BITMAP* pTargetBitmap, const Vector& targetPos, int whichScr
 					str[0] = m_GoldPicked ? -57 : -58;
 					str[1] = 0;
 					pSymbolFont->DrawAligned(&bitmapInt, drawPos.GetFloorIntX() - 11, drawPos.GetFloorIntY() + m_HUDStack, str, GUIFont::Left, 0, 0, 0, 1);
-					std::snprintf(str, sizeof(str), "%.0f oz", GetGoldCarried());
+					std::snprintf(str, sizeof(str), "%.0f °»Ë¾", GetGoldCarried());
 					pSmallFont->DrawAligned(&bitmapInt, drawPos.GetFloorIntX() - 0, drawPos.GetFloorIntY() + m_HUDStack + 2, str, GUIFont::Left);
 
 					m_HUDStack -= 11;

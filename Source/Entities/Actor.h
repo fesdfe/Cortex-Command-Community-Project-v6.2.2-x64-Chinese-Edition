@@ -170,7 +170,7 @@ namespace RTE {
 		void SetAimDistance(int newValue) { m_AimDistance = newValue; }
 
 		/// Gets how many ounces of gold this Actor is carrying.
-		/// @return The current amount of carried gold, in Oz.
+		/// @return The current amount of carried gold, in oz.
 		float GetGoldCarried() const { return m_GoldCarried; }
 
 		/// Gets the total liquidation value of this Actor and all its carried
@@ -289,8 +289,8 @@ namespace RTE {
 		void SetTeam(int team) override;
 
 		/// Sets how many ounces of gold this Actor is carrying.
-		/// @param goldOz The new amount of carried gold, in Oz.
-		void SetGoldCarried(float goldOz) { m_GoldCarried = goldOz; }
+		/// @param goldoz The new amount of carried gold, in oz.
+		void SetGoldCarried(float goldoz) { m_GoldCarried = goldoz; }
 
 		/// Sets this Actor's aim angle.
 		/// @param newAngle A new angle, in radians.
@@ -329,8 +329,8 @@ namespace RTE {
 		virtual bool Look(float FOVSpread, float range);
 
 		/// Adds a certain amount of ounces of gold to this' team's total funds.
-		/// @param goldOz The amount in Oz with which to change this' team's gold tally.
-		void AddGold(float goldOz);
+		/// @param goldoz The amount in oz with which to change this' team's gold tally.
+		void AddGold(float goldoz);
 
 		/// Does the calculations necessary to detect whether this Actor is at rest or not. IsAtRest() retrieves the answer.
 		void RestDetection() override;

@@ -310,7 +310,7 @@ void ScenarioActivityConfigGUI::UpdateStartingGoldSliderAndLabel() {
 		std::snprintf(goldString.data(), goldString.size(), " %c ÎÞÏÞ", -58); //Infinite
 	} else {
 		int startGold = m_StartingGoldSlider->GetValue();
-		std::snprintf(goldString.data(), goldString.size(), " %c %d oz", -58, startGold);
+		std::snprintf(goldString.data(), goldString.size(), " %c %d °»Ë¾", -58, startGold);
 	}
 	m_StartingGoldLabel->SetText(goldString);
 }

@@ -915,7 +915,7 @@ void MultiplayerServerLobby::Update() {
 				m_apPlayerNameLabel[i]->SetText(g_NetworkServer.GetPlayerName(i));
 		} else {
 			if (m_apPlayerNameLabel[i]->GetText() != "- NO PLAYER -")
-				m_apPlayerNameLabel[i]->SetText("- NO PLAYER -");
+				m_apPlayerNameLabel[i]->SetText("- Ã»ÓÐÍæ¼Ò -");
 		}
 	}
 

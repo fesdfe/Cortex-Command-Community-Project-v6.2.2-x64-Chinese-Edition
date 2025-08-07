@@ -50,7 +50,7 @@ int ActorEditor::Create(const ActorEditor& reference) {
 		return -1;
 
 	if (m_Description.empty())
-		m_Description = "Load and edit Actors.";
+		m_Description = "加载和编辑角色.";
 
 	return 0;
 }
@@ -156,7 +156,7 @@ void ActorEditor::Update() {
 	// Picking something to load into the editor
 	if (m_EditorMode == EditorActivity::LOADDIALOG) {
 		g_FrameMan.ClearScreenText();
-		g_FrameMan.SetScreenText("Select an Actor to LOAD into the editor ->", 0, 333);
+		g_FrameMan.SetScreenText("选择一个角色添加其到编辑器中 ->", 0, 333);
 
 		// Picked something!
 		if (m_pPicker->ObjectPicked() && !m_pPicker->IsEnabled()) {
@@ -165,7 +165,7 @@ void ActorEditor::Update() {
 		}
 	} else {
 		g_FrameMan.ClearScreenText();
-		g_FrameMan.SetScreenText("Control the actor to see how he moves. Reload data with the pie menu.", 0, 0, 5000);
+		g_FrameMan.SetScreenText("控制这个角色,观察他的动作.通过饼状菜单重新加载数据.", 0, 0, 5000);
 	}
 
 	//////////////////////////////////////////////
@@ -228,7 +228,7 @@ bool ActorEditor::LoadActor(const Entity* pActorToLoad) {
 		m_ModeChange = true;
 	} else {
 		g_FrameMan.ClearScreenText();
-		g_FrameMan.SetScreenText("There's something wrong with that picked Actor!?", 0, 333, 2000);
+		g_FrameMan.SetScreenText("那个角色动作出了问题!?", 0, 333, 2000);
 		return false;
 	}
 

@@ -280,7 +280,7 @@ void AreaEditorGUI::Update() {
 	// ADDING or MOVING BOX MODE
 
 	if (m_pCurrentArea && m_EditorGUIMode == PREADDMOVEBOX && !m_PieMenu->IsEnabled()) {
-		g_FrameMan.SetScreenText("Click and drag to ADD a new box to the Area - Drag existing ones to MOVE them", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+		g_FrameMan.SetScreenText("点击并拖动可添加新的框到区域中——拖动已有的框可对其进行移动", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 		// Trap the mouse cursor
 		g_UInputMan.TrapMousePos(true, m_pController->GetPlayer());
@@ -383,7 +383,7 @@ void AreaEditorGUI::Update() {
 		// MOVING BOX MODE
 
 		if (m_EditorGUIMode == MOVINGBOX) {
-			g_FrameMan.SetScreenText("Keep dragging the box to MOVE it", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("持续拖动这个框即可移动它", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// While primary is kept held down, keep dragging the Box
 			if (m_pController->IsState(PRIMARY_ACTION)) {
@@ -410,7 +410,7 @@ void AreaEditorGUI::Update() {
 		// ADDING BOX MODE
 
 		if (m_EditorGUIMode == ADDINGBOX) {
-			g_FrameMan.SetScreenText("Keep dragging the new box out - release and it is ADDED to the current Area", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("继续将新框拖出 - 释放,它将添加到当前区域", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			// While primary is kept held down, keep dragging out the otehr corner of the Box being defined
 			if (m_pController->IsState(PRIMARY_ACTION)) {
@@ -435,7 +435,7 @@ void AreaEditorGUI::Update() {
 		// REMOVING BOX MODE
 
 		else if (m_EditorGUIMode == DELETINGBOX) {
-			g_FrameMan.SetScreenText("Click and hold to select a Box - release to DELETE it", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
+			g_FrameMan.SetScreenText("单击并按住以选择一个框 - 松开以删除它", g_ActivityMan.GetActivity()->ScreenOfPlayer(m_pController->GetPlayer()));
 
 			m_EditedBox.Reset();
 

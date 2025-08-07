@@ -382,7 +382,7 @@ void GATutorial::Update() {
 			// Check if any player's brain is dead
 			if (!g_MovableMan.IsActor(m_Brain[player])) {
 				m_Brain[player] = 0;
-				g_FrameMan.SetScreenText("Your brain has been destroyed!", ScreenOfPlayer(player), 333);
+				g_FrameMan.SetScreenText("你的主脑被摧毁了!", ScreenOfPlayer(player), 333);
 
 				// Now see if all brains are dead of this player's team, and if so, end the game
 				if (!g_MovableMan.GetFirstBrainActor(team)) {
@@ -407,9 +407,9 @@ void GATutorial::Update() {
 		else if (!m_GameOverTimer.IsPastSimMS(m_GameOverPeriod)) {
 			// TODO: make more appropriate messages here for run out of funds endings
 			if (m_Team[player] == m_WinnerTeam)
-				g_FrameMan.SetScreenText("你摧毁了 dummy CPU!\n按 [SPACE] 或 [START] 继续", ScreenOfPlayer(player)); //"You destroyed the dummy CPU!\nPress [SPACE] or [START] to continue"
+				g_FrameMan.SetScreenText("你摧毁了 假人 CPU!\n按 [SPACE] 或 [START] 继续", ScreenOfPlayer(player)); //"You destroyed the dummy CPU!\nPress [SPACE] or [START] to continue"
 			else
-				g_FrameMan.SetScreenText("Your brain has been destroyed!", ScreenOfPlayer(player));
+				g_FrameMan.SetScreenText("你的主脑被摧毁了!", ScreenOfPlayer(player));
 		}
 	}
 
@@ -633,7 +633,7 @@ void GATutorial::Update() {
 		m_MessageTimer[m_TutorialPlayer].Reset();
 		// Display the text of the current step
 		g_FrameMan.ClearScreenText(ScreenOfPlayer(m_TutorialPlayer));
-		g_FrameMan.SetScreenText("在即将到来的冲击下保护你的脑子 !", ScreenOfPlayer(m_TutorialPlayer), 500, 8000, true); //DEFEND YOUR BRAIN AGAINST THE INCOMING FORCES!
+		g_FrameMan.SetScreenText("在即将到来的冲击下保护你的主脑 !", ScreenOfPlayer(m_TutorialPlayer), 500, 8000, true); //DEFEND YOUR BRAIN AGAINST THE INCOMING FORCES!
 		// This will make all the enemy team AI's go into brain hunt mode
 		GameActivity::InitAIs();
 		DisableAIs(false, Teams::TeamTwo);
