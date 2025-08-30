@@ -211,7 +211,7 @@ function WaveDefense:UpdateActivity()
 			local time = math.floor(self.PrepareForNextWaveTimer:LeftTillRealTimeLimitMS() / 1000);
 			for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 				if self:PlayerActive(player) and self:PlayerHuman(player) then
-					FrameMan:SetScreenText("The next wave arrive in "..time.." seconds. Press [Space] to enter edit mode.", self:ScreenOfPlayer(player), 0, 100, false);
+					FrameMan:SetScreenText("下一波将在 "..time.." 秒后到来. 按Space键进入编辑模式.", self:ScreenOfPlayer(player), 0, 100, false);
 				end
 			end
 
@@ -294,12 +294,12 @@ function WaveDefense:UpdateActivity()
 
 		-- Show the remaining funds and current wave on first screen only
 		FrameMan:ClearScreenText(0);
-		local str = "Wave "..self.wave.."  |  ";
+		local str = "波次 "..self.wave.."  |  ";
 		local remainingFunds = math.floor(self:GetTeamFunds(self.CPUTeam));
 		if remainingFunds <= 0 then
-			str = str .. "Kill all enemies to finish the wave";
+			str = str .. "杀死所有敌人以结束波次";
 		else
-			str = str .. "Remaining Enemy Budget: " .. remainingFunds .. " oz";
+			str = str .. "敌人剩余预算: " .. remainingFunds .. " 盎司";
 		end
 		FrameMan:SetScreenText(str, 0, 0, 10, false);
 
@@ -312,7 +312,7 @@ function WaveDefense:UpdateActivity()
 		for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				if not self.StartTimer:IsPastRealMS(3000) then
-					FrameMan:SetScreenText("Survive wave "..self.wave, self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("生存波次 "..self.wave, self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 
 				-- The current player's team
@@ -333,20 +333,20 @@ function WaveDefense:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					local str = "Your brain has been destroyed on wave "..self.wave.." at "..self.Difficulty.."% difficulty";
+					local str = "你的主脑遭到了摧毁在波次 "..self.wave.." 中 "..self.Difficulty.."% 难度下";
 					FrameMan:SetScreenText(str, self:ScreenOfPlayer(player), 333, -1, false);
 				else
 					playertally = playertally + 1;
 					if not setTeam[team] then
 						-- Add objective points
-						self:AddObjectivePoint("Protect!", self:GetPlayerBrain(player).AboveHUDPos, team, GameActivity.ARROWDOWN);
+						self:AddObjectivePoint("保护!", self:GetPlayerBrain(player).AboveHUDPos, team, GameActivity.ARROWDOWN);
 						for otherPlayer = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 							if otherPlayer ~= player and self:PlayerActive(otherPlayer) and self:PlayerHuman(otherPlayer) and MovableMan:IsActor(self:GetPlayerBrain(otherPlayer)) then
 								local otherTeam = self:GetTeamOfPlayer(otherPlayer);
 								if otherTeam ~= team then
-									self:AddObjectivePoint("Destroy!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
+									self:AddObjectivePoint("摧毁!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
 								else
-									self:AddObjectivePoint("Protect!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
+									self:AddObjectivePoint("保护!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
 								end
 							end
 						end
@@ -371,7 +371,7 @@ function WaveDefense:UpdateActivity()
 			else
 				for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 					if self:PlayerActive(player) and self:PlayerHuman(player) then
-						FrameMan:SetScreenText("Wave "..self.wave.." defeated!", self:ScreenOfPlayer(player), 250, 500, true);
+						FrameMan:SetScreenText("波次 "..self.wave.." 击败!", self:ScreenOfPlayer(player), 250, 500, true);
 					end
 				end
 			end
@@ -561,7 +561,7 @@ function WaveDefense:AddObjectiveMarkers()
 				end
 
 				for team = self.playerTeam, Activity.TEAM_4 do
-					self:AddObjectivePoint("Destroy!", Act.AboveHUDPos, team, GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("摧毁!", Act.AboveHUDPos, team, GameActivity.ARROWDOWN);
 				end
 			end
 		end

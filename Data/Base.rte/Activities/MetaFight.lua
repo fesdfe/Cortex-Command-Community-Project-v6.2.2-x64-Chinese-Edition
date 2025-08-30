@@ -280,7 +280,7 @@ function MetaFight:StartActivity()
 
 					-- Set the mode to LZ select so the player can choose where to land first
 					self:SetViewState(Activity.LZSELECT, player);
-					FrameMan:SetScreenText("Choose where to land your assault brain", self:ScreenOfPlayer(player), 250, 3500, false);
+					FrameMan:SetScreenText("选择你的攻击主脑的降落地点!", self:ScreenOfPlayer(player), 250, 3500, false);
 					self:ResetMessageTimer(player);
 				end
 
@@ -305,13 +305,13 @@ function MetaFight:StartActivity()
 					if not self:GetEditorGUI(player):TestBrainResidence(false) then
 						-- Force player to re-place his brain
 						self:GetEditorGUI(player):Update();
-						FrameMan:SetScreenText("PLACE YOUR BRAIN IN A VALID SPOT FIRST", self:ScreenOfPlayer(player), 250, 3500, false);
+						FrameMan:SetScreenText("请将你的主脑置于一个合适的位置!", self:ScreenOfPlayer(player), 250, 3500, false);
 						self:ResetMessageTimer(player);
 					else
 						self.Ready[player] = true;
 						-- Place this player's resident brain into the simulation and set it as the player's assigned brain
 						SceneMan.Scene:PlaceResidentBrain(player, self);
-						FrameMan:SetScreenText("READY to start - wait for others to finish...", self:ScreenOfPlayer(player), 333, -1, false);
+						FrameMan:SetScreenText("准备好开始,等待其他人完成...", self:ScreenOfPlayer(player), 333, -1, false);
 						self:ResetMessageTimer(player);
 
 						-- If brain's coords are -1,-1 then it was auto-placed by MetaGameGUI when we captured an empty location
@@ -588,17 +588,17 @@ function MetaFight:EndActivity()
 			if self:GetTeamOfPlayer(player) == self.WinnerTeam then
 				-- Owned the site/base at start
 				if SceneMan.Scene.TeamOwnership == self:GetTeamOfPlayer(player) then
-					FrameMan:SetScreenText("Your team has successfully defended this site!", self:ScreenOfPlayer(player), 0, -1, false);
+					FrameMan:SetScreenText("你们的团队已经成功保卫了这个阵地!", self:ScreenOfPlayer(player), 0, -1, false);
 				else
-					FrameMan:SetScreenText("Your team has successfully taken over this site!", self:ScreenOfPlayer(player), 0, -1, false);
+					FrameMan:SetScreenText("你们的团队已经成功接管了这个阵地!!", self:ScreenOfPlayer(player), 0, -1, false);
 				end
 			-- Losers
 			else
 				-- Owned the site/base at start
 				if SceneMan.Scene.TeamOwnership == self:GetTeamOfPlayer(player) then
-					FrameMan:SetScreenText("Your team's brains have been destroyed and therefore lost this site!", self:ScreenOfPlayer(player), 0, -1, false);
+					FrameMan:SetScreenText("你们的团队主脑已经被摧毁,所以失去了这个阵地!", self:ScreenOfPlayer(player), 0, -1, false);
 				else
-					FrameMan:SetScreenText("Your attempt to take over this site has failed!", self:ScreenOfPlayer(player), 0, -1, false);
+					FrameMan:SetScreenText("你们试图接管此阵地的行动以失败告终!", self:ScreenOfPlayer(player), 0, -1, false);
 				end
 			end
 			-- Set the observation targets if everyone to the last brain's death
@@ -736,7 +736,7 @@ function MetaFight:UpdateActivity()
 				end
 			end
 		else
-			scanMessage = "Complete!";
+			scanMessage = "完成!";
 			messageBlink = 0;
 		end
 	end
@@ -785,7 +785,7 @@ function MetaFight:UpdateActivity()
 						if self:GetDeliveryCount(self:GetTeamOfPlayer(player)) < 1 then
 							-- Set the mode to LZ selct so the player can choose where to land first
 							self:SetViewState(Activity.LZSELECT, player);
-							FrameMan:SetScreenText("Choose where to land your assault brain", self:ScreenOfPlayer(player), 250, 3500, false);
+							FrameMan:SetScreenText("选择你的攻击主脑的降落地点!", self:ScreenOfPlayer(player), 250, 3500, false);
 							self:ResetMessageTimer(player);
 						else
 							-- Ok, done for real
@@ -796,7 +796,7 @@ function MetaFight:UpdateActivity()
 
 				-- Keep showing ready message for those who are
 				if self.Ready[player] then
-					FrameMan:SetScreenText("READY to start - wait for others to finish...", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("准备好开始,等待其他人完成...", self:ScreenOfPlayer(player), 333, -1, false);
 				else
 					allReady = false;
 				end

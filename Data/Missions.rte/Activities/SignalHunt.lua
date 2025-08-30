@@ -474,10 +474,10 @@ function SignalHunt:UpdateScreenTextAndObjectiveArrows(humanActorCount)
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				local brain = self:GetPlayerBrain(player);
 				if brain and self.currentFightStage > self.fightStage.beginFight and (not self.actorHoldingControlChip or self.actorHoldingControlChip.UniqueID ~= brain.UniqueID) and (not self.evacuationRocket or self.evacuationRocket.UniqueID ~= brain.UniqueID) then
-					self:AddObjectivePoint("Protect!", brain.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("保护!", brain.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
 				elseif not brain then
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been lost!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你失去主脑了!", self:ScreenOfPlayer(player), 333, -1, false);
 				end
 			end
 		end
@@ -487,44 +487,44 @@ function SignalHunt:UpdateScreenTextAndObjectiveArrows(humanActorCount)
 				for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 					if self:PlayerActive(player) and self:PlayerHuman(player) then
 						FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-						FrameMan:SetScreenText("Contractor, we at Alchiral appreciate your cooperation and confidentiality on this assignment.\nPlease enter the cave to ascertain the source of the signal.", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("承包商,我们Alchiral公司非常感谢您在此次任务中的合作与保密.\n请进入洞穴以查明信号来源.", self:ScreenOfPlayer(player), 0, 1, false);
 					end
 				end
 			else
-				self:AddObjectivePoint("Enter the cave to find the source of the signal!", self.outerBombPickupArea:GetCenterPoint(), self.humanTeam, GameActivity.ARROWDOWN);
+				self:AddObjectivePoint("进入洞穴,寻找信号的来源!", self.outerBombPickupArea:GetCenterPoint(), self.humanTeam, GameActivity.ARROWDOWN);
 			end
 			if humanActorCount < 1 and not self.screenTextTimer:IsPastSimMS(self.screenTextTimeLimit * 2) and self:GetTeamFunds(self.humanTeam) > 0 then
-				self:AddObjectivePoint("More bodies are recommended to complete this contract!", self.humanLZ:GetCenterPoint(), self.humanTeam, GameActivity.ARROWDOWN);
+				self:AddObjectivePoint("建议更多人完成这份合同！", self.humanLZ:GetCenterPoint(), self.humanTeam, GameActivity.ARROWDOWN);
 			end
 		elseif self.currentFightStage < self.fightStage.inInnerCaveArea then
-			self:AddObjectivePoint("Proceed farther into the cave!", self.innerBombPickupArea:GetCenterPoint(), self.humanTeam, GameActivity.ARROWDOWN);
+			self:AddObjectivePoint("继续往洞穴深处走！", self.innerBombPickupArea:GetCenterPoint(), self.humanTeam, GameActivity.ARROWDOWN);
 		elseif self.currentFightStage < self.fightStage.inInnermostCaveArea then
 			if not self.screenTextTimer:IsPastSimMS(self.screenTextTimeLimit) then
 				for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 					if self:PlayerActive(player) and self:PlayerHuman(player) then
 						FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-						FrameMan:SetScreenText("Contractor, these cloning tubes are not your primary target.\nYou may destroy them if they are obstructing your progress, but your task is to find the source of the signal.\nProceed farther into the cave.", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("承包商,这些克隆管并非你的首要目标.\n如果它们阻碍了你的进度,你可以摧毁它们,但你的任务是找到信号的来源.\n继续深入洞穴.", self:ScreenOfPlayer(player), 0, 1, false);
 					end
 				end
 			else
-				self:AddObjectivePoint("The signal is getting stronger, proceed farther into the cave!", self.controlCase.Pos + Vector(0, -100), self.humanTeam, GameActivity.ARROWDOWN);
+				self:AddObjectivePoint("信号越来越强,继续往洞穴深处走!", self.controlCase.Pos + Vector(0, -100), self.humanTeam, GameActivity.ARROWDOWN);
 			end
 		elseif self.currentFightStage < self.fightStage.ambushAndExtraction and self.controlCase then
 			if not self.screenTextTimer:IsPastSimMS(self.screenTextTimeLimit) then
 				for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 					if self:PlayerActive(player) and self:PlayerHuman(player) then
 						FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-						FrameMan:SetScreenText("Contractor, the signal is coming from that case; there is a modified Alchiral Cloning Control Chip inside it.\nDestroy the case and retrieve our property, once the chip is outside we will send a rocket to evacuate it to orbit.", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("承包商,信号来自那个箱子;里面有一个经过修改的Alchiral克隆控制芯片.\n摧毁那个箱子并取回我们的财产,一旦芯片被取出,我们将发射一枚火箭将其送入轨道.", self:ScreenOfPlayer(player), 0, 1, false);
 					end
 				end
 			end
-			self:AddObjectivePoint("Destroy the case and retrieve the control chip inside!", self.controlCase.Pos, self.humanTeam, GameActivity.ARROWDOWN);
+			self:AddObjectivePoint("摧毁这个箱子,取出里面的控制芯片!", self.controlCase.Pos, self.humanTeam, GameActivity.ARROWDOWN);
 		elseif self.currentFightStage == self.fightStage.ambushAndExtraction then
 			if self.secretIndex == nil and not self.screenTextTimer:IsPastSimMS(self.screenTextTimeLimit) then
 				for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 					if self:PlayerActive(player) and self:PlayerHuman(player) then
 						FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-						FrameMan:SetScreenText(self:GetTeamOfPlayer(player) == self.humanTeam and "Get To The Rocket!!!" or "Y O U R   W I S H   I S   O U R   C O M M A N D,   O   D R E A D   L O R D\nW E   S H A L L   S L A U G H T E R   E V E R Y O N E", self:ScreenOfPlayer(player), 0, 1, true);
+						FrameMan:SetScreenText(self:GetTeamOfPlayer(player) == self.humanTeam and "快到火箭那里去!!!" or " 你 的 愿 望 就 是 我 们 的 命 令 , 主 啊 , 请 阅 读 , 我 们 必 将 欢 欣 鼓 舞 . . . ", self:ScreenOfPlayer(player), 0, 1, true);
 					end
 				end
 			else
@@ -533,32 +533,32 @@ function SignalHunt:UpdateScreenTextAndObjectiveArrows(humanActorCount)
 						for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 							if self:PlayerActive(player) and self:PlayerHuman(player) then
 								FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-								FrameMan:SetScreenText("ALERT: Contractor, unknown hostiles are entering the area. They must not retrieve the Cloning Control Chip!", self:ScreenOfPlayer(player), 500, 1, true);
+								FrameMan:SetScreenText("警报:承包商,不明敌方势力正在进入该区域.别让他们取回克隆控制芯片!", self:ScreenOfPlayer(player), 500, 1, true);
 							end
 						end
 					end
 				end
 			end
 			if self.controlChip and not self.actorHoldingControlChip then
-				self:AddObjectivePoint("Pick up the Cloning Control Chip!", self.controlChip.Pos, self.humanTeam, GameActivity.ARROWDOWN);
+				self:AddObjectivePoint("拿起克隆控制芯片!", self.controlChip.Pos, self.humanTeam, GameActivity.ARROWDOWN);
 			elseif self.actorHoldingControlChip then
 				if self.actorHoldingControlChip.Team == self.humanTeam and (not self.evacuationRocket or self.actorHoldingControlChip.UniqueID ~= self.evacuationRocket.UniqueID) then
-					self:AddObjectivePoint("Evacuate the Cloning Control Chip!", self.actorHoldingControlChip.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("撤出克隆控制芯片！", self.actorHoldingControlChip.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
 				elseif self.actorHoldingControlChip.Team ~= self.humanTeam then
-					self:AddObjectivePoint("Kill to retrieve the Cloning Control Chip!", self.actorHoldingControlChip.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("夺回克隆控制芯片！", self.actorHoldingControlChip.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
 				end
 			end
 			if self.evacuationRocket and (not self.actorHoldingControlChip or self.actorHoldingControlChip.UniqueID ~= self.evacuationRocket.UniqueID) then
-				self:AddObjectivePoint(self.secretIndex == nil and "Get To The Rocket!!!" or "Get the Cloning Control Chip to the rocket!", self.evacuationRocket.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
+				self:AddObjectivePoint(self.secretIndex == nil and "快到火箭那里去!!!" or "携带克隆控制芯片到火箭那里去!", self.evacuationRocket.AboveHUDPos, self.humanTeam, GameActivity.ARROWDOWN);
 			end
 		end
 	elseif self.WinnerTeam == self.humanTeam and not self.screenTextTimer:IsPastSimMS(self.screenTextTimeLimit) then
 		for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-				local endText = "Contractor, thank you for your efficient work. Your agreed-upon fee has been deposited to your account.\nWe at Alchiral are pleased with your performance, and look forward to a productive relationship with you in future.";
+				local endText = "承包商,感谢您的高效工作.您约定的费用已存入您的账户.\n我们Alchiral公司对您的表现感到满意,并期待未来与您建立富有成效的合作关系.";
 				if self.secretIndex == nil then
-					endText = self:GetTeamOfPlayer(player) == self.humanTeam and "You may not have the chip, but at least you made it out after that betrayal!" or "D R E A D   L O R D,   T H E Y   H A V E   E S C A P E D   A N D   W I L L\nB R I N G   R U I N   D O W N   U P O N   U S   B E F O R E   W E   A R E   P R E P A R E D";
+					endText = self:GetTeamOfPlayer(player) == self.humanTeam and "你或许没有拿到芯片,但至少在那次背叛之后,你挺过来了!" or "阅读洛德,他们已经逃脱,并且将会\n在我们做好准备之前给我们带来毁灭性的打击...";
 				end
 				FrameMan:SetScreenText(endText, self:ScreenOfPlayer(player), 0, 1, true);
 			end
@@ -567,7 +567,7 @@ function SignalHunt:UpdateScreenTextAndObjectiveArrows(humanActorCount)
 		for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 			if self:PlayerActive(player) and self:PlayerHuman(player) and self:GetTeamOfPlayer(player) == self.zombieTeam then
 				FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-				FrameMan:SetScreenText("A    G R A N D    V I C T O R Y ,   Y O U R    H O R D E    S H A L L    G R O W    A N D    C O N Q U E R    T H I S    P L A N E T", self:ScreenOfPlayer(player), 0, 1, true);
+				FrameMan:SetScreenText("伟大的胜利,你们的军队将成长并征服这个星球!", self:ScreenOfPlayer(player), 0, 1, true);
 			end
 		end
 	end

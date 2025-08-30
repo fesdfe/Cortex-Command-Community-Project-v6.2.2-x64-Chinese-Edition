@@ -38,7 +38,7 @@ function OneManArmy:StartNewGame()
 
 	if self.Difficulty <= GameActivity.CAKEDIFFICULTY then
 		self.timeLimit = 5 * 60000 + 5000;
-		self.timeDisplay = "five minutes";
+		self.timeDisplay = "五分钟";
 		self.baseSpawnTime = 6000;
 
 		actorGroup = "Actors - Heavy";
@@ -46,7 +46,7 @@ function OneManArmy:StartNewGame()
 		secondaryGroup = "Weapons - Explosive";
 	elseif self.Difficulty <= GameActivity.EASYDIFFICULTY then
 		self.timeLimit = 5 * 60000 + 5000;
-		self.timeDisplay = "five minutes";
+		self.timeDisplay = "五分钟";
 		self.baseSpawnTime = 5500;
 
 		actorGroup = "Actors - Heavy";
@@ -54,26 +54,26 @@ function OneManArmy:StartNewGame()
 		secondaryGroup = "Weapons - Light";
 	elseif self.Difficulty <= GameActivity.MEDIUMDIFFICULTY then
 		self.timeLimit = 5 * 60000 + 5000;
-		self.timeDisplay = "five minutes";
+		self.timeDisplay = "五分钟";
 		self.baseSpawnTime = 5000;
 
 	elseif self.Difficulty <= GameActivity.HARDDIFFICULTY then
 		self.timeLimit = 6 * 60000 + 5000;
-		self.timeDisplay = "six minutes";
+		self.timeDisplay = "六分钟";
 		self.baseSpawnTime = 4500;
 
 		primaryGroup = "Weapons - Light";
 		secondaryGroup = "Weapons - Secondary";
 	elseif self.Difficulty <= GameActivity.NUTSDIFFICULTY then
 		self.timeLimit = 8 * 60000 + 5000;
-		self.timeDisplay = "eight minutes";
+		self.timeDisplay = "八分钟";
 		self.baseSpawnTime = 4000;
 
 		primaryGroup = "Weapons - Secondary";
 		secondaryGroup = "Weapons - Secondary";
 	elseif self.Difficulty <= GameActivity.MAXDIFFICULTY then
 		self.timeLimit = 10 * 60000 + 5000;
-		self.timeDisplay = "ten minutes";
+		self.timeDisplay = "十分钟";
 		self.baseSpawnTime = 3500;
 
 		primaryGroup = "Weapons - Secondary";
@@ -224,9 +224,9 @@ function OneManArmy:UpdateActivity()
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				--Display messages.
 				if self.startMessageTimer:IsPastSimMS(3000) then
-					FrameMan:SetScreenText(math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) / 1000) .. " seconds left", self:ScreenOfPlayer(player), 0, 1000, false);
+					FrameMan:SetScreenText(math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) / 1000) .. " 秒剩余", self:ScreenOfPlayer(player), 0, 1000, false);
 				else
-					FrameMan:SetScreenText("Survive for " .. self.timeDisplay .. "!", self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("生存直到 " .. self.timeDisplay .. "后!", self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 
 				local team = self:GetTeamOfPlayer(player);
@@ -235,7 +235,7 @@ function OneManArmy:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你的大脑被摧毁了!", self:ScreenOfPlayer(player), 333, -1, false);
 					-- Now see if all brains of self player's team are dead, and if so, end the game
 					if not MovableMan:GetFirstBrainActor(team) then
 						self.WinnerTeam = self:OtherTeam(team);
@@ -247,7 +247,7 @@ function OneManArmy:UpdateActivity()
 				if self.winTimer:IsPastSimMS(self.timeLimit) then
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("You survived!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你活下来了!", self:ScreenOfPlayer(player), 333, -1, false);
 
 					self.WinnerTeam = team;
 

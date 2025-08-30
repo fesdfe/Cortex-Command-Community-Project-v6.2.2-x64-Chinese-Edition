@@ -280,7 +280,7 @@ function Siege:UpdateActivity()
 		end
 
 		if self:PlayerActive(player) and self:PlayerHuman(player) then
-			FrameMan:SetScreenText("Enemy assault budget: " .. math.floor(displayValue), self:ScreenOfPlayer(player), 0, -1, false);
+			FrameMan:SetScreenText("敌方攻击预算: " .. math.floor(displayValue), self:ScreenOfPlayer(player), 0, -1, false);
 		end
 
 
@@ -289,7 +289,7 @@ function Siege:UpdateActivity()
 	for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 		local Brain = self:GetPlayerBrain(player);
 		if Brain and MovableMan:IsActor(Brain) then
-			self:AddObjectivePoint("Protect!", Brain.AboveHUDPos, self.PlayerTeam, GameActivity.ARROWDOWN);
+			self:AddObjectivePoint("保护!", Brain.AboveHUDPos, self.PlayerTeam, GameActivity.ARROWDOWN);
 		end
 	end
 
@@ -321,7 +321,7 @@ function Siege:UpdateActivity()
 				else
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 2000, -1, false);
+					FrameMan:SetScreenText("你的主脑被摧毁了!", self:ScreenOfPlayer(player), 2000, -1, false);
 				end
 			end
 		end

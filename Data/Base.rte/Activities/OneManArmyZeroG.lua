@@ -42,7 +42,7 @@ function OneManArmyZeroG:StartNewGame()
 	local timeLimitText;
 	if self.Difficulty <= GameActivity.CAKEDIFFICULTY then
 		timeLimitMinutes = self.isDiggersOnly and 5 or 3;
-		timeLimitText = self.isDiggersOnly and "five" or "three";
+		timeLimitText = self.isDiggersOnly and "f五" or "三";
 		self.baseSpawnTime = 6000;
 
 		actorGroup = "Actors - Heavy";
@@ -51,31 +51,31 @@ function OneManArmyZeroG:StartNewGame()
 		tertiaryGroup = "Weapons - Light";
 	elseif self.Difficulty <= GameActivity.EASYDIFFICULTY then
 		timeLimitMinutes = self.isDiggersOnly and 5 or 4;
-		timeLimitText = self.isDiggersOnly and "five" or "four";
+		timeLimitText = self.isDiggersOnly and "五" or "四";
 		self.baseSpawnTime = 5500;
 
 		actorGroup = "Actors - Heavy";
 		secondaryGroup = "Weapons - Light";
 	elseif self.Difficulty <= GameActivity.MEDIUMDIFFICULTY then
 		timeLimitMinutes = 5;
-		timeLimitText = "five";
+		timeLimitText = "五";
 		self.baseSpawnTime = 5000;
 
 	elseif self.Difficulty <= GameActivity.HARDDIFFICULTY then
 		timeLimitMinutes = 6;
-		timeLimitText = "six";
+		timeLimitText = "六";
 		self.baseSpawnTime = 4500;
 
 	elseif self.Difficulty <= GameActivity.NUTSDIFFICULTY then
 		timeLimitMinutes = self.isDiggersOnly and 8 or 7;
-		timeLimitText = self.isDiggersOnly and "eight" or "seven";
+		timeLimitText = self.isDiggersOnly and "八" or "七";
 		self.baseSpawnTime = 4000;
 
 		actorGroup = "Actors - Light";
 		secondaryGroup = "Weapons - Secondary";
 	elseif self.Difficulty <= GameActivity.MAXDIFFICULTY then
 		timeLimitMinutes = self.isDiggersOnly and 10 or 9;
-		timeLimitText = self.isDiggersOnly and "ten" or "nine";
+		timeLimitText = self.isDiggersOnly and "十" or "九";
 		self.baseSpawnTime = 3500;
 
 		actorGroup = "Actors - Light";
@@ -83,7 +83,7 @@ function OneManArmyZeroG:StartNewGame()
 		secondaryGroup = "Weapons - Secondary";
 	end
 	self.timeLimit = (timeLimitMinutes * 60000) + 5000;
-	self.timeDisplay = timeLimitText .. " minutes";
+	self.timeDisplay = timeLimitText .. " 分钟";
 	self.enemySpawnTimeLimit = 500;
 	
 	local automoverController = CreateActor("Invisible Automover Controller", "Base.rte");
@@ -289,9 +289,9 @@ function OneManArmyZeroG:UpdateActivity()
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				--Display messages
 				if self.startMessageTimer:IsPastSimMS(3000) then
-					FrameMan:SetScreenText(math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) * 0.001) .. " seconds left", self:ScreenOfPlayer(player), 0, 1000, false);
+					FrameMan:SetScreenText(math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) * 0.001) .. " 秒剩余", self:ScreenOfPlayer(player), 0, 1000, false);
 				else
-					FrameMan:SetScreenText("Survive for " .. self.timeDisplay .. "!", self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("生存直到 " .. self.timeDisplay .. "后!", self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 
 				local team = self:GetTeamOfPlayer(player);
@@ -300,7 +300,7 @@ function OneManArmyZeroG:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你的大脑被摧毁了!", self:ScreenOfPlayer(player), 333, -1, false);
 					--Now see if all brains of self player's team are dead, and if so, end the game
 					if not MovableMan:GetFirstBrainActor(team) then
 						self.WinnerTeam = self:OtherTeam(team);
@@ -312,7 +312,7 @@ function OneManArmyZeroG:UpdateActivity()
 				if self.winTimer:IsPastSimMS(self.timeLimit) then
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("You survived!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你活下来了!", self:ScreenOfPlayer(player), 333, -1, false);
 
 					self.WinnerTeam = player;
 

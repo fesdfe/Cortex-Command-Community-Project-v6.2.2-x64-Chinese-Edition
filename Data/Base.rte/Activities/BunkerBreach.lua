@@ -363,7 +363,7 @@ function BunkerBreach:UpdatePlayerObjectiveArrowsAndScreenText()
 			for _, friendlyUnitTable in ipairs({self.AI.friendlyUnitsInsideBunker, self.AI.friendlyUnitsOutsideBunker}) do
 				for _, friendlyUnit in pairs(friendlyUnitTable) do
 					if MovableMan:IsActor(friendlyUnit) then
-						self:AddObjectivePoint("Destroy!", friendlyUnit.AboveHUDPos, self.defenderTeam, GameActivity.ARROWDOWN);
+						self:AddObjectivePoint("摧毁!", friendlyUnit.AboveHUDPos, self.defenderTeam, GameActivity.ARROWDOWN);
 					end
 					objectiveArrowsShown = objectiveArrowsShown + 1;
 					if objectiveArrowsShown >= 10 then
@@ -373,9 +373,9 @@ function BunkerBreach:UpdatePlayerObjectiveArrowsAndScreenText()
 			end
 			self:YSortObjectivePoints();
 		else
-			local screenText = "Remaining Enemy Budget: " .. math.floor(self.AI.funds) .. " oz";
+			local screenText = "敌方剩余预算: " .. math.floor(self.AI.funds) .. " oz";
 			if self.AI.isLaunchingMajorAttack then
-				screenText = screenText .. "\n ALERT: The Enemy is Launching a Major Offensive!"
+				screenText = screenText .. "\n 警报:敌人正在发动大规模攻势!"
 			end
 			for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 				if self:PlayerActive(player) and self:PlayerHuman(player) then
@@ -386,7 +386,7 @@ function BunkerBreach:UpdatePlayerObjectiveArrowsAndScreenText()
 	elseif self.AI.isDefenderTeam and self.AI.enemyHumanIsRamboing then
 		for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
-				FrameMan:SetScreenText("ALERT: Enemy Alarms Have Been Triggered!", self:ScreenOfPlayer(player), 0, 2500, false);
+				FrameMan:SetScreenText("警报:敌方警报已启动!", self:ScreenOfPlayer(player), 0, 2500, false);
 			end
 		end
 	end

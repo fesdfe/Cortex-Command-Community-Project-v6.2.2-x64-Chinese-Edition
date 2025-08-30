@@ -308,7 +308,7 @@ function SkirmishDefense:UpdateActivity()
 		for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				if not self.startTimer:IsPastSimMS(3000) then
-					FrameMan:SetScreenText("Survive the assault!", self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("撑过这次袭击!", self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 				-- The current player's team
 				local team = self:GetTeamOfPlayer(player);
@@ -329,19 +329,19 @@ function SkirmishDefense:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你的主脑被摧毁了!", self:ScreenOfPlayer(player), 333, -1, false);
 				else
 					playertally = playertally + 1;
 					if not setTeam[team] then
 						-- Add objective points
-						self:AddObjectivePoint("Protect!", self:GetPlayerBrain(player).AboveHUDPos, team, GameActivity.ARROWDOWN);
+						self:AddObjectivePoint("保护!", self:GetPlayerBrain(player).AboveHUDPos, team, GameActivity.ARROWDOWN);
 						for otherPlayer = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 							if otherPlayer ~= player and self:PlayerActive(otherPlayer) and self:PlayerHuman(otherPlayer) and MovableMan:IsActor(self:GetPlayerBrain(otherPlayer)) then
 								local otherTeam = self:GetTeamOfPlayer(otherPlayer);
 								if otherTeam ~= team then
-									self:AddObjectivePoint("Destroy!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
+									self:AddObjectivePoint("摧毁!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
 								else
-									self:AddObjectivePoint("Protect!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
+									self:AddObjectivePoint("保护!", self:GetPlayerBrain(otherPlayer).AboveHUDPos, team, GameActivity.ARROWDOWN);
 								end
 							end
 						end

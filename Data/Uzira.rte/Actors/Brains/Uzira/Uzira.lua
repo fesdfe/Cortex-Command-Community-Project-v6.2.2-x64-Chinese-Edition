@@ -71,7 +71,7 @@ local handleMinionSpawning = function(self)
 							
 					local spawnSlice = self.minionManagementSubPieMenu:GetFirstPieSliceByPresetName(self.enableMinionSpawning and "DisableMinionSpawning" or "EnableMinionSpawning");
 					if spawnSlice then
-						spawnSlice.Description = self.enableMinionSpawning and "Let the dead sleep..." or "Raise the living dead!";
+						spawnSlice.Description = self.enableMinionSpawning and "让逝者安息吧..." or "让逝者复苏!";
 					end
 
 					return;
@@ -81,7 +81,7 @@ local handleMinionSpawning = function(self)
 		if #self.minions == 0 and #self.frenziedMinions == 0 then
 			local spawnSlice = self.minionManagementSubPieMenu:GetFirstPieSliceByPresetName(self.enableMinionSpawning and "DisableMinionSpawning" or "EnableMinionSpawning");
 			if spawnSlice then
-				spawnSlice.Description = self.enableMinionSpawning and "From dust they came..." or "...To dust they return.";
+				spawnSlice.Description = self.enableMinionSpawning and "它们从尘土中来..." or "...让它们回到尘土中.";
 			end
 		end
 	end
@@ -251,9 +251,9 @@ function Update(self)
 
 		local newSlice = self.minionManagementSubPieMenu:GetFirstPieSliceByPresetName(sliceNameToAdd);
 		if #self.minions == 0 and #self.frenziedMinions == 0 then
-			newSlice.Description = self.enableMinionSpawning and "From dust they came..." or "...To dust they return.";
+			newSlice.Description = self.enableMinionSpawning and "它们从尘土中来..." or "...让它们回到尘土中.";
 		else
-			newSlice.Description = self.enableMinionSpawning and "Let the dead sleep..." or "Raise the living dead!";
+			newSlice.Description = self.enableMinionSpawning and "让逝者安息吧..." or "让逝者复苏!";
 		end
 	end
 	

@@ -40,32 +40,32 @@ function Harvester:StartNewGame()
 
 	if self.Difficulty <= GameActivity.CAKEDIFFICULTY then
 		self.goldNeeded = 1000;
-		self.goldDisplay = "one thousand";
+		self.goldDisplay = "一千";
 		self.baseSpawnTime = 10000;
 		self.randomSpawnTime = 8000;
 	elseif self.Difficulty <= GameActivity.EASYDIFFICULTY then
 		self.goldNeeded = 2000;
-		self.goldDisplay = "two thousand";
+		self.goldDisplay = "两千";
 		self.baseSpawnTime = 9500;
 		self.randomSpawnTime = 7000;
 	elseif self.Difficulty <= GameActivity.MEDIUMDIFFICULTY then
 		self.goldNeeded = 3000;
-		self.goldDisplay = "three thousand";
+		self.goldDisplay = "三千";
 		self.baseSpawnTime = 9000;
 		self.randomSpawnTime = 6000;
 	elseif self.Difficulty <= GameActivity.HARDDIFFICULTY then
 		self.goldNeeded = 5000;
-		self.goldDisplay = "five thousand";
+		self.goldDisplay = "五千";
 		self.baseSpawnTime = 8500;
 		self.randomSpawnTime = 5000;
 	elseif self.Difficulty <= GameActivity.NUTSDIFFICULTY then
 		self.goldNeeded = 7500;
-		self.goldDisplay = "sevent thousand five hundred";
+		self.goldDisplay = "七千五百";
 		self.baseSpawnTime = 8000;
 		self.randomSpawnTime = 4500;
 	elseif self.Difficulty <= GameActivity.MAXDIFFICULTY then
 		self.goldNeeded = 10000;
-		self.goldDisplay = "ten thousand";
+		self.goldDisplay = "一万";
 		self.baseSpawnTime = 7500;
 		self.randomSpawnTime = 4000;
 	end
@@ -157,9 +157,9 @@ function Harvester:UpdateActivity()
 			if self:PlayerActive(player) and self:PlayerHuman(player) then
 				--Display messages.
 				if self.startMessageTimer:IsPastSimMS(3000) then
-					FrameMan:SetScreenText(self.goldNeeded - (math.ceil(self:GetTeamFunds(Activity.TEAM_1)) - self.humanTeamFundsAfterInitialEditingPhase) .. " oz of gold left", self:ScreenOfPlayer(player), 0, 1000, false);
+					FrameMan:SetScreenText(self.goldNeeded - (math.ceil(self:GetTeamFunds(Activity.TEAM_1)) - self.humanTeamFundsAfterInitialEditingPhase) .. " 金子待挖出", self:ScreenOfPlayer(player), 0, 1000, false);
 				else
-					FrameMan:SetScreenText("Dig up " .. self.goldDisplay .. " oz of gold!", self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("挖出 " .. self.goldDisplay .. " 盎司金子!", self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 
 				-- The current player's team
@@ -180,7 +180,7 @@ function Harvester:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你的主脑被摧毁了!", self:ScreenOfPlayer(player), 333, -1, false);
 					-- Now see if all brains of self player's team are dead, and if so, end the game
 					if not MovableMan:GetFirstBrainActor(team) then
 						self.WinnerTeam = self:OtherTeam(team);
@@ -192,7 +192,7 @@ function Harvester:UpdateActivity()
 				if self:GetTeamFunds(Activity.TEAM_1) - self.humanTeamFundsAfterInitialEditingPhase > self.goldNeeded then
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("You dug up all the gold!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你挖到了所有的金子!", self:ScreenOfPlayer(player), 333, -1, false);
 
 					self.WinnerTeam = Activity.TEAM_1;
 

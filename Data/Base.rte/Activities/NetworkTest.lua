@@ -148,8 +148,8 @@ function NetworkTest:UpdateActivity()
 	PrimitiveMan:DrawBoxPrimitive(0, Vector(10,410), Vector(100,449), 5);
 	PrimitiveMan:DrawBoxPrimitive(1, Vector(10,450), Vector(100,500), 10);
 
-	PrimitiveMan:DrawTextPrimitive(0, Vector(30, 430), "Player One Sees This!", true, 0);
-	PrimitiveMan:DrawTextPrimitive(1, Vector(30, 430), "Player Two Sees This!", true, 0);
+	PrimitiveMan:DrawTextPrimitive(0, Vector(30, 430), "玩家一看到了这个!", true, 0);
+	PrimitiveMan:DrawTextPrimitive(1, Vector(30, 430), "玩家二看到了这个!", true, 0);
 
 	for actor in MovableMan.Actors do
 		--[[if actor.ClassName == "ACRocket" then

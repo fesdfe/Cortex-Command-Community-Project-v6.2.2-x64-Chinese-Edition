@@ -161,7 +161,7 @@ function MaginotMission:DoGameOverCheck()
 							end
 							self:GetBanner(GUIBanner.RED, player):ClearText();
 						else
-							FrameMan:SetScreenText("Your brain has been lost!", self:ScreenOfPlayer(player), 333, -1, false);
+							FrameMan:SetScreenText("你失去主脑了!", self:ScreenOfPlayer(player), 333, -1, false);
 							self.brainDead[player] = true;
 
 							local gameOver = true;
@@ -180,7 +180,7 @@ function MaginotMission:DoGameOverCheck()
 						end
 					else
 						if self.evacuationRocket and brain.UniqueID ~= self.evacuationRocket.UniqueID then
-							self:AddObjectivePoint("Protect!", brain.AboveHUDPos, self.defenderTeam, GameActivity.ARROWDOWN);
+							self:AddObjectivePoint("保护!", brain.AboveHUDPos, self.defenderTeam, GameActivity.ARROWDOWN);
 						end
 
 						self:SetObservationTarget(brain.Pos, player);
@@ -196,9 +196,9 @@ function MaginotMission:DoGameOverCheck()
 				if not self.GameOverTimer:IsPastSimMS(self.GameOverPeriod) then
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
 					if self.brainDead[player] then
-						FrameMan:SetScreenText("You may have died, but your fellow brains lived to fight another day. Rest assured, you will be avenged!", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("你或许已逝,但你的同类们将继续生存,为未来而战.放心,你一定会得到复仇!", self:ScreenOfPlayer(player), 0, 1, false);
 					else
-						FrameMan:SetScreenText("Good job, you lived to fight another day. We've located the enemy fortress and are planning an assault on it!", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("干得好,你又活过了一天!我们已经找到了敌人的基地,正在计划对其进行突袭!", self:ScreenOfPlayer(player), 0, 1, false);
 					end
 				else
 					ActivityMan:EndActivity();
@@ -249,22 +249,22 @@ function MaginotMission:UpdateScreenText()
 				FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
 				if self.currentFightStage == self.fightStage.beginFight then
 					if self:GetTeamFunds(self.defenderTeam) == 0 then
-						FrameMan:SetScreenText("Sensors show enemy dropship signatures en route to the West entrance.\nYou'll have to make do with the forces you have on site. Good luck!", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("传感器显示,敌方空投船正在前往左门的途中.\n你只能利用现场现有的兵力了.祝你好运!", self:ScreenOfPlayer(player), 0, 1, false);
 					else
-						FrameMan:SetScreenText("Sensors show enemy dropship signatures en route to the West entrance.\nPrepare while you can, they'll be here soon!", self:ScreenOfPlayer(player), 0, 1, false);
+						FrameMan:SetScreenText("传感器显示,敌方空投船正在前往左门的途中.\n尽快做好准备,他们很快就会到!", self:ScreenOfPlayer(player), 0, 1, false);
 					end
 				elseif self.currentFightStage == self.fightStage.defendLeft then
-					FrameMan:SetScreenText("The onslaught has begun. Hold the line!", self:ScreenOfPlayer(player), 1500, 1, true);
+					FrameMan:SetScreenText("攻势已经开始,坚守阵地!", self:ScreenOfPlayer(player), 1500, 1, true);
 				elseif self.currentFightStage == self.fightStage.defendRight then
-					FrameMan:SetScreenText("ALERT: A ground attack force is moving on the Eastern entrance!", self:ScreenOfPlayer(player), 1500, 1, true);
+					FrameMan:SetScreenText("警报:一支地面攻击部队正往右门入口移动!", self:ScreenOfPlayer(player), 1500, 1, true);
 				elseif self.currentFightStage == self.fightStage.evacuateBrain then
 					if self.PlayerCount == 1 then
-						FrameMan:SetScreenText("The enemy force is too powerful, abandon the bunker immediately!\nYour brain has been loaded onto a bot, get to the LZ and evacuate.", self:ScreenOfPlayer(player), 0, 1, true);
+						FrameMan:SetScreenText("敌军势力过于强大,立即撤离掩体!\n你的主脑已被上传至机器人,前往着陆区撤离.", self:ScreenOfPlayer(player), 0, 1, true);
 					else
-						FrameMan:SetScreenText("The enemy force is too powerful, abandon the bunker immediately!\nYour brains have been loaded onto bots, get as many of them as possible to the LZ and evacuate.", self:ScreenOfPlayer(player), 0, 1, true);
+						FrameMan:SetScreenText("敌军势力过于强大,立即撤离掩体!\n你的主脑已加载到机器人上,尽可能地将它运至着陆区并撤离.", self:ScreenOfPlayer(player), 0, 1, true);
 					end
 				elseif self.currentFightStage == self.fightStage.enterEvacuationRocket then
-					FrameMan:SetScreenText("The evacuation rocket is coming in hot, get to the LZ!", self:ScreenOfPlayer(player), 1500, 1, true);
+					FrameMan:SetScreenText("撤离火箭即将到达,快到着陆区!", self:ScreenOfPlayer(player), 1500, 1, true);
 				end
 			end
 		end
@@ -404,7 +404,7 @@ function MaginotMission:UpdateActivity()
 	self:UpdateAttackerSpawns();
 
 	if self.currentFightStage == self.fightStage.evacuateBrain then
-		self:AddObjectivePoint("Get to the LZ!", self.rescueLZ:GetCenterPoint() + Vector(0, 20), self.defenderTeam, GameActivity.ARROWDOWN);
+		self:AddObjectivePoint("到达着陆区!", self.rescueLZ:GetCenterPoint() + Vector(0, 20), self.defenderTeam, GameActivity.ARROWDOWN);
 	elseif self.currentFightStage == self.fightStage.enterEvacuationRocket then
 		if not self.evacuationRocket or not MovableMan:IsActor(self.evacuationRocket) then
 			self.evacuationRocket = nil;
@@ -420,7 +420,7 @@ function MaginotMission:UpdateActivity()
 				end
 			end
 			if not evacuationRocketHasAllBrains then
-				self:AddObjectivePoint("Get in the rocket!", self.evacuationRocket.AboveHUDPos, self.defenderTeam, GameActivity.ARROWDOWN);
+				self:AddObjectivePoint("进入火箭!", self.evacuationRocket.AboveHUDPos, self.defenderTeam, GameActivity.ARROWDOWN);
 				self.evacuationRocket:OpenHatch();
 			else
 				self.evacuationRocket.AIMode = Actor.AIMODE_RETURN;

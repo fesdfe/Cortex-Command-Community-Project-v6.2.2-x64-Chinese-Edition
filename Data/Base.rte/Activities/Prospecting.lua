@@ -88,7 +88,7 @@ function Prospecting:UpdateActivity()
 						self.ScanEndPos.Y = self.ScanEndPos.Y - (FrameMan.PlayerScreenHeight / 4);
 
 						if (self.ScanPosX[team] < SceneMan.Scene.Width) then
-							scanMessage = "Scanning...";
+							scanMessage = "扫描中...";
 							messageBlink = 500;
 							-- Move on to the next column
 							self.ScanPosX[team] = self.ScanPosX[team] + SceneMan:GetUnseenResolution(team).X;
@@ -124,7 +124,7 @@ function Prospecting:UpdateActivity()
 				end
 				self.ActivityState = Activity.RUNNING;
 			else
-				scanMessage = "Complete!";
+				scanMessage = "完成!";
 				messageBlink = 0;
 			end
 		end
@@ -180,7 +180,7 @@ function Prospecting:UpdateActivity()
 									self:SwitchToActor(newBrain, player, team);
 								end
 							else
-								FrameMan:SetScreenText("Your brain has been lost!", self:ScreenOfPlayer(player), 333, -1, false);
+								FrameMan:SetScreenText("你失去了主脑!", self:ScreenOfPlayer(player), 333, -1, false);
 								self.braindead[player] = true;
 								-- Now see if all brains of self player's team are dead, and if so, end the game
 								if not MovableMan:GetFirstBrainActor(team) then
@@ -209,9 +209,9 @@ function Prospecting:UpdateActivity()
 				elseif not self.GameOverTimer:IsPastSimMS(self.GameOverPeriod) then
 	-- TODO: make more appropriate messages here for run out of funds endings
 					if team == self.WinnerTeam then
-						FrameMan:SetScreenText("Well done, you retrieved the item!", self:ScreenOfPlayer(player), 0, -1, false);
+						FrameMan:SetScreenText("干得好,你成功找回了那个物品!", self:ScreenOfPlayer(player), 0, -1, false);
 					else
-						FrameMan:SetScreenText("Your brain has been lost!", self:ScreenOfPlayer(player), 0, -1, false);
+						FrameMan:SetScreenText("你失去了主脑!", self:ScreenOfPlayer(player), 0, -1, false);
 					end
 				end
 			end

@@ -1134,77 +1134,77 @@ function DecisionDay:UpdateMessages()
 		local blinkTime = 0;
 
 		if self.WinnerTeam == self.humanTeam then
-			messageText = "Finally, we have revenge for the loss of our Maginot bunker. With the loss of this fortress, the enemy is in tatters, we can crush them with ease."
+			messageText = "最后,我们为失去的马奇诺地堡报仇了.随着这座基地的失守,敌人已元气大伤,我们可以轻易地击败他们!"
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
-				messageText = messageText .. "\nYour outstanding contributions have been noted, we'll see to it that you receive a hefty year-end performance bonus!";
+				messageText = messageText .. "\n我们看到了你杰出的贡献,我们会给予你获得丰厚的年终绩效奖金!";
 			end
 		elseif self.WinnerTeam == self.aiTeam then
-			messageText = "With the loss of your brain, the assault has failed catastrophically. Your faction now faces complete destruction at the hands of your enemies.";
+			messageText = "由于你的主脑被摧毁,这次袭击彻底失败了.你的派系现在面临着被敌人彻底毁灭的命运...";
 		elseif self.currentStage == self.stages.showInitialText then
-			messageText = "Good to see your forces have made it over land. As you can see, this installation is impregnable by air thanks to their EMP defenses."
+			messageText = "很高兴看到你的部队已经成功登陆!如你所见,由于他们的EMP防御,这个设施无法被空降."
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
-				messageText = messageText .. "\nGet into the bunker and disable the AA defenses so we can land our forces and begin the real assault!";
+				messageText = messageText .. "\n进入掩体并关闭防空防御系统,这样我们就可以让部队着陆并开始全面进攻了!";
 			end
 		elseif self.currentStage == self.stages.attackFrontBunker and not self.anyHumanHasSeenObjectives then
-			messageText = "Enter actor select mode to see objectives!";
+			messageText = "进入角色选择模式以查看目标！";
 			blinkTime = 1000;
 		elseif self.currentStage == self.stages.frontBunkerCaptured then
-			messageText = "Excellent work! With these anti-air defences disabled, we can start our attack in earnest.\n";
+			messageText = "干得好!防空系统被瘫痪后,我们可以正式开始进攻了.\n";
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
 				if self.bunkerRegions["Front Bunker Small Vault"].ownerTeam == self.aiTeam then
-					messageText = messageText .. "We'll begin the assault shortly, capture the vault to get some funds, and deploy your " .. brainString .. " in the Operations Center so you can assist us!";
+					messageText = messageText .. "我们很快就会开始突袭,占领金库获取一些资金,然后部署你" .. brainString .. " 在运营中心,这样你就可以协助我们了!";
 				else
-					messageText = messageText .. "We'll begin the assault shortly, deploy your " .. brainString .. " in the Operations Center so you can assist us!";
+					messageText = messageText .. "我们很快就会开始进攻，部署你 " .. brainString .. " 在运营中心，这样你就可以协助我们了！";
 				end
 			end
 		elseif self.currentStage == self.stages.deployBrain then
 			if self.currentMessageNumber == 1 then
 				if self.messageTimer.SimTimeLimitProgress > 0.1 then
-					messageText = "As you can see, there's another small bunker to deal with before we can assault the fortress proper. Our forces should make short work of it.";
+					messageText = "如你所见,在我们正式攻打基地之前,还有一个小的碉堡需要解决.我们的部队应该能很快解决它.";
 				end
 				if self.messageTimer.SimTimeLimitProgress > 0.35 then
-					messageText = messageText .. "\nOnce your brain is deployed, you're welcome to take control of some of our forces while you build up your own.";
+					messageText = messageText .. "\n一旦你的主脑被部署,你在空投自己的士兵时,欢迎编入我们的一些士兵.";
 				end
 			elseif self.currentMessageNumber == 2 then
-				messageText = "It should be noted that sub-surface scans indicate that this area is devoid of gold, it seems that every ounce of it has been dug up and stored in vaults.";
+				messageText = "值得注意的是,地下扫描结果显示,该地区已无黄金,似乎每一盎司黄金都已被挖出并存放在金库中.";
 				if self.messageTimer.SimTimeLimitProgress > 0.25 then
-					messageText = messageText .. "\nYou'll have to rely on capturing these vaults for income. As a bonus, every vault we capture will also harm our enemy's reinforcement capabilities.";
+					messageText = messageText .. "\n你必须依靠占领这些金库来获取收入.作为额外奖励,我们占领的每一个金库都会削弱敌人的增援能力.";
 				end
 			end
 		elseif self.currentStage == self.stages.attackMiddleBunker then
-			messageText = "Excellent, with your brain deployed you can contribute to the assault."
+			messageText = "太棒了,有了你的智慧,你一定能为这次突袭做出贡献."
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
-				messageText = messageText .. "\nOur troops will push straight to the main bunker, you should follow along behind us and capture the middle bunker's operations room.";
+				messageText = messageText .. "\n我们的部队将直捣主基地,你们应紧随其后,占领中间基地的作战室.";
 			end
 		elseif self.currentStage == self.stages.middleBunkerCaptured then
-			messageText = "Good job capturing the middle bunker, it'll let us land troops closer and focus on the main bunker."
+			messageText = "占领中间碉堡做得很好,这样我们就能让部队更靠近登陆点,并集中火力攻击主碉堡."
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
-				messageText = messageText .. "\nUnfortunately, we've got our work cut out for us, the main bunker is incredibly well defended.";
+				messageText = messageText .. "\n不幸的是,我们的任务十分艰巨,主基地的防御非常严密.";
 			end
 		elseif self.currentStage == self.stages.findTunnel then
-			messageText = "Sub-surface scans suggest there's an old mining tunnel that you can use to infiltrate the main bunker and help us from the inside.";
+			messageText = "地下扫描结果显示,有一条古老的采矿隧道可供你利用,以便潜入主基地并从内部协助我们.";
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
-				messageText = messageText .. "\nLook around below the bottom of the middle bunker and find a way in. Our forces will keep them locked down so they don't retake our territory, but move quickly!";
+				messageText = messageText .. "\n在中间碉堡底部周围找找,找到一条进去的路.我们的部队会牵制住他们,防止他们夺回我们的领土,但动作要快!";
 			end
 		elseif self.currentStage == self.stages.captureDoorControls then
-			messageText = "Excellent, you found the tunnel and it looks abandoned! With any luck, this will get you straight to the main bunker.";
+			messageText = "太好了!你找到了隧道,而且它看起来已经废弃了!如果幸运的话,这将直接把你带到主碉堡.";
 			if self.messageTimer.SimTimeLimitProgress > 0.25 then
-				messageText = messageText .. "\nGet in there and capture the door and turret controls as soon as possible, our forces are dwindling.";
+				messageText = messageText .. "\n快进去,尽快控制住门和炮塔的控制装置,我们的兵力正在减少!";
 			end
 		elseif self.currentStage == self.stages.captureMainBunker then
 			if self.currentMessageNumber == 1 then
-				messageText = "Excellent work, and just in time, we've almost run out of reinforcements.";
+				messageText = "做得很好,而且来得正是时候,我们的增援部队都快用完了.";
 				if self.messageTimer.SimTimeLimitProgress > 0.25 then
-					messageText = messageText .. "\nWe'll use our remaining forces to hold the door controls and the other bunkers - buy more troops and take over the bunker, sector-by-sector.";
+					messageText = messageText .. "\n我们将利用剩余兵力守住门控和其他掩体,同时增援部队,逐区接管掩体.";
 				end
 			elseif self.currentMessageNumber == 2 then
-				messageText = "Your main goal is to capture the shield generator so you can get access to the brain vault and destroy the enemy brain.";
+				messageText = "你的主要目标是占领护盾发生器,以便能够进入主脑库并摧毁敌人的主脑.";
 				if self.messageTimer.SimTimeLimitProgress > 0.25 then
-					messageText = messageText .. "\nThat said, every region you capture will damage the enemy's capabilities, so it might be wise to capture as much as you can.";
+					messageText = messageText .. "\n话虽如此,你占领的每个区域都会削弱敌人的实力,因此尽可能多地占领区域可能是明智之举.";
 				end
 			end
 		elseif self.currentStage == self.stages.attackBrain then
-			messageText = "Great work, the shield generator is disabled. This is the last stretch, get your forces to the brain vault and finish the fight!";
+			messageText = "干得好,护盾发生器已被禁用.这是最后阶段,快带领你的部队前往主脑库,结束这场战斗!";
 		end
 
 		if messageText then
@@ -1269,9 +1269,9 @@ function DecisionDay:UpdateObjectiveArrowsAndRegionVisuals()
 		self.anyHumanHasSeenObjectives = true;
 
 		if self.currentStage == self.stages.deployBrain then
-			self:AddObjectivePoint("Use the Pie Menu and deploy your brain to join the assault", self.bunkerRegions["Front Bunker Operations"].totalArea.Center, self.humanTeam, GameActivity.ARROWDOWN);
+			self:AddObjectivePoint("使用圆盘菜单,调动你的主脑,加入这场突击.", self.bunkerRegions["Front Bunker Operations"].totalArea.Center, self.humanTeam, GameActivity.ARROWDOWN);
 		elseif self.currentStage == self.stages.findTunnel then
-			self:AddObjectivePoint("Find and enter the abandoned tunnel", self.bunkerAreas[self.bunkerIds.middleBunker].totalArea.Center + Vector(84, 185), self.humanTeam, GameActivity.ARROWDOWN);
+			self:AddObjectivePoint("找到并进入废弃的隧道", self.bunkerAreas[self.bunkerIds.middleBunker].totalArea.Center + Vector(84, 185), self.humanTeam, GameActivity.ARROWDOWN);
 		end
 
 		for bunkerRegionName, bunkerRegionData in pairs(self.bunkerRegions) do
@@ -1279,26 +1279,26 @@ function DecisionDay:UpdateObjectiveArrowsAndRegionVisuals()
 				if bunkerRegionData.ownerTeam ~= self.humanTeam then
 					local objectiveString = bunkerRegionData.hasBeenCapturedAtLeastOnceByHumanTeam and "Recapture " or "Capture ";
 					if bunkerRegionName:find("Operations") then
-						objectiveString = objectiveString .. "to secure the bunker";
+						objectiveString = objectiveString .. "确保地堡安全";
 					elseif bunkerRegionName:find("Vault") then
-						objectiveString = objectiveString .. "to gain funds";
+						objectiveString = objectiveString .. "夺取金库";
 					elseif bunkerRegionName:find("Door Controls") then
-						objectiveString = objectiveString .. "to breach the bunker";
+						objectiveString = objectiveString .. "突破基地";
 					elseif bunkerRegionName:find("Security Tower") then
-						objectiveString = objectiveString .. "to access cameras and turrets";
+						objectiveString = objectiveString .. "控制摄像头和炮塔";
 					elseif bunkerRegionName:find("Barracks") then
-						objectiveString = objectiveString .. "to slow enemy internal reinforcements";
+						objectiveString = objectiveString .. "拖延敌方内部增援";
 						if self.currentStage == self.stages.attackBrain then
-							objectiveString = objectiveString .. " and command center defenders";
+							objectiveString = objectiveString .. " 指挥中心的防御者";
 						end
 					elseif bunkerRegionName:find("Armory") then
-						objectiveString = objectiveString .. "to limit enemy equipment";
+						objectiveString = objectiveString .. "限制敌方装备";
 					elseif bunkerRegionName:find("Air Traffic Control") then
-						objectiveString = objectiveString .. "to control the LZ";
+						objectiveString = objectiveString .. "控制着陆区";
 					elseif bunkerRegionName:find("Shield Generator") then
-						objectiveString = objectiveString .. "to reach the enemy brain";
+						objectiveString = objectiveString .. "到达敌人主脑位置";
 					elseif bunkerRegionName:find("Command Center") then
-						objectiveString = objectiveString .. "to destroy the enemy brain";
+						objectiveString = objectiveString .. "摧毁敌人主脑";
 						if self.aiData.brainDefendersRemaining > 0 then
 							local reinforcementsRemainString = self.aiData.brainDefendersRemaining == 1 and " reinforcement remains" or " reinforcements remain";
 							objectiveString = objectiveString .. "\n" .. tostring(self.aiData.brainDefendersRemaining) .. reinforcementsRemainString;
@@ -1317,23 +1317,23 @@ function DecisionDay:UpdateObjectiveArrowsAndRegionVisuals()
 							PrimitiveMan:DrawPrimitives(75, boxFillPrimitives);
 
 							if bunkerRegionData.ownerTeam == self.humanTeam then
-								local capturedRegionDescription = "This region is ";
+								local capturedRegionDescription = "这个地区是 ";
 								if bunkerRegionName:find("Operations") then
-									capturedRegionDescription = capturedRegionDescription .. "keeping the bunker and LZ secured";
+									capturedRegionDescription = capturedRegionDescription .. "确保掩体和着陆区安全";
 								elseif bunkerRegionName:find("Vault") then
-									capturedRegionDescription = capturedRegionDescription .. "providing you with funds";
+									capturedRegionDescription = capturedRegionDescription .. "为你提供资金";
 								elseif bunkerRegionName:find("Door Controls") then
-									capturedRegionDescription = capturedRegionDescription .. "giving you control of the front doors"
+									capturedRegionDescription = capturedRegionDescription .. "让你控制前门"
 								elseif bunkerRegionName:find("Security Tower") then
-									capturedRegionDescription = capturedRegionDescription .. "giving you control of the cameras and turrets"
+									capturedRegionDescription = capturedRegionDescription .. "让你控制摄像机和炮塔"
 								elseif bunkerRegionName:find("Barracks") then
-									capturedRegionDescription = capturedRegionDescription .. "slowing enemy internal reinforcements"
+									capturedRegionDescription = capturedRegionDescription .. "减缓敌方内部增援"
 								elseif bunkerRegionName:find("Armory") then
-									capturedRegionDescription = capturedRegionDescription .. "limiting enemy weapons"
+									capturedRegionDescription = capturedRegionDescription .. "限制敌方武器"
 								elseif bunkerRegionName:find("Air Traffic Control") then
-									capturedRegionDescription = capturedRegionDescription .. "giving you control of the LZ"
+									capturedRegionDescription = capturedRegionDescription .. "让你控制着陆区"
 								elseif bunkerRegionName:find("Shield Generator") then
-									capturedRegionDescription = capturedRegionDescription .. "giving you access to the enemy brain"
+									capturedRegionDescription = capturedRegionDescription .. "让你能够攻击敌方主脑"
 								end
 								PrimitiveMan:DrawTextPrimitive(player, bunkerRegionData.totalArea.Center, capturedRegionDescription, false, 1);
 							end

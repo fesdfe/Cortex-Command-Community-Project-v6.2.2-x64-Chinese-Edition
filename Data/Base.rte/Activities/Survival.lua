@@ -37,32 +37,32 @@ function Survival:StartNewGame()
 
 	if self.Difficulty <= GameActivity.CAKEDIFFICULTY then
 		self.timeLimit = 125000;
-		self.timeDisplay = "two minutes";
+		self.timeDisplay = "两分钟";
 		self.baseSpawnTime = 6000;
 		self.randomSpawnTime = 8000;
 	elseif self.Difficulty <= GameActivity.EASYDIFFICULTY then
 		self.timeLimit = 185000;
-		self.timeDisplay = "three minutes";
+		self.timeDisplay = "三分钟";
 		self.baseSpawnTime = 5500;
 		self.randomSpawnTime = 7000;
 	elseif self.Difficulty <= GameActivity.MEDIUMDIFFICULTY then
 		self.timeLimit = 245000;
-		self.timeDisplay = "four minutes";
+		self.timeDisplay = "四分钟";
 		self.baseSpawnTime = 5000;
 		self.randomSpawnTime = 6000;
 	elseif self.Difficulty <= GameActivity.HARDDIFFICULTY then
 		self.timeLimit = 305000;
-		self.timeDisplay = "five minutes";
+		self.timeDisplay = "五分钟";
 		self.baseSpawnTime = 4500;
 		self.randomSpawnTime = 5000;
 	elseif self.Difficulty <= GameActivity.NUTSDIFFICULTY then
 		self.timeLimit = 485000;
-		self.timeDisplay = "eight minutes";
+		self.timeDisplay = "八分钟";
 		self.baseSpawnTime = 4000;
 		self.randomSpawnTime = 4500;
 	elseif self.Difficulty <= GameActivity.MAXDIFFICULTY then
 		self.timeLimit = 605000;
-		self.timeDisplay = "ten minutes";
+		self.timeDisplay = "十分钟";
 		self.baseSpawnTime = 3500;
 		self.randomSpawnTime = 4000;
 	end
@@ -142,12 +142,12 @@ function Survival:UpdateActivity()
 				if self.startMessageTimer:IsPastSimMS(3000) then
 					local secondsLeft = math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) / 1000);
 					if (secondsLeft > 1) then
-						FrameMan:SetScreenText(secondsLeft .. " seconds left", self:ScreenOfPlayer(player), 0, 1000, false);
+						FrameMan:SetScreenText(secondsLeft .. " 秒剩余", self:ScreenOfPlayer(player), 0, 1000, false);
 					else
-						FrameMan:SetScreenText("1 second left!", self:ScreenOfPlayer(player), 0, 1000, false);
+						FrameMan:SetScreenText("1分钟剩余!", self:ScreenOfPlayer(player), 0, 1000, false);
 					end
 				else
-					FrameMan:SetScreenText("Survive for " .. self.timeDisplay .. "!", self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("生存直到 " .. self.timeDisplay .. "后!", self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 
 				-- The current player's team
@@ -168,21 +168,21 @@ function Survival:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你的主脑被摧毁了!", self:ScreenOfPlayer(player), 333, -1, false);
 					-- Now see if all brains of self player's team are dead, and if so, end the game
 					if not MovableMan:GetFirstBrainActor(team) then
 						self.WinnerTeam = self:OtherTeam(team);
 						ActivityMan:EndActivity();
 					end
 				else
-					self:AddObjectivePoint("Protect!", self:GetPlayerBrain(player).AboveHUDPos, self:GetTeamOfPlayer(player), GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("保护!", self:GetPlayerBrain(player).AboveHUDPos, self:GetTeamOfPlayer(player), GameActivity.ARROWDOWN);
 				end
 
 				--Check if the player has won.
 				if self.winTimer:IsPastSimMS(self.timeLimit) then
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("You survived!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你活下来了!", self:ScreenOfPlayer(player), 333, -1, false);
 
 					self.WinnerTeam = Activity.TEAM_1;
 

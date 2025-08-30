@@ -39,32 +39,32 @@ function KeepieUppie:StartNewGame()
 
 	if self.Difficulty <= GameActivity.CAKEDIFFICULTY then
 		self.timeLimit = 25000;
-		self.timeDisplay = "twenty seconds";
+		self.timeDisplay = "20Ãë";
 		self.baseSpawnTime = 6000;
 		self.randomSpawnTime = 8000;
 	elseif self.Difficulty <= GameActivity.EASYDIFFICULTY then
 		self.timeLimit = 45000;
-		self.timeDisplay = "forty seconds";
+		self.timeDisplay = "40Ãë";
 		self.baseSpawnTime = 5500;
 		self.randomSpawnTime = 7000;
 	elseif self.Difficulty <= GameActivity.MEDIUMDIFFICULTY then
 		self.timeLimit = 65000;
-		self.timeDisplay = "one minute";
+		self.timeDisplay = "1·ÖÖÓ";
 		self.baseSpawnTime = 5000;
 		self.randomSpawnTime = 6000;
 	elseif self.Difficulty <= GameActivity.HARDDIFFICULTY then
 		self.timeLimit = 95000;
-		self.timeDisplay = "one minute and thirty seconds";
+		self.timeDisplay = "1·Ö30Ãë";
 		self.baseSpawnTime = 4500;
 		self.randomSpawnTime = 5000;
 	elseif self.Difficulty <= GameActivity.NUTSDIFFICULTY then
 		self.timeLimit = 125000;
-		self.timeDisplay = "two minutes and thirty seconds";
+		self.timeDisplay = "2·Ö30Ãë";
 		self.baseSpawnTime = 4000;
 		self.randomSpawnTime = 4500;
 	elseif self.Difficulty <= GameActivity.MAXDIFFICULTY then
 		self.timeLimit = 305000;
-		self.timeDisplay = "five minutes";
+		self.timeDisplay = "5·ÖÖÓ";
 		self.baseSpawnTime = 3500;
 		self.randomSpawnTime = 4000;
 	end
@@ -145,9 +145,9 @@ function KeepieUppie:UpdateActivity()
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
 					if self.startMessageTimer:IsPastSimMS(3000) then
-						FrameMan:SetScreenText(math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) / 1000) .. " seconds left", self:ScreenOfPlayer(player), 0, 1000, false);
+						FrameMan:SetScreenText(math.floor(self.winTimer:LeftTillSimMS(self.timeLimit) / 1000) .. " ÃëÊ£Óà", self:ScreenOfPlayer(player), 0, 1000, false);
 					else
-						FrameMan:SetScreenText("Keep the rocket alive for " .. self.timeDisplay .. "!", self:ScreenOfPlayer(player), 333, 5000, true);
+						FrameMan:SetScreenText("±£³Ö»ð¼ý´æ»î " .. self.timeDisplay .. "!", self:ScreenOfPlayer(player), 333, 5000, true);
 					end
 
 					-- The current player's team
@@ -157,7 +157,7 @@ function KeepieUppie:UpdateActivity()
 						self:SetPlayerBrain(nil, player);
 						self:ResetMessageTimer(player);
 						FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-						FrameMan:SetScreenText("Your rocket has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+						FrameMan:SetScreenText("ÄãµÄ»ð¼ý±»´Ý»ÙÁË!", self:ScreenOfPlayer(player), 333, -1, false);
 						-- Now see if all brains of self player's team are dead, and if so, end the game
 						if not MovableMan:GetFirstBrainActor(team) then
 							self.WinnerTeam = self:OtherTeam(team);
@@ -171,7 +171,7 @@ function KeepieUppie:UpdateActivity()
 					if self.winTimer:IsPastSimMS(self.timeLimit) then
 						self:ResetMessageTimer(player);
 						FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-						FrameMan:SetScreenText("You survived!", self:ScreenOfPlayer(player), 333, -1, false);
+						FrameMan:SetScreenText("Äã»îÏÂÀ´ÁË!", self:ScreenOfPlayer(player), 333, -1, false);
 
 						self.WinnerTeam = player;
 
@@ -259,7 +259,7 @@ function KeepieUppie:UpdateActivity()
 		self.startMessageTimer:Reset();
 		self.winTimer:Reset();
 
-		FrameMan:SetScreenText("Order your rocket...", 0, 0, 5000, false);
+		FrameMan:SetScreenText("²Ù¿ØÄãµÄ»ð¼ý...", 0, 0, 5000, false);
 
 		--See if the rocket has spawned yet.
 		for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do

@@ -188,9 +188,9 @@ function DoainarMission:UpdateActivity()
 			if actor.PresetName == "Crab" then
 				crabcount = crabcount + 1;
 				if not self.mamaCrab then
-					self:AddObjectivePoint("Kill!", actor.AboveHUDPos, self.PlayerTeam, GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("杀死!", actor.AboveHUDPos, self.PlayerTeam, GameActivity.ARROWDOWN);
 				elseif not self.mamaAggressive and not self.caveAreaA:IsInside(actor.Pos) and not self.caveAreaB:IsInside(actor.Pos) then
-					self:AddObjectivePoint("Kill!", actor.AboveHUDPos, self.PlayerTeam, GameActivity.ARROWDOWN);
+					self:AddObjectivePoint("杀死!", actor.AboveHUDPos, self.PlayerTeam, GameActivity.ARROWDOWN);
 					crabsOutside = crabsOutside + 1;
 				end
 				if actor.Age < TimerMan.DeltaTimeMS then
@@ -220,7 +220,7 @@ function DoainarMission:UpdateActivity()
 						self:SetPlayerBrain(newBrain, player);
 						self:SwitchToActor(newBrain, player, team);
 					else
-						FrameMan:SetScreenText("Your brain has been lost!", self:ScreenOfPlayer(player), 333, -1, true);
+						FrameMan:SetScreenText("你失去主脑了!", self:ScreenOfPlayer(player), 333, -1, true);
 						self.brainDead[player] = true;
 						-- Now see if all brains of self player's team are dead, and if so, end the game
 						if not MovableMan:GetFirstBrainActor(team) then
@@ -234,7 +234,7 @@ function DoainarMission:UpdateActivity()
 				end
 				if self.brainDead[player] == false then
 					if (-self.spawnTimer:LeftTillSimMS(0) >= 25) then
-						--Check if all the outside crabs have died, and if so, enter the "aggression" stage, where all the crabs try to kill you.
+						--Check if all the outside crabs have died, and if so, enter the "aggression" stage, where all the crabs try to 杀死 you.
 						if self.mamaAggressive == false then
 							if MovableMan:IsActor(self.mamaCrab) and (crabsOutside == 0 or self.mamaCrab.PinStrength == 0 or self.mamaCrab.Health < self.mamaCrab.MaxHealth) then
 								self.mamaCrab.SpriteAnimDuration = self.mamaCrab.SpriteAnimDuration * 0.1;
@@ -247,7 +247,7 @@ function DoainarMission:UpdateActivity()
 
 								self:ResetMessageTimer(player);
 								FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-								FrameMan:SetScreenText("Uh oh, looks like you angered the mother crab!  Kill it before it kills you!", self:ScreenOfPlayer(player), 0, 7500, true);
+								FrameMan:SetScreenText("该死,看来你惹怒了母螃蟹!在它杀了你之前,先干掉它!", self:ScreenOfPlayer(player), 0, 7500, true);
 								AudioMan:PlayMusic("Base.rte/Music/dBSoundworks/bossfight.ogg", -1, -1);
 							end
 						end
@@ -257,21 +257,21 @@ function DoainarMission:UpdateActivity()
 							self.brainHasLanded[player] = true;
 							self:ResetMessageTimer(player);
 							FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-							FrameMan:SetScreenText("Looks like there's a crab den down here.  We'll have to clear them out first.", self:ScreenOfPlayer(player), 0, 7500, true);
+							FrameMan:SetScreenText("看起来这里有个螃蟹窝,我们得先把它们清理出去.", self:ScreenOfPlayer(player), 0, 7500, true);
 						end
 
 						if not self.mamaCrab and self.mamaDead == false and self.mamaAggressive == true then
 							self.mamaDead = true;
 							self:ResetMessageTimer(player);
 							FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-							FrameMan:SetScreenText("That was a close one.  Go finish off their den!", self:ScreenOfPlayer(player), 0, 7500, true);
+							FrameMan:SetScreenText("那真是千钧一发,去把他们的巢穴也端了!", self:ScreenOfPlayer(player), 0, 7500, true);
 							AudioMan:PlayMusic("Base.rte/Music/dBSoundworks/cc2g.ogg", -1, -1);
 						end
 
 						if MovableMan:IsParticle(self.eggSac) == false and self.sacDestroyed == false then
 							self:ResetMessageTimer(player);
 							FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-							FrameMan:SetScreenText("Looks like a cave-in happened down here.  Dig through that sand, there might be something under it.", self:ScreenOfPlayer(player), 0, 7500, true);
+							FrameMan:SetScreenText("看起来这里发生了塌方,挖开那沙子,下面可能有什么东西", self:ScreenOfPlayer(player), 0, 7500, true);
 							self.sacDestroyed = true;
 						end
 
@@ -279,7 +279,7 @@ function DoainarMission:UpdateActivity()
 							if self.pitfallArea:IsInside(self:GetControlledActor(player).Pos) and self.passedPitfall == false then
 								self:ResetMessageTimer(player);
 								FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-								FrameMan:SetScreenText("What the...?  It's some kind of ancient bunker?  There seems to be a control panel inside, go see what's on it...", self:ScreenOfPlayer(player), 0, 7500, true);
+								FrameMan:SetScreenText("这……这是什么?某种古老的掩体吗?里面好像有个控制面板,去看看上面有什么……", self:ScreenOfPlayer(player), 0, 7500, true);
 								AudioMan:ClearMusicQueue();
 								AudioMan:PlayMusic("Base.rte/Music/dBSoundworks/ruinexploration.ogg", -1, -1);
 								self.passedPitfall = true;
@@ -307,7 +307,7 @@ function DoainarMission:UpdateActivity()
 						end
 
 						if MovableMan:IsActor(brain) and self.passedPitfall == false and playerInsideConsoleArea == 0 then
-							self:AddObjectivePoint("Protect!", brain.AboveHUDPos + Vector(0, -8), self.PlayerTeam, GameActivity.ARROWDOWN);
+							self:AddObjectivePoint("保护!", brain.AboveHUDPos + Vector(0, -8), self.PlayerTeam, GameActivity.ARROWDOWN);
 						end
 					end
 				end
@@ -316,7 +316,7 @@ function DoainarMission:UpdateActivity()
 	end
 
 	if self.mamaDead == false and MovableMan:IsActor(self.mamaCrab) and self.mamaCrab.Status ~= Actor.INACTIVE then
-		self:AddObjectivePoint("Kill!", self.mamaCrab.AboveHUDPos+Vector(0, -16), self.PlayerTeam, GameActivity.ARROWDOWN);
+		self:AddObjectivePoint("杀死!", self.mamaCrab.AboveHUDPos+Vector(0, -16), self.PlayerTeam, GameActivity.ARROWDOWN);
 		if self.mamaJumpTimer:LeftTillSimMS(3000) < 0 and MovableMan:IsActor(self.target) and SceneMan:GetTerrMatter(self.mamaCrab.Pos.X, self.mamaCrab.Pos.Y + self.mamaCrab:GetSpriteHeight() * 0.5) then
 			local jumpVector = Vector((self.target.Pos.X - self.mamaCrab.Pos.X) * 0.045, -15 + ((self.target.Pos.Y - self.mamaCrab.Pos.Y) * 0.025));
 			self.mamaCrab.Vel = self.mamaCrab.Vel + jumpVector:SetMagnitude(math.min(jumpVector.Magnitude, 30));
@@ -324,7 +324,7 @@ function DoainarMission:UpdateActivity()
 			self.mamaJumpTimer:Reset();
 		end
 	elseif self.mamaAggressive == true and MovableMan:IsParticle(self.eggSac) then
-		self:AddObjectivePoint("Destroy!", self.eggSac.Pos+Vector(0,-16), self.PlayerTeam, GameActivity.ARROWDOWN);
+		self:AddObjectivePoint("摧毁!", self.eggSac.Pos+Vector(0,-16), self.PlayerTeam, GameActivity.ARROWDOWN);
 	end
 	if self.eggSac and MovableMan:IsParticle(self.eggSac) then
 		self.eggSac.Throttle = 2/(1 + (crabcount + self.eggSac.WoundCount) * 0.1) - 1;
@@ -342,12 +342,12 @@ function DoainarMission:UpdateActivity()
 			MovableMan:AddParticle(self.litscreen);
 		end
 		if self.decipherTimer:LeftTillSimMS(3000) > 0 then
-			self:AddObjectivePoint("Loading... " .. math.ceil(self.decipherTimer:LeftTillSimMS(3000)/1000) .. " seconds left.", Vector(1104, 600), self.PlayerTeam, GameActivity.ARROWDOWN);
+			self:AddObjectivePoint("加载... " .. math.ceil(self.decipherTimer:LeftTillSimMS(3000)/1000) .. " 秒时间剩余", Vector(1104, 600), self.PlayerTeam, GameActivity.ARROWDOWN);
 		elseif self.decipherTimer:IsPastSimMS(3000) then
 			local textTime = 5000;
 			for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 				if self:PlayerActive(player) and self:PlayerHuman(player) then
-					FrameMan:SetScreenText("These are cartesian coordinates...  Where could they possibly lead to?", self:ScreenOfPlayer(player), 0, textTime, true);
+					FrameMan:SetScreenText("这些是笛卡尔坐标系……它们可能指向哪里?", self:ScreenOfPlayer(player), 0, textTime, true);
 				end
 			end
 			self.WinnerTeam = self.PlayerTeam;
@@ -364,11 +364,11 @@ function DoainarMission:UpdateActivity()
 	end
 
 	if self.passedPitfall == true and playerInsideConsoleArea == 0 then
-		self:AddObjectivePoint("Investigate!", Vector(1104, 600), self.PlayerTeam, GameActivity.ARROWDOWN);
+		self:AddObjectivePoint("调查!", Vector(1104, 600), self.PlayerTeam, GameActivity.ARROWDOWN);
 	end
 
 	if invest2obj == 1 then
-		self:AddObjectivePoint("Get a digging tool and dig!", Vector(1400, 400), self.PlayerTeam, GameActivity.ARROWDOWN);
+		self:AddObjectivePoint("用工具挖穿这里!", Vector(1400, 400), self.PlayerTeam, GameActivity.ARROWDOWN);
 	end
 	 --Sort the objective points
 	self:YSortObjectivePoints();

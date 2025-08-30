@@ -150,12 +150,12 @@ function Massacre:UpdateActivity()
 				--Display messages.
 				if self.startMessageTimer:IsPastSimMS(3000) then
 					if self.killsNeeded - self:GetTeamDeathCount(Activity.TEAM_2) > 1 then
-						FrameMan:SetScreenText(self.killsNeeded - self:GetTeamDeathCount(Activity.TEAM_2) .. " enemies left!", self:ScreenOfPlayer(player), 0, 1000, false);
+						FrameMan:SetScreenText(self.killsNeeded - self:GetTeamDeathCount(Activity.TEAM_2) .. " 敌人剩余!", self:ScreenOfPlayer(player), 0, 1000, false);
 					else
-						FrameMan:SetScreenText("1 enemy left!", self:ScreenOfPlayer(player), 0, 1000, false);
+						FrameMan:SetScreenText("1个敌人剩余!", self:ScreenOfPlayer(player), 0, 1000, false);
 					end
 				else
-					FrameMan:SetScreenText("Kill " .. self.killsDisplay .. " enemies!", self:ScreenOfPlayer(player), 333, 5000, true);
+					FrameMan:SetScreenText("杀死 " .. self.killsDisplay .. " 个敌人!", self:ScreenOfPlayer(player), 333, 5000, true);
 				end
 
 				-- The current player's team
@@ -176,7 +176,7 @@ function Massacre:UpdateActivity()
 					self:SetPlayerBrain(nil, player);
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("Your brain has been destroyed!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你的主脑被摧毁了!", self:ScreenOfPlayer(player), 333, -1, false);
 					-- Now see if all brains of self player's team are dead, and if so, end the game
 					if not MovableMan:GetFirstBrainActor(team) then
 						self.WinnerTeam = self:OtherTeam(team);
@@ -188,7 +188,7 @@ function Massacre:UpdateActivity()
 				if self:GetTeamDeathCount(Activity.TEAM_2) >= self.killsNeeded then
 					self:ResetMessageTimer(player);
 					FrameMan:ClearScreenText(self:ScreenOfPlayer(player));
-					FrameMan:SetScreenText("You killed all the attackers!", self:ScreenOfPlayer(player), 333, -1, false);
+					FrameMan:SetScreenText("你杀死了所有进攻者!", self:ScreenOfPlayer(player), 333, -1, false);
 
 					self.WinnerTeam = Activity.TEAM_1;
 
