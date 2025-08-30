@@ -881,9 +881,9 @@ void GATutorial::SetupAreas() {
 	m_TutAreaSteps[ROOFEAST].push_back(TutStep("按住 [" + PieName + "] 并聚焦 '编队'", 4000, "Missions.rte/Objects/Tutorial/MenuTeam.png", 2, 500)); //Hold [" + PieName + "] and point down and right to 'Form Squad'
 	m_TutAreaSteps[ROOFEAST].push_back(TutStep("调整选择圈去选中附近的躯干", 4000, "Missions.rte/Objects/Tutorial/TeamSelect.png", 4, 500)); //Adjust selection circle to select nearby bodies
 	m_TutAreaSteps[ROOFEAST].push_back(TutStep("所有被选中的单位都会跟随你 , 并践行他们的职责", 4000, "Missions.rte/Objects/Tutorial/TeamFollow.png", 2, 500)); //All selected units will follow you, and engage on their own
-	m_TutAreaSteps[ROOFEAST].push_back(TutStep("拿着相似武器地单位将会与领头的同步开火", 4000, "Missions.rte/Objects/Tutorial/TeamFollow.png", 2, 500)); //Units with similar weapons will fire in unison with the leader
+	m_TutAreaSteps[ROOFEAST].push_back(TutStep("拿着相似武器的单位将会与领队同步开火", 4000, "Missions.rte/Objects/Tutorial/TeamFollow.png", 2, 500)); //Units with similar weapons will fire in unison with the leader
 	m_TutAreaSteps[ROOFEAST].push_back(TutStep("再次按住 [" + PieName + "] 并聚焦 '编队' 以取消编队", 4000, "Missions.rte/Objects/Tutorial/MenuTeam.png", 2, 500)); //"Hold [" + PieName + "] and point down and right again to disband squad"
-	m_TutAreaSteps[ROOFEAST].push_back(TutStep("接下来 , 你可以继续往东走去打一场模拟战了 !", 8000, "Missions.rte/Objects/Tutorial/ArrowRight.png", 2)); //Next, you can head east for a TRIAL BATTLE!
+	m_TutAreaSteps[ROOFEAST].push_back(TutStep("接下来 , 你可以继续往右走去打一场模拟战了 !", 8000, "Missions.rte/Objects/Tutorial/ArrowRight.png", 2)); //Next, you can head east for a TRIAL BATTLE!
 
 	m_AreaTimer.Reset();
 	m_StepTimer.Reset();

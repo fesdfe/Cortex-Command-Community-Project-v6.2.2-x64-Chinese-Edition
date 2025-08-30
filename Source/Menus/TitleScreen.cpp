@@ -302,7 +302,7 @@ void TitleScreen::UpdateIntroSlideshowSequence(bool skipSlideshow) {
 			if (m_SectionProgress < 0.49F) {
 				m_SlideshowSlideText = "这最终使人类能够离开他们的肉身..."; //This eventually enabled humans to leave their natural bodies...
 			} else if (m_SectionProgress > 0.51F) {
-				m_SlideshowSlideText = "...并将他们的脑子从这种过时的约束中解放出来 ."; //...and to free their minds from obsolete constraints.
+				m_SlideshowSlideText = "...并将他们的大脑从这种过时的约束中解放出来 ."; //...and to free their minds from obsolete constraints.
 			}
 			break;
 		case IntroSequence::ShowSlide4:
@@ -311,7 +311,7 @@ void TitleScreen::UpdateIntroSlideshowSequence(bool skipSlideshow) {
 				m_SlideFadeInDuration = 0.5F;
 				m_SlideFadeOutDuration = 0.5F;
 			}
-			m_SlideshowSlideText = "通过人工维护脑子的活性 , 太空旅行变得可行了 ."; //With their brains sustained by artificial means, space travel also became feasible.
+			m_SlideshowSlideText = "通过人工维护大脑的活性 , 太空旅行变得可行了 ."; //With their brains sustained by artificial means, space travel also became feasible.
 			break;
 		case IntroSequence::ShowSlide5:
 			if (m_SectionSwitch) {

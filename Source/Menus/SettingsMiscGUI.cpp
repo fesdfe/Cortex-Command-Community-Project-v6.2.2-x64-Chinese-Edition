@@ -54,13 +54,13 @@ void SettingsMiscGUI::SetEnabled(bool enable) const {
 void SettingsMiscGUI::UpdateSceneBackgroundAutoScaleLabel() {
 	switch (g_SettingsMan.GetSceneBackgroundAutoScaleMode()) {
 		case 1:
-			m_SceneBackgroundAutoScaleLabel->SetText("Stretch to fit screen");
+			m_SceneBackgroundAutoScaleLabel->SetText("调整以适应屏幕尺寸" /*"Stretch to fit screen"*/);
 			break;
 		case 2:
-			m_SceneBackgroundAutoScaleLabel->SetText("Always upscaled");
+			m_SceneBackgroundAutoScaleLabel->SetText("总是进行超分辨率处理"/*"Always upscaled"*/);
 			break;
 		default:
-			m_SceneBackgroundAutoScaleLabel->SetText("Disabled");
+			m_SceneBackgroundAutoScaleLabel->SetText("禁用" /*"Disabled"*/);
 			break;
 	}
 }

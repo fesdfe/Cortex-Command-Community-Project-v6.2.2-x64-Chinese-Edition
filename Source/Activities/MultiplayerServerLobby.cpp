@@ -145,7 +145,7 @@ int MultiplayerServerLobby::Start() {
 	g_AudioMan.ClearMusicQueue();
 	g_AudioMan.StopMusic();
 
-	SetPresetName("Multiplayer Lobby");
+	SetPresetName("多人游戏大厅" /*"Multiplayer Lobby"*/);
 
 	//////////////////////////////////////////////
 	// Allocate and (re)create the Editor GUI
@@ -388,17 +388,17 @@ void MultiplayerServerLobby::UpdateGoldSlider(const GameActivity* pSelectedGA) {
 void MultiplayerServerLobby::UpdateDifficultySlider() {
 	// Set the description
 	if (m_pDifficultySlider->GetValue() < DifficultySetting::CakeDifficulty)
-		m_pDifficultyLabel->SetText("Difficulty: Cake");
+		m_pDifficultyLabel->SetText("难度:闲庭信步" /*"Difficulty: Cake"*/);
 	else if (m_pDifficultySlider->GetValue() < DifficultySetting::EasyDifficulty)
-		m_pDifficultyLabel->SetText("Difficulty: Easy");
+		m_pDifficultyLabel->SetText("难度:简单" /*"Difficulty: Easy"*/);
 	else if (m_pDifficultySlider->GetValue() < DifficultySetting::MediumDifficulty)
-		m_pDifficultyLabel->SetText("Difficulty: Medium");
+		m_pDifficultyLabel->SetText("难度:中等" /*"Difficulty: Medium"*/);
 	else if (m_pDifficultySlider->GetValue() < DifficultySetting::HardDifficulty)
-		m_pDifficultyLabel->SetText("Difficulty: Hard");
+		m_pDifficultyLabel->SetText("难度:困难" /*"Difficulty: Hard"*/);
 	else if (m_pDifficultySlider->GetValue() < DifficultySetting::NutsDifficulty)
-		m_pDifficultyLabel->SetText("Difficulty: Nuts");
+		m_pDifficultyLabel->SetText("难度:地狱" /*"Difficulty: Nuts"*/);
 	else
-		m_pDifficultyLabel->SetText("Difficulty: Nuts!");
+		m_pDifficultyLabel->SetText("难度:地狱内环" /*"Difficulty: Nuts!"*/);
 }
 
 void MultiplayerServerLobby::UpdateSkillSlider() {
@@ -597,7 +597,7 @@ void MultiplayerServerLobby::UpdatePlayersBox(bool newActivity) {
 				                else */
 				if (team == TEAM_DISABLED) {
 					pIcon = dynamic_cast<const Icon*>(g_PresetMan.GetEntityPreset("Icon", "Disabled Team"));
-					m_apTeamNameLabels[team]->SetText("Not Playing:");
+					m_apTeamNameLabels[team]->SetText("没有玩家:" /*"Not Playing:"*/);
 				}
 				// Active player team
 				else if (pActivity->TeamActive(team)) {
@@ -606,7 +606,7 @@ void MultiplayerServerLobby::UpdatePlayersBox(bool newActivity) {
 					// Revert to default if needed
 					if (!pIcon) {
 						char str[128];
-						std::snprintf(str, sizeof(str), "Team %d Default", team + 1);
+						std::snprintf(str, sizeof(str), "队伍 %d 默认" /*, "Team %d Default"*/, team + 1);
 						pIcon = dynamic_cast<const Icon*>(g_PresetMan.GetEntityPreset("Icon", str));
 					}
 					m_apTeamNameLabels[team]->SetText(pActivity->GetTeamName(team) + ":");
@@ -614,7 +614,7 @@ void MultiplayerServerLobby::UpdatePlayersBox(bool newActivity) {
 				// Disabled/unplayable teams
 				else {
 					pIcon = dynamic_cast<const Icon*>(g_PresetMan.GetEntityPreset("Icon", "Locked Team"));
-					m_apTeamNameLabels[team]->SetText("Unavailable");
+					m_apTeamNameLabels[team]->SetText("不可用" /*"Unavailable"*/);
 				}
 
 				// Finally set whatever Icon we came up with
@@ -690,9 +690,9 @@ void MultiplayerServerLobby::UpdatePlayersBox(bool newActivity) {
 		int startGold = m_pGoldSlider->GetValue();
 		startGold = startGold - startGold % 500;
 		if (m_pGoldSlider->GetValue() == m_pGoldSlider->GetMaximum())
-			std::snprintf(str, sizeof(str), "Starting Gold: %c Infinite", -58);
+			std::snprintf(str, sizeof(str), " 初始黄金 : %c 无限 " /*"Starting Gold: %c Infinite"*/, -58);
 		else
-			std::snprintf(str, sizeof(str), "Starting Gold: %c %d oz", -58, startGold);
+			std::snprintf(str, sizeof(str), " 初始黄金 : %c %d 盎司 "/*"Starting Gold: %c %d oz"*/, -58, startGold);
 		m_pGoldLabel->SetText(str);
 
 		// Set skill labels
@@ -914,8 +914,8 @@ void MultiplayerServerLobby::Update() {
 			if (m_apPlayerNameLabel[i]->GetText() != g_NetworkServer.GetPlayerName(i) && g_NetworkServer.GetPlayerName(i) != "")
 				m_apPlayerNameLabel[i]->SetText(g_NetworkServer.GetPlayerName(i));
 		} else {
-			if (m_apPlayerNameLabel[i]->GetText() != "- NO PLAYER -")
-				m_apPlayerNameLabel[i]->SetText("- 没有玩家 -");
+			if (m_apPlayerNameLabel[i]->GetText() != "- 没有 玩家-" /*"- NO PLAYER -"*/)
+				m_apPlayerNameLabel[i]->SetText("- 没有 玩家 -");
 		}
 	}
 

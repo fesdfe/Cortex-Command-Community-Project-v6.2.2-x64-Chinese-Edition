@@ -1458,7 +1458,7 @@ void GameActivity::Update() {
 		// Selecting LZ, a place for the craft to land
 
 		else if (m_ViewState[player] == ViewState::LandingZoneSelect) {
-			g_FrameMan.SetScreenText("选择投送地点 ... 按住上或下以同时投放多次", ScreenOfPlayer(player)); //Choose your landing zone... Hold UP or DOWN to place multiple orders
+			g_FrameMan.SetScreenText("选择投送地点 ... 按住上 W-返回模式 或下 S-待命模式 以同时投放多次", ScreenOfPlayer(player)); //Choose your landing zone... Hold UP or DOWN to place multiple orders
 
 			// Save the x pos so we can see which direction the user is moving it
 			float prevLZX = m_LandingZone[player].m_X;
@@ -1758,9 +1758,9 @@ void GameActivity::Update() {
 
 		if (IsOver()) {
 			// Override previous messages
-			if (m_pBannerRed[player]->IsVisible() && m_pBannerRed[player]->GetBannerText() != "FAIL")
+			if (m_pBannerRed[player]->IsVisible() && m_pBannerRed[player]->GetBannerText() != "失败") //"FAIL")
 				m_pBannerRed[player]->HideText(2500, 0);
-			if (m_pBannerYellow[player]->IsVisible() && m_pBannerYellow[player]->GetBannerText() != "WIN")
+			if (m_pBannerYellow[player]->IsVisible() && m_pBannerYellow[player]->GetBannerText() != "获胜")//"WIN")
 				m_pBannerYellow[player]->HideText(2500, 0);
 
 			// Player on a winning team

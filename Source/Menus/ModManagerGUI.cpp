@@ -116,14 +116,14 @@ void ModManagerGUI::ToggleMod() {
 
 		modRecord.Disabled = !modRecord.Disabled;
 		if (modRecord.Disabled) {
-			m_ToggleModButton->SetText("Enable Mod");
+			m_ToggleModButton->SetText("ÆôÓÃMod" /*"Enable Mod"*/);
 			if (disabledModsList.find(modRecord.ModulePath) != disabledModsList.end()) {
 				disabledModsList.at(modRecord.ModulePath) = true;
 			} else {
 				disabledModsList.try_emplace(modRecord.ModulePath, true);
 			}
 		} else {
-			m_ToggleModButton->SetText("Disable Mod");
+			m_ToggleModButton->SetText("½ûÓÃMod" /*"Disable Mod"*/);
 			disabledModsList.at(modRecord.ModulePath) = false;
 		}
 		selectedItem->m_Name = modRecord.GetDisplayString();

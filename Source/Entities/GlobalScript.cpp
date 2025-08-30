@@ -103,7 +103,7 @@ int GlobalScript::Start() {
 	}
 
 	if (g_SettingsMan.PrintDebugInfo()) {
-		g_ConsoleMan.PrintString("DEBUG: Start Global Script: " + GetPresetName());
+		g_ConsoleMan.PrintString("DEBUG:打开全局脚本:" /*"DEBUG: Start Global Script: "*/ + GetPresetName());
 	}
 
 	int error = ReloadScripts();
@@ -130,7 +130,7 @@ int GlobalScript::End() const {
 	}
 
 	if (g_SettingsMan.PrintDebugInfo()) {
-		g_ConsoleMan.PrintString("DEBUG: End Global Script: " + GetPresetName());
+		g_ConsoleMan.PrintString("DEBUG:结束全局脚本:"/*"DEBUG: End Global Script: "*/ + GetPresetName());
 	}
 
 	return g_LuaMan.GetMasterScriptState().RunScriptString("if " + m_LuaClassName + ".EndScript then " + m_LuaClassName + ":EndScript(); end");

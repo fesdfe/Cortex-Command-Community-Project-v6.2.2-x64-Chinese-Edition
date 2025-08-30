@@ -635,17 +635,17 @@ std::string Activity::GetDifficultyString(int difficulty) {
 	} else if (difficulty <= DifficultySetting::HardDifficulty) {
 		return "困难"; //Hard
 	} else if (difficulty <= DifficultySetting::NutsDifficulty) {
-		return "疯狂"; //Nuts
+		return "地狱"; //Nuts
 	} else {
-		return "超级疯狂"; //Nuts!
+		return "地狱内环"; //Nuts!
 	}
 }
 
 std::string Activity::GetAISkillString(int skill) {
 	if (skill < AISkillSetting::InferiorSkill) {
-		return "人机"; //Inferior
+		return "暴风兵"; //Inferior
 	} else if (skill < AISkillSetting::AverageSkill) {
-		return "标准"; //Average
+		return "正常"; //Average
 	} else if (skill < AISkillSetting::GoodSkill) {
 		return "优秀"; //Good
 	} else {

@@ -265,7 +265,7 @@ void GibEditorGUI::Update() {
 	// Picking something to load into the editor
 	if (m_EditorGUIMode == PICKOBJECTTOLOAD) {
 		g_FrameMan.ClearScreenText();
-		g_FrameMan.SetScreenText("选择一个对象以加载到GIB编辑器中 ->", 0, 333);
+		g_FrameMan.SetScreenText("选择一个对象以加载到Gib编辑器中 ->", 0, 333);
 
 		// Picked something!
 		if (m_pPicker->ObjectPicked() && !m_pPicker->IsEnabled()) {
@@ -308,7 +308,7 @@ void GibEditorGUI::Update() {
 	// ADDING GIB MODE
 
 	if (m_EditorGUIMode == ADDINGGIB && !m_PieMenu->IsEnabled()) {
-		g_FrameMan.SetScreenText("点击以向已编辑对象添加新GIB - 拖动以精确定位", 0);
+		g_FrameMan.SetScreenText("点击以向已编辑对象添加新Gib - 拖动以精确定位", 0);
 
 		m_DrawCurrentGib = true;
 

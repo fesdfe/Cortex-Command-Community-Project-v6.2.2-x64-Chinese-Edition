@@ -525,10 +525,10 @@ int MetagameGUI::Create(Controller* pController) {
 	m_apPlayerControlButton[Players::PlayerOne]->SetText("玩家"); //Human
 	//    m_apPlayerControlButton[Players::PlayerTwo]->SetText("Human");
 	m_apPlayerControlButton[Players::PlayerTwo]->SetText("A.I.");
-	m_apPlayerNameBox[Players::PlayerOne]->SetText("Player 1");
-	m_apPlayerNameBox[Players::PlayerTwo]->SetText("Player 2");
-	m_apPlayerNameBox[Players::PlayerThree]->SetText("Player 3");
-	m_apPlayerNameBox[Players::PlayerFour]->SetText("Player 4");
+	m_apPlayerNameBox[Players::PlayerOne]->SetText("玩家 1" /*"Player 1"*/);
+	m_apPlayerNameBox[Players::PlayerTwo]->SetText("玩家 2" /*"Player 2"*/);
+	m_apPlayerNameBox[Players::PlayerThree]->SetText("玩家 3" /*"Player 3"*/);
+	m_apPlayerNameBox[Players::PlayerFour]->SetText("玩家 4" /*"Player 4"*/);
 
 	// Add the handicap options to the dropdowns
 	// Prepare the brain icon
@@ -894,7 +894,7 @@ bool MetagameGUI::StartNewGame() {
 		m_apPlayerTeamActionBox[player]->SetDrawImage(0);
 
 		// Found an active player
-		if (m_apPlayerControlButton[player]->GetText() != "None") {
+		if (m_apPlayerControlButton[player]->GetText() != "空" /*"None"*/) {
 			// Disallow empty player name strings
 			if (m_apPlayerNameBox[player]->GetText() == "") {
 				std::snprintf(str, sizeof(str), "玩家 %d", player); //"Player %d"
@@ -1386,7 +1386,7 @@ void MetagameGUI::Update() {
 		m_apMetaButton[CONTINUE]->SetText("跳过介绍"); //Skip Intro
 	} else if (g_MetaMan.m_GameState == MetaMan::NEWROUND) {
 		if (g_MetaMan.m_StateChanged) {
-			m_pBannerYellowTop->ShowText("DAY", GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 2500, 200);
+			m_pBannerYellowTop->ShowText("天数" /*"DAY"*/, GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 2500, 200);
 			m_pBannerYellowBottom->ShowText(GetRoundName(g_MetaMan.m_CurrentRound), GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 2500, 300);
 		}
 		m_pPhaseLabel->SetText("新的一天"); //New Day
@@ -1421,8 +1421,8 @@ void MetagameGUI::Update() {
 				if (g_MetaMan.GetTotalBrainCountOfPlayer(metaPlayer) <= 0) {
 					m_apMetaButton[CONTINUE]->SetText("继续"); //Continue
 					m_pPhaseLabel->SetText(g_MetaMan.m_Players[metaPlayer].GetName() + "的回合"); //'s Turn
-					m_pBannerRedTop->ShowText("Game Over", GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
-					m_pBannerRedBottom->ShowText("for " + g_MetaMan.m_Players[metaPlayer].GetName() + "!", GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
+					m_pBannerRedTop->ShowText("游戏 结束" /*"Game Over"*/, GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
+					m_pBannerRedBottom->ShowText("为" /*"for "*/ + g_MetaMan.m_Players[metaPlayer].GetName() + "!", GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
 
 					// Show a lil descriptive message as to why the game ended
 					m_pGameMessageLabel->SetVisible(true);
@@ -1437,7 +1437,7 @@ void MetagameGUI::Update() {
 					m_apMetaButton[CONTINUE]->SetText("开始回合"); // Start Turn
 					m_pPhaseLabel->SetText(g_MetaMan.m_Players[metaPlayer].GetName() + "的回合"); //'s Turn
 					m_pBannerRedTop->ShowText(g_MetaMan.m_Players[metaPlayer].GetName() + "'s", GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
-					m_pBannerRedBottom->ShowText("Turn", GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
+					m_pBannerRedBottom->ShowText("回合" /*"Turn"*/, GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
 					m_pGameMessageLabel->SetVisible(false);
 					m_PreTurn = true;
 				}
@@ -1501,8 +1501,8 @@ void MetagameGUI::Update() {
 
 			// Noone left??
 			if (winnerTeam == Activity::NoTeam) {
-				m_pBannerRedTop->ShowText("EVERYONE", GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
-				m_pBannerYellowBottom->ShowText("-DIED-", GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
+				m_pBannerRedTop->ShowText("每个人" /*"EVERYONE"*/, GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
+				m_pBannerYellowBottom->ShowText("-死亡-" /*"-DIED-"*/, GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
 			} else {
 
 				// Find out who was on this winning team so we can name them by name
@@ -1515,11 +1515,11 @@ void MetagameGUI::Update() {
 						if (!winnerNames.empty())
 							plural = true;
 
-						winnerNames = winnerNames + (winnerNames.empty() ? "" : " and ") + (*pItr).GetName();
+						winnerNames = winnerNames + (winnerNames.empty() ? "" : "和" /*" and "*/) + (*pItr).GetName();
 					}
 				}
 				m_pBannerRedTop->ShowText(winnerNames, GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
-				m_pBannerYellowBottom->ShowText(plural ? "WIN!" : "WINS!", GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
+				m_pBannerYellowBottom->ShowText(plural ? "获胜" : "获胜!" /*"WIN!" : "WINS!"*/, GUIBanner::FLYBYRIGHTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.6, 3500, 0);
 				//                char winStr[256];
 				//                std::snprintf(winStr, sizeof(winStr), "Team %d", winner + 1);
 				//                m_pBannerRedTop->ShowText(winStr, GUIBanner::FLYBYLEFTWARD, -1, Vector(m_RootBoxMaxWidth, g_WindowMan.GetResY()), 0.4, 3500, 0);
@@ -2098,7 +2098,7 @@ void MetagameGUI::UpdateInput() {
 				if (!g_MetaMan.GameIsSaved()) {
 					HideAllScreens();
 					m_pConfirmationLabel->SetText("有一个游戏正在进行 !\n任何为保存的进度\n都将丢失 !"); //"There is a game going!\nAny unsaved progress\nin it will be lost!"
-					m_pConfirmationButton->SetText("Load");
+					m_pConfirmationButton->SetText("加载" /*"Load"*/);
 					m_pConfirmationBox->SetVisible(true);
 				} else {
 					LoadGame();
@@ -2354,17 +2354,17 @@ void MetagameGUI::UpdateInput() {
 					std::string difficultyString;
 
 					if (pGame->GetDifficulty() < Activity::CakeDifficulty)
-						difficultyString = "难度 : 小菜一碟"; //"Difficulty: Cake";
+						difficultyString = "难度 : 闲庭信步"; //"Difficulty: Cake";
 					else if (pGame->GetDifficulty() < Activity::EasyDifficulty)
 						difficultyString = "难度 : 简单"; //"Difficulty: Easy"
 					else if (pGame->GetDifficulty() < Activity::MediumDifficulty)
-						difficultyString = "难度 : 标准"; //"Difficulty: Medium"
+						difficultyString = "难度 : 中等"; //"Difficulty: Medium"
 					else if (pGame->GetDifficulty() < Activity::HardDifficulty)
 						difficultyString = "难度 : 困难"; //"Difficulty: Hard"
 					else if (pGame->GetDifficulty() < Activity::NutsDifficulty)
-						difficultyString = "难度 : 疯狂"; //"Difficulty: Nuts"
+						difficultyString = "难度 : 地狱"; //"Difficulty: Nuts"
 					else
-						difficultyString = "难度 : 自寻死路 !"; //"Difficulty: Nuts!"
+						difficultyString = "难度 : 地狱内环"; //"Difficulty: Nuts!"
 
 					std::snprintf(info, sizeof(info), "游戏规模 : %d 个站点\n总玩家数 : %d\n天数 : %d\n%s", pGame->GetSiteCount(), pGame->GetPlayerCount(), pGame->GetRoundCount() + 1, difficultyString.c_str()); //"Game Size: %d sites\nTotal Players: %d\nDay: %d\n%s"
 					m_pLoadInfoLabel->SetText(info);
@@ -2391,17 +2391,17 @@ void MetagameGUI::UpdateInput() {
 					std::string difficultyString;
 
 					if (pGame->GetDifficulty() < Activity::CakeDifficulty)
-						difficultyString = "难度 : 小菜一碟"; //"Difficulty: Cake";
+						difficultyString = "难度 : 闲庭信步"; //"Difficulty: Cake";
 					else if (pGame->GetDifficulty() < Activity::EasyDifficulty)
 						difficultyString = "难度 : 简单"; //"Difficulty: Easy"
 					else if (pGame->GetDifficulty() < Activity::MediumDifficulty)
-						difficultyString = "难度 : 标准"; //"Difficulty: Medium"
+						difficultyString = "难度 : 中等"; //"Difficulty: Medium"
 					else if (pGame->GetDifficulty() < Activity::HardDifficulty)
 						difficultyString = "难度 : 困难"; //"Difficulty: Hard"
 					else if (pGame->GetDifficulty() < Activity::NutsDifficulty)
-						difficultyString = "难度 : 疯狂"; //"Difficulty: Nuts"
+						difficultyString = "难度 : 地狱"; //"Difficulty: Nuts"
 					else
-						difficultyString = "难度 : 自寻死路 !"; //"Difficulty: Nuts!"
+						difficultyString = "难度 : 地狱内环"; //"Difficulty: Nuts!"
 
 					std::snprintf(info, sizeof(info), "游戏规模 : %d 个站点\n总玩家数 : %d\n天数 : %d\n%s", pGame->GetSiteCount(), pGame->GetPlayerCount(), pGame->GetRoundCount() + 1, difficultyString.c_str()); //"Game Size: %d sites\nTotal Players: %d\nDay: %d\n%s"
 					m_pSaveInfoLabel->SetText(info);
@@ -3243,12 +3243,12 @@ void MetagameGUI::UpdateIncomeCounting(bool initOverride) {
 				// Show the change, if any
 				if (fabs(m_IncomeSiteLines[m_AnimIncomeLineIndex].m_FundsTarget - m_IncomeSiteLines[m_AnimIncomeLineIndex].m_FundsAmount) > 0) {
 					// Show why we are paying money
-					PlayerTextIndication(m_AnimMetaPlayer, "TradeStar brain storage rent", Vector(m_apPlayerBarLabel[m_AnimMetaPlayer]->GetXPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetWidth() / 2), m_apPlayerBarLabel[m_AnimMetaPlayer]->GetYPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetHeight() / 2)), m_AnimModeDuration);
+					PlayerTextIndication(m_AnimMetaPlayer, "贸易之星大脑存储租金" /*"TradeStar brain storage rent"*/, Vector(m_apPlayerBarLabel[m_AnimMetaPlayer]->GetXPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetWidth() / 2), m_apPlayerBarLabel[m_AnimMetaPlayer]->GetYPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetHeight() / 2)), m_AnimModeDuration);
 					FundsChangeIndication(m_AnimMetaPlayer, m_IncomeSiteLines[m_AnimIncomeLineIndex].m_FundsTarget - m_IncomeSiteLines[m_AnimIncomeLineIndex].m_FundsAmount, Vector(m_apPlayerBarLabel[m_AnimMetaPlayer]->GetXPos() + m_apPlayerBarLabel[m_AnimMetaPlayer]->GetWidth(), m_apPlayerBarLabel[m_AnimMetaPlayer]->GetYPos()), m_AnimModeDuration);
 				}
 				// Indicate why we're not paying anything
 				else
-					PlayerTextIndication(m_AnimMetaPlayer, "No brains; no rent!", Vector(m_apPlayerBarLabel[m_AnimMetaPlayer]->GetXPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetWidth() / 2), m_apPlayerBarLabel[m_AnimMetaPlayer]->GetYPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetHeight() / 2)), m_AnimModeDuration);
+					PlayerTextIndication(m_AnimMetaPlayer, "没有主脑;没有租金!" /*"No brains; no rent!"*/, Vector(m_apPlayerBarLabel[m_AnimMetaPlayer]->GetXPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetWidth() / 2), m_apPlayerBarLabel[m_AnimMetaPlayer]->GetYPos() + (m_apPlayerBarLabel[m_AnimMetaPlayer]->GetHeight() / 2)), m_AnimModeDuration);
 
 				/* This is done above on init now
 				                // Only charge rent if we've still got brains at the tradestar
@@ -5253,7 +5253,7 @@ void MetagameGUI::UpdateScenesBox(bool sceneChanged) {
 				m_pScanInfoLabel->SetVisible(false);
 				m_apMetaButton[SCENEACTION]->SetVisible(false);
 				m_apMetaButton[DESIGNBASE]->SetVisible(true);
-				m_apMetaButton[DESIGNBASE]->SetText("设计基地"); //Design Base
+				m_apMetaButton[DESIGNBASE]->SetText("手动设计基地"); //Design Base
 				m_pSceneBudgetLabel->SetToolTip("设 置 您 的 总 资 金 中 有 多 少 将 用 于 在 此 基 地 上 构 建 基 地 防 御 建 设 .");
 				m_pSceneBudgetSlider->SetToolTip("设 置 您 的 总 资 金 中 有 多 少 将 用 于 在 此 基 地 上 构 建 基 地 防 御 建 设 .");
 				/*
@@ -5386,7 +5386,7 @@ void MetagameGUI::UpdateGameSizeLabels() {
 	// How many players do we have set to go
 	int playerCount = 0;
 	for (int player = Players::PlayerOne; player < Players::MaxPlayerCount; ++player)
-		if (m_apPlayerControlButton[player]->GetText() != "None")
+		if (m_apPlayerControlButton[player]->GetText() != "空" /*"None"*/)
 			++playerCount;
 
 	// How many scenes the game should end up with, according to the specified game size.
@@ -5421,13 +5421,13 @@ void MetagameGUI::UpdateGameSizeLabels() {
 	else if (m_pDifficultySlider->GetValue() < Activity::EasyDifficulty)
 		m_pDifficultyLabel->SetText("难度 : 简单"); // Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::MediumDifficulty)
-		m_pDifficultyLabel->SetText("难度 : 普通"); // Difficulty: Cake
+		m_pDifficultyLabel->SetText("难度 : 中等"); // Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::HardDifficulty)
 		m_pDifficultyLabel->SetText("难度 : 困难"); // Difficulty: Cake
 	else if (m_pDifficultySlider->GetValue() < Activity::NutsDifficulty)
-		m_pDifficultyLabel->SetText("难度 : 疯狂"); // Difficulty: Cake
+		m_pDifficultyLabel->SetText("难度 : 地狱"); // Difficulty: Cake
 	else
-		m_pDifficultyLabel->SetText("难度 : 超级疯狂"); // Difficulty: Cake
+		m_pDifficultyLabel->SetText("难度 : 地狱内环"); // Difficulty: Cake
 }
 
 void MetagameGUI::UpdatePlayerSetup() {
@@ -5436,7 +5436,7 @@ void MetagameGUI::UpdatePlayerSetup() {
 	const Icon* pTeamIcon = 0;
 	std::list<const Icon*> teamList;
 	for (int player = Players::PlayerOne; player < Players::MaxPlayerCount; ++player) {
-		if (m_apPlayerControlButton[player]->GetText() == "None") {
+		if (m_apPlayerControlButton[player]->GetText() == "空" /*"None"*/) {
 			m_apPlayerTeamSelect[player]->SetVisible(false);
 			m_apPlayerTechSelect[player]->SetVisible(false);
 			m_apPlayerHandicap[player]->SetVisible(false);

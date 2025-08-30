@@ -682,7 +682,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 0:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("移动或向上瞄准"); // MOVE or AIM UP
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Up]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向上的方向键]" /*"[D-Pad Up]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_AIM_UP)) {
@@ -693,7 +693,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 1:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("移动或向下瞄准"); // MOVE or AIM DOWN
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Down]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向下的方向键]"/*"[D-Pad Down]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_AIM_DOWN)) {
@@ -704,7 +704,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 2:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向左移动"); // MOVE LEFT
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Left]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向左的方向键]" /*"[D-Pad Left]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_L_LEFT)) {
@@ -714,7 +714,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 3:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向右移动"); // MOVE RIGHT
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Right]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向右的方向键]" /*"[D-Pad Right]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_L_RIGHT)) {
@@ -724,7 +724,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 4:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("开火或互动"); // FIRE or ACTIVATE
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[B Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[B按钮]" /*"[B Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_FIRE)) {
@@ -734,7 +734,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 5:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("精确瞄准"); // SHARP AIM
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[Y Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[Y按钮]"/*"[Y Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_AIM)) {
@@ -744,7 +744,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 6:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("指令菜单"); //COMMAND MENU
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[X Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[X按钮]" /*"[X Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_PIEMENU_DIGITAL)) {
@@ -754,7 +754,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 7:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("跳跃"); // JUMP
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[A Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[A按钮]" /*"[A Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_JUMP)) {
@@ -764,7 +764,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 8:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("下一个控制体"); // NEXT BODY
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R. Bumper Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[RB按钮]" /*"[R. Bumper Button RB]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_NEXT)) {
@@ -774,7 +774,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 9:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("上一个控制体"); // PREVIOUS BODY
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L. Bumper Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[LB按钮]"/*"[L. Bumper Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_PREV)) {
@@ -784,7 +784,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 10:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("START / PAUSE");
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[Start Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[Start按钮]" /*"[Start Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_START)) {
@@ -794,7 +794,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadDPadConfigSequence() {
 		case 11:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("重置活动"); //RESET ACTIVITY
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[Select Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[Select按钮]" /*"[Select Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (!m_ConfigFinished && m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_BACK)) {
@@ -814,7 +814,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 0:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向上移动或跳跃"); //MOVE UP or JUMP
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L. Stick Up]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L摇杆向上]" /*"[L. Stick Up]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_L_UP)) {
@@ -825,7 +825,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 1:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向下移动或下蹲"); //MOVE DOWN or CROUCH
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L. Stick Down]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L摇杆向下]" /*"[L. Stick Down]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_L_DOWN)) {
@@ -836,7 +836,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 2:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向左移动"); // MOVE LEFT
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L. Stick Left]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L摇杆向左]" /*"[L. Stick Left]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_L_LEFT)) {
@@ -846,7 +846,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 3:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向右移动"); // MOVE RIGHT
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L. Stick Right]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[L摇杆向右]" /*"[L. Stick Right]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_L_RIGHT)) {
@@ -856,7 +856,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 4:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向上瞄准"); //ANALOG AIM UP
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R. Stick Up]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R摇杆向上]" /*"[R. Stick Up]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_R_UP)) {
@@ -866,7 +866,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 5:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向下瞄准"); //ANALOG AIM DOWN
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R. Stick Down]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R摇杆向下]" /*"[R. Stick Down]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_R_DOWN)) {
@@ -876,7 +876,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 6:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向左瞄准"); //ANALOG AIM LEFT
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R. Stick Left]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R摇杆向左]" /*"[R. Stick Left]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_R_LEFT)) {
@@ -886,7 +886,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 7:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("向右瞄准"); //ANALOG AIM RIGHT
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R. Stick Right]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[R摇杆向右]" /*"[R. Stick Right]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_R_RIGHT)) {
@@ -896,7 +896,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 8:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("开火或互动"); //FIRE / ACTIVATE
-				std::string buttonName = (m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[X Button]" : "[A Button]";
+				std::string buttonName = (m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[X按钮]" : "[A按钮]" /*"[X Button]" : "[A Button]"*/;
 				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText(buttonName + " 或 [RT]"); // or [R. Trigger]
 				m_ConfigStepChange = false;
 			}
@@ -907,7 +907,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 9:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("精确瞄准"); // SHARP AIM
-				std::string buttonName = (m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[Square Button]" : "[X Button]";
+				std::string buttonName = (m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[方形按钮]" : "X按钮" /*"[Square Button]" : "[X Button]"*/;
 				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText(buttonName + " 或" + ((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "\n" : " ") + "[LT]"); //" or"  "[L. Trigger]"
 				m_ConfigStepChange = false;
 			}
@@ -918,7 +918,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 10:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("指令菜单"); //COMMAND MENU
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[Circle Button]" : "[B Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[圆圈按钮]" : "[B按钮]"/*"[Circle Button]" : "[B Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, m_ConfiguringGamepadType == GamepadType::AnalogDualShock ? InputElements::INPUT_PIEMENU_ANALOG : InputElements::INPUT_PIEMENU_DIGITAL)) {
@@ -948,7 +948,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 13:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("武器重装弹"); // RELOAD WEAPON
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[Triangle Button]" : "[Y Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[三角形按钮]" : "[Y按钮]"/*"[Triangle Button]" : "[Y Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_WEAPON_RELOAD)) {
@@ -958,7 +958,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 14:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("捡拾"); // PICK UP DEVICE
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Up]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向上的方向键]" /*"[D-Pad Up]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_WEAPON_PICKUP)) {
@@ -968,7 +968,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 15:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("丢弃"); // DROP DEVICE
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Down]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向下的方向键]"/*"[D-Pad Down]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_WEAPON_DROP)) {
@@ -978,7 +978,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 16:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("下一个设备"); // NEXT DEVICE
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Right]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向右的方向键]" /*"[D-Pad Right]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_WEAPON_CHANGE_NEXT)) {
@@ -988,7 +988,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 17:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("前一个设备"); // PREVIOUS DEVICE
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[D-Pad Left]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText("[向左的方向键]"/*"[D-Pad Left]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_WEAPON_CHANGE_PREV)) {
@@ -997,8 +997,8 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 			break;
 		case 18:
 			if (m_ConfigStepChange) {
-				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("START / PAUSE");
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[Options Button]" : "[Start Button]");
+				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("开始 / 暂停" /*"START / PAUSE"*/);
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[设置按钮]" : "[Start按钮]"/*"[Options Button]" : "[Start Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_START)) {
@@ -1008,7 +1008,7 @@ bool SettingsInputMappingWizardGUI::UpdateGamepadAnalogConfigSequence() {
 		case 19:
 			if (m_ConfigStepChange) {
 				m_WizardManualConfigScreen.ConfigStepDescriptionLabel->SetText("重置活动"); //RESET ACTIVITY
-				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[Share Button]" : "[Back Button]");
+				m_WizardManualConfigScreen.GamepadConfigStepRecommendedInputLabel->SetText((m_ConfiguringGamepadType == GamepadType::AnalogDualShock) ? "[共享按钮]" : "[Back按钮]"/*"[Share Button]" : "[Back Button]"*/);
 				m_ConfigStepChange = false;
 			}
 			if (!m_ConfigFinished && m_NewInputScheme.CaptureJoystickMapping(m_ConfiguringGamepadIndex, InputElements::INPUT_BACK)) {

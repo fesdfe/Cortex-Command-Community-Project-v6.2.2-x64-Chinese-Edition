@@ -44,14 +44,14 @@ void SettingsInputGUI::SetEnabled(bool enable) const {
 }
 
 void SettingsInputGUI::ResetPlayerInputSettings(int player) {
-	if (m_PlayerInputSettingsBoxes.at(player).ResetControlsButton->GetText() == "Reset") { //Reset
+	if (m_PlayerInputSettingsBoxes.at(player).ResetControlsButton->GetText() == "重置" /*"Reset"*/) { // Reset
 		// Only one player's reset button can be pending confirmation at a time, so cancel any other pending confirmations.
 		for (int otherPlayer = Players::PlayerOne; otherPlayer < Players::MaxPlayerCount; ++otherPlayer) {
 			if (otherPlayer != player) {
-				m_PlayerInputSettingsBoxes.at(otherPlayer).ResetControlsButton->SetText("Reset"); //Reset
+				m_PlayerInputSettingsBoxes.at(otherPlayer).ResetControlsButton->SetText("重置" /*"Reset"*/); // Reset
 			}
 		}
-		m_PlayerInputSettingsBoxes.at(player).ResetControlsButton->SetText("CONFIRM"); //CONFIRM
+		m_PlayerInputSettingsBoxes.at(player).ResetControlsButton->SetText("确认" /*"CONFIRM"*/); // CONFIRM
 	} else {
 		InputScheme* playerControlScheme = g_UInputMan.GetControlScheme(player);
 		playerControlScheme->ResetToPlayerDefaults(static_cast<Players>(player));
@@ -63,7 +63,7 @@ void SettingsInputGUI::ResetPlayerInputSettings(int player) {
 		ShowOrHidePlayerInputDeviceSensitivityControls(player);
 		UpdatePlayerInputSensitivityControlValues(player);
 
-		m_PlayerInputSettingsBoxes.at(player).ResetControlsButton->SetText("Reset"); //Reset
+		m_PlayerInputSettingsBoxes.at(player).ResetControlsButton->SetText("重置" /*"Reset"*/); // Reset
 		g_GUISound.ExitMenuSound()->Play();
 	}
 }

@@ -1631,27 +1631,27 @@ void NetworkServer::DrawStatisticsData() {
 	clear_to_color(bmp, g_BlackColor);
 
 	// Print server GUID to connect via NAT
-	std::string guid = "Server GUID: ";
+	std::string guid = "服务器 GUID: "/*"Server GUID: "*/;
 	guid += GetServerGUID().ToString();
 	g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 5, guid, GUIFont::Centre);
 
 	char buf[512];
 
 	if (m_NatServerConnected) {
-		std::snprintf(buf, sizeof(buf), "NAT SERVICE CONNECTED\nName: %s  Pass: %s", g_SettingsMan.GetNATServerName().c_str(), g_SettingsMan.GetNATServerPassword().c_str());
+		std::snprintf(buf, sizeof(buf), "NAT服务器已连接\nName: %s  Pass: %s", g_SettingsMan.GetNATServerName().c_str(), g_SettingsMan.GetNATServerPassword().c_str());/*NAT SERVICE CONNECTED*/
 		g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 20, buf, GUIFont::Centre);
 	} else {
-		g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 20, "NOT CONNECTED TO NAT SERVICE", GUIFont::Centre);
+		g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 20, "未连接到NAT服务器" /*"NOT CONNECTED TO NAT SERVICE"*/, GUIFont::Centre);
 	}
 
 	if (g_ActivityMan.IsInActivity()) {
 		const GameActivity* gameActivity = dynamic_cast<GameActivity*>(g_ActivityMan.GetActivity());
 		if (gameActivity) {
-			std::snprintf(buf, sizeof(buf), "Activity: %s   Players: %d", gameActivity->GetPresetName().c_str(), gameActivity->GetPlayerCount());
+			std::snprintf(buf, sizeof(buf), "活动: %s   玩家: %d" /*"Activity: %s   Players: %d"*/, gameActivity->GetPresetName().c_str(), gameActivity->GetPlayerCount());
 			g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 50, buf, GUIFont::Centre);
 		}
 	} else {
-		g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 50, "NOT IN GAME ACTIVITY", GUIFont::Centre);
+		g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, midX, 50, "不在游戏活动中" /*"NOT IN GAME ACTIVITY"*/, GUIFont::Centre);
 	}
 
 	m_FramesSent[c_MaxClients] = 0;
@@ -1714,14 +1714,32 @@ void NetworkServer::DrawStatisticsData() {
 		double compressionRatio = (m_DataUncompressedTotal[i] > 0) ? static_cast<double>(m_DataSentTotal[i]) / static_cast<double>(m_DataUncompressedTotal[i]) : 0;
 		double emptyRatio = (m_EmptyBlocks[i] > 0) ? static_cast<double>(m_FullBlocks[i]) / static_cast<double>(m_EmptyBlocks[i]) : 0;
 
-		std::string playerName = " - NO PLAYER - ";
+		std::string playerName = "- 没有 玩家-" /*" - NO PLAYER - "*/;
 		if (IsPlayerConnected(i)) {
 			playerName = GetPlayerName(i);
 		}
 
 		// Jesus christ
 		std::snprintf(buf, sizeof(buf),
-		              "%s\nPing %u\n"
+		              "%s\n Ping %u\n"
+		              "压缩 Mbit : % .1f\n"
+		              "未压缩 Mbit : % .1f\n"
+		              "压缩比 : % .2f\n"
+		              "完整区块 %lu (%.1f Kb)\n"
+		              "空闲区块 %lu (%.1f Kb)\n"
+		              "帧数据 Kb : %lu\n"
+		              "辉光数据 Kb : %lu\n"
+		              "音频数据 Kb : %lu\n"
+		              "场景数据 Kb : %lu\n"
+		              "发送帧数 : %uK\n"
+		              "跳过帧数 : %uK\n"
+		              "完整块数 : %uK\n"
+		              "空闲块数 : %uK\n"
+		              "区块比率 : % .2f\n"
+		              "帧时间 : % d\n"
+		              "发送时间 % d\n"
+		              "总数据量 %lu MB"
+		              /*"%s\nPing %u\n"
 		              "Cmp Mbit : % .1f\n"
 		              "Unc Mbit : % .1f\n"
 		              "R : % .2f\n"
@@ -1738,9 +1756,9 @@ void NetworkServer::DrawStatisticsData() {
 		              "Blk Ratio : % .2f\n"
 		              "Frames ms : % d\n"
 		              "Send ms % d\n"
-		              "Total Data %lu MB",
+		              "Total Data %lu MB"*/,
 
-		              (i == c_MaxClients) ? "- TOTALS - " : playerName.c_str(),
+		              (i == c_MaxClients) ? "- 总计 -" /*"- TOTALS - "*/ : playerName.c_str(),
 		              (i < c_MaxClients) ? m_Ping[i] : 0,
 		              static_cast<double>(m_DataSentCurrent[i][STAT_SHOWN]) / 125000,
 		              static_cast<double>(m_DataUncompressedCurrent[i][STAT_SHOWN]) / 125000,
@@ -1766,7 +1784,7 @@ void NetworkServer::DrawStatisticsData() {
 
 		if (i < c_MaxClients) {
 			int lines = 2;
-			std::snprintf(buf, sizeof(buf), "Thread: %d\nBuffer: %d / %d", m_ThreadExitReason[i], m_SendBufferMessages[i], m_SendBufferBytes[i] / 1024);
+			std::snprintf(buf, sizeof(buf), "线程: %d\n缓冲区: %d / %d" /*"Thread: %d\nBuffer: %d / %d"*/, m_ThreadExitReason[i], m_SendBufferMessages[i], m_SendBufferBytes[i] / 1024);
 			g_FrameMan.GetLargeFont()->DrawAligned(&guiBMP, 10 + i * g_WindowMan.GetResX() / 5, g_WindowMan.GetResY() - lines * 15, buf, GUIFont::Left);
 		}
 	}
@@ -1807,7 +1825,7 @@ void NetworkServer::Update(bool processInput) {
 
 		// Process reset votes
 		// Only reset gameplay activities, and not server lobby
-		if (g_ActivityMan.IsInActivity() && g_ActivityMan.GetActivity()->GetPresetName() != "Multiplayer Lobby") {
+		if (g_ActivityMan.IsInActivity() && g_ActivityMan.GetActivity()->GetPresetName() != "多人游戏大厅" /*"Multiplayer Lobby"*/) {
 
 			int votesNeeded = 0;
 			int endActivityVotes = 0;

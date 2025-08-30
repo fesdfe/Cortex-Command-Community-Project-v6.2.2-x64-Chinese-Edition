@@ -331,7 +331,7 @@ void MultiplayerGame::Update() {
 		if (m_ConnectionWaitTimer.IsPastRealMS(8000)) {
 			g_NetworkClient.Disconnect();
 			m_Mode = SETUP;
-			m_pStatusLabel->SetText("Connection failed. Check console for error messages.");
+			m_pStatusLabel->SetText("连接失败.检查控制台以查看错误信息."); //"Connection failed. Check console for error messages.");
 			m_pGUIController->EnableMouse(true);
 		}
 	}

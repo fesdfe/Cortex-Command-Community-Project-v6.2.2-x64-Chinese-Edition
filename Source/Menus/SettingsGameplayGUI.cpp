@@ -113,7 +113,7 @@ void SettingsGameplayGUI::UpdateUnheldItemsHUDDisplayRange() {
 		m_UnheldItemsHUDDisplayRangeLabel->SetText("无限制"); //Unlimited
 		g_SettingsMan.SetUnheldItemsHUDDisplayRange(-1.0F);
 	} else {
-		m_UnheldItemsHUDDisplayRangeLabel->SetText("Up to " + std::to_string(newValue) + " meters");
+		m_UnheldItemsHUDDisplayRangeLabel->SetText("上升到" /*"Up to "*/ + std::to_string(newValue) + "米" /*" meters"*/);
 		g_SettingsMan.SetUnheldItemsHUDDisplayRange(static_cast<float>(newValue) * c_PPM);
 	}
 }

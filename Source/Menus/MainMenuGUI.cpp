@@ -174,7 +174,7 @@ void MainMenuGUI::CreateCreditsScreen() {
 			stringChar = static_cast<unsigned char>(221); //'?'
 		}
 	}
-	m_CreditsTextLabel->SetText("-中文本地化-\nfesdfe\nDolphinA\n\n" + s_CreditsText);
+	m_CreditsTextLabel->SetText("-中文本地化-\nfesdfe\nDolphinA\n群号:797196952\nGitHub链接:https://github.com/fesdfe/Cortex-Command-Community-Project-v6.2.2-x64-Chinese-Edition\n我已经尽我所能.希望游戏越来越好,人越来越多,社区越来越大,相信后人的智慧!---DolphinA\n\n\n\n" + s_CreditsText);
 	m_CreditsTextLabel->ResizeHeightToFit();
 }
 
@@ -243,7 +243,7 @@ void MainMenuGUI::ShowMetaGameNoticeScreen() {
 	std::string metaNotice = {
 	    "- * 注 意 * -\n\n"
 	    "征服模式目前处于不完整的状态 , 存在缺陷 , 表层指挥社区计划团队将在未来重制该模式 . \n"
-	    "目前该模式依旧可以游玩 , 你绝对可以与AI和 / 或最多三个朋友一起享受该模式 . \n要不 , 在 cccp.mod.io 上查看我们的虚空漫游者吧 !\n"
+	    "目前该模式依旧可以游玩 , 你绝对可以与AI和 / 或最多三个朋友一起享受该模式 . \n要不 , 在 cccp.mod.io 上查看我们的太空漫游者吧 !\n"
 	    "还有一件事 , 如果你从未玩过表层指挥 , 我们推荐你先玩玩教程 :"};
 	metaNoticeLabel->SetText(metaNotice);
 	metaNoticeLabel->SetVisible(true);

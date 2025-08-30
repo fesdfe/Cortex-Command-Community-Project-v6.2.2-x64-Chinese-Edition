@@ -708,7 +708,7 @@ void InventoryMenuGUI::UpdateFullModeInformationText(const std::deque<MovableObj
 			}
 		} else {
 			if (m_GUIDisplayOnly) {
-				informationText = ">> DISPLAY ONLY <<";
+				informationText = ">> 仅 显 示 <<" /*">> DISPLAY ONLY <<"*/;
 			} else if (m_InventoryActorEquippedItems.empty() && inventory->empty()) {
 				informationText = "空 空 如 也 ."; //No items to display.
 			} else {
